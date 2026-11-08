@@ -1,5 +1,6 @@
 import { expect, test, type Page } from '@playwright/test';
 import { readdirSync, readFileSync } from 'node:fs';
+import { createServer } from 'node:http';
 import { resolve } from 'node:path';
 import type {
   Deck,
@@ -415,4 +416,105 @@ test('설치 가능한 앱 셸과 전체 원리장은 오프라인에서도 열�
   await answerVisibleQuestion(page);
   expect((await records(page)).attempts).toHaveLength(1);
   await context.setOffline(false);
+});
+
+test('새 웹앱이 준비되어도 학습을 마저 저장한 뒤 자동으로 적용된다', async ({
+  baseURL,
+  context,
+  page,
+}) => {
+  let published = 1;
+  // Give this test its own origin and change the production worker between launches.
+  const server = createServer((request, response) => {
+    const url = new URL(request.url ?? '/', baseURL);
+    const version = published;
+    void fetch(url)
+      .then(async (upstream) => {
+        response.writeHead(upstream.status, {
+          'Cache-Control': 'no-store',
+          'Content-Type': upstream.headers.get('content-type') ?? 'application/octet-stream',
+        });
+        if (url.pathname === '/sw.js') {
+          response.end(`${await upstream.text()}\nself.addEventListener('message', (event) => {
+            if (event.data === 'test-build') event.ports[0]?.postMessage(${version});
+          });`);
+          return;
+        }
+        response.end(Buffer.from(await upstream.arrayBuffer()));
+      })
+      .catch(() => {
+        response.statusCode = 502;
+        response.end();
+      });
+  });
+  await new Promise<void>((ready) => server.listen(0, '127.0.0.1', ready));
+  const address = server.address();
+  if (!address || typeof address === 'string') throw new Error('Test update server has no port.');
+
+  const activeBuild = () =>
+    page.evaluate(() => {
+      const controller = navigator.serviceWorker.controller;
+      if (!controller) return 0;
+      return new Promise<number>((resolve) => {
+        const channel = new MessageChannel();
+        const timeout = window.setTimeout(() => {
+          channel.port1.close();
+          resolve(0);
+        }, 1000);
+        channel.port1.onmessage = (event) => {
+          clearTimeout(timeout);
+          channel.port1.close();
+          resolve(Number(event.data));
+        };
+        controller.postMessage('test-build', [channel.port2]);
+      });
+    }).catch(() => 0);
+  const documentStart = () => page.evaluate(() => performance.timeOrigin).catch(() => 0);
+
+  try {
+    await page.goto(`http://127.0.0.1:${address.port}/`);
+    await expect(page.locator('.page-heading h1')).toBeVisible();
+    await page.evaluate(async () => { await navigator.serviceWorker.ready; });
+    await page.reload();
+    await expect.poll(activeBuild).toBe(1);
+    await page.getByRole('button', { name: '1회차 탐험 시작', exact: true }).click();
+    await answerVisibleQuestion(page);
+    await advance(page);
+    const question = await page.locator('.question-prompt').innerText();
+    await page.locator('.choices .choice').first().click();
+    const originalDocument = await page.evaluate(() => performance.timeOrigin);
+
+    await context.setOffline(true);
+    await expect.poll(() => page.evaluate(() => navigator.onLine)).toBe(false);
+    published = 2;
+    await context.setOffline(false);
+    await expect(page.getByRole('button', { name: '업데이트 적용', exact: true })).toBeDisabled();
+    expect(await activeBuild()).toBe(1);
+    expect(await page.evaluate(() => performance.timeOrigin)).toBe(originalDocument);
+    await expect(page.locator('.question-prompt')).toHaveText(question);
+    await expect(page.locator('.choices .choice').first()).toHaveAttribute('aria-pressed', 'true');
+
+    await page.getByRole('button', { name: '저장하고 나가기', exact: true }).click();
+    await expect.poll(activeBuild).toBe(2);
+    await expect.poll(documentStart).toBeGreaterThan(originalDocument);
+    await page.getByRole('button', { name: '1회차 이어 하기', exact: true }).click();
+    await expect(page.locator('.question-prompt')).toHaveText(question);
+    const saved = await records(page);
+    expect(saved.sessions[0]).toMatchObject({ index: 1, xp: 10 });
+    expect(saved.attempts).toHaveLength(1);
+    expect(saved.rewards).toHaveLength(1);
+
+    await page.getByRole('button', { name: '저장하고 나가기', exact: true }).click();
+    const secondDocument = await page.evaluate(() => performance.timeOrigin);
+    published = 3;
+    await page.evaluate(() => window.dispatchEvent(new PageTransitionEvent('pageshow')));
+    await expect.poll(activeBuild).toBe(3);
+    await expect.poll(documentStart).toBeGreaterThan(secondDocument);
+    await expect(page.getByRole('button', { name: '1회차 이어 하기', exact: true })).toBeVisible();
+  } finally {
+    await new Promise<void>((closed) => {
+      server.close(() => closed());
+      server.closeAllConnections();
+    });
+  }
 });
