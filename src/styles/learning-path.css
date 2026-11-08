@@ -1,0 +1,470 @@
+.learning-path {
+  --lp-green: #58cc02;
+  --lp-green-shadow: #46a302;
+  --lp-blue: #1cb0f6;
+  --lp-ink: #3c3c3c;
+  --lp-muted: #6f7780;
+  width: 100%;
+  min-width: 0;
+  color: var(--lp-ink);
+  background: #fff;
+  border: 2px solid #e5e5e5;
+  border-radius: 22px;
+  overflow: hidden;
+}
+.learning-path .lp-heading {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  min-height: 104px;
+  padding: 20px 23px;
+  background: var(--lp-green);
+  color: #fff;
+  border-bottom: 5px solid var(--lp-green-shadow);
+}
+.learning-path .lp-heading-icon {
+  flex: 0 0 48px;
+  width: 48px;
+  height: 48px;
+  display: grid;
+  place-items: center;
+  border: 2px solid #ffffff75;
+  border-radius: 15px;
+}
+.learning-path .lp-eyebrow {
+  margin: 0 0 5px;
+  font-size: 13px;
+  line-height: 1.4;
+  font-weight: 800;
+  color: #fff;
+}
+.learning-path .lp-heading h2 {
+  margin: 0;
+  font-size: 22px;
+  line-height: 1.35;
+  font-weight: 900;
+  letter-spacing: -0.7px;
+  color: #fff;
+}
+.learning-path .lp-heading-count {
+  margin-left: auto;
+  flex: 0 0 auto;
+  font-size: 25px;
+  font-weight: 900;
+  line-height: 1.2;
+  white-space: nowrap;
+}
+.learning-path .lp-heading-count span {
+  font-size: 17px;
+  color: #e8ffd7;
+}
+.learning-path .lp-intro {
+  margin: 0;
+  padding: 21px 20px 0;
+  font-size: 16px;
+  line-height: 1.7;
+  font-weight: 700;
+  text-align: center;
+  color: var(--lp-muted);
+}
+.learning-path .lp-track {
+  position: relative;
+  width: min(100%, 360px);
+  margin: 24px auto 0;
+  padding-bottom: 24px;
+  isolation: isolate;
+}
+.learning-path .lp-route {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  max-width: none;
+  pointer-events: none;
+  z-index: -1;
+  overflow: visible;
+}
+.learning-path .lp-route-piece {
+  fill: none;
+  stroke: #e5e5e5;
+  stroke-width: 11;
+  stroke-linecap: round;
+  stroke-dasharray: 2 20;
+}
+.learning-path .lp-route-piece--reached {
+  stroke: #b5e98b;
+}
+.learning-path .lp-lessons {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.learning-path .lp-lesson {
+  position: relative;
+  min-height: 180px;
+  margin: 0;
+  padding: 0;
+}
+.learning-path .lp-node {
+  position: absolute;
+  left: var(--lp-node-left);
+  top: 31px;
+  width: 86px;
+  min-width: 86px;
+  height: 77px;
+  min-height: 77px;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  place-items: center;
+  border: 0;
+  border-radius: 50%;
+  background: var(--lp-green);
+  color: #fff;
+  box-shadow:
+    0 8px 0 var(--lp-green-shadow),
+    inset 0 2px 0 #a3ef6d;
+  cursor: pointer;
+  transform: translateX(-50%);
+  transition:
+    box-shadow 0.13s ease,
+    margin-top 0.13s ease,
+    filter 0.13s ease;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+}
+.learning-path .lp-node-face {
+  display: grid;
+  place-items: center;
+  width: 69px;
+  height: 62px;
+  border: 3px solid #ffffff38;
+  border-radius: 50%;
+}
+.learning-path .lp-node-face > svg {
+  stroke-width: 3.4;
+}
+.learning-path .lp-lesson--current .lp-node-face > svg {
+  fill: #fff;
+  stroke: #fff;
+}
+.learning-path .lp-node-number {
+  position: absolute;
+  top: -3px;
+  right: -3px;
+  width: 29px;
+  height: 29px;
+  display: grid;
+  place-items: center;
+  background: #fff;
+  border: 3px solid var(--lp-green);
+  border-radius: 50%;
+  color: #439600;
+  font-size: 13px;
+  font-weight: 900;
+  line-height: 1;
+}
+.learning-path .lp-node:not(:disabled):hover {
+  filter: brightness(1.055);
+}
+.learning-path .lp-node:not(:disabled):active {
+  margin-top: 6px;
+  box-shadow:
+    0 2px 0 var(--lp-green-shadow),
+    inset 0 2px 0 #a3ef6d;
+}
+.learning-path .lp-node:focus-visible {
+  outline: 4px solid var(--lp-blue);
+  outline-offset: 7px;
+}
+.learning-path .lp-node:disabled {
+  opacity: 1;
+  cursor: default;
+}
+.learning-path .lp-lesson--done .lp-node {
+  background: #ffc800;
+  color: #fff;
+  box-shadow:
+    0 8px 0 #daa500,
+    inset 0 2px 0 #ffe87d;
+}
+.learning-path .lp-lesson--done .lp-node:not(:disabled):active {
+  box-shadow:
+    0 2px 0 #daa500,
+    inset 0 2px 0 #ffe87d;
+}
+.learning-path .lp-lesson--done .lp-node-number {
+  border-color: #ffc800;
+  color: #9c7100;
+}
+.learning-path .lp-lesson--locked .lp-node {
+  background: #e5e5e5;
+  color: #8d969e;
+  box-shadow:
+    0 8px 0 #c9cdd0,
+    inset 0 2px 0 #f5f5f5;
+}
+.learning-path .lp-lesson--locked .lp-node-face {
+  border-color: #ffffff55;
+}
+.learning-path .lp-lesson--locked .lp-node-number {
+  border-color: #d8dddf;
+  color: #727b82;
+}
+.learning-path .lp-start-label {
+  position: absolute;
+  top: -9px;
+  left: var(--lp-node-left);
+  transform: translateX(-50%);
+  min-width: 112px;
+  padding: 9px 12px;
+  border: 2px solid #e5e5e5;
+  border-radius: 12px;
+  background: #fff;
+  color: #439600;
+  box-shadow: 0 2px 0 #f2f2f2;
+  text-align: center;
+  font-size: 14px;
+  font-weight: 900;
+  line-height: 1.25;
+  white-space: nowrap;
+  z-index: 2;
+}
+.learning-path .lp-start-label:before,
+.learning-path .lp-start-label:after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 100%;
+  border: 8px solid transparent;
+  border-top-color: #e5e5e5;
+  transform: translateX(-50%);
+}
+.learning-path .lp-start-label:after {
+  margin-top: -3px;
+  border-top-color: #fff;
+}
+.learning-path .lp-lesson-caption {
+  position: absolute;
+  top: 123px;
+  left: var(--lp-node-left);
+  width: 214px;
+  max-width: 72%;
+  background: #fff;
+  border-radius: 10px;
+  text-align: center;
+  transform: translateX(-50%);
+}
+.learning-path .lp-lesson-caption h3 {
+  margin: 0 0 4px;
+  color: #53616c;
+  font-size: 17px;
+  font-weight: 900;
+  line-height: 1.3;
+  letter-spacing: -0.3px;
+}
+.learning-path .lp-lesson-caption h3 span {
+  margin-left: 7px;
+  font-size: 12px;
+  color: #a87c00;
+}
+.learning-path .lp-lesson--current .lp-lesson-caption h3 {
+  color: #439600;
+}
+.learning-path .lp-lesson-caption p {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  margin: 0;
+  color: #78848d;
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1.4;
+}
+.learning-path .lp-friend {
+  position: absolute;
+  top: 22px;
+  width: 112px;
+  text-align: center;
+  pointer-events: none;
+  z-index: -1;
+}
+.learning-path .lp-friend--right {
+  right: 9px;
+}
+.learning-path .lp-friend--left {
+  left: 9px;
+}
+.learning-path .lp-friend .mascot {
+  display: block;
+  width: 105px;
+  height: 105px;
+  margin: 0 auto;
+}
+.learning-path .lp-friend span {
+  display: block;
+  margin-top: 0;
+  font-size: 13px;
+  font-weight: 900;
+  line-height: 1.3;
+  color: #1a92cc;
+}
+.learning-path .lp-decor {
+  position: absolute;
+  top: 23px;
+  width: 72px;
+  height: 72px;
+  pointer-events: none;
+  z-index: -1;
+}
+.learning-path .lp-decor--left {
+  left: 15px;
+}
+.learning-path .lp-decor--right {
+  right: 15px;
+}
+.learning-path .lp-sparkles {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.learning-path .lp-finish {
+  position: relative;
+  min-height: 113px;
+  padding: 22px 12px 0;
+  text-align: center;
+}
+.learning-path .lp-finish-flag {
+  width: 55px;
+  height: 55px;
+  display: grid;
+  place-items: center;
+  margin: 0 auto 17px;
+  border: 3px solid #e5e5e5;
+  border-radius: 18px;
+  background: #fff;
+  color: #93a1ab;
+}
+.learning-path .lp-finish h3 {
+  margin: 0 0 7px;
+  font-size: 15px;
+  font-weight: 900;
+  line-height: 1.45;
+  color: #63727c;
+}
+.learning-path .lp-finish p {
+  margin: 0;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1.6;
+  color: #8a969f;
+}
+.learning-path .lp-finish--completed .lp-finish-flag {
+  background: #eaf8ff;
+  border-color: #84d8ff;
+  color: #159bd8;
+}
+.learning-path .lp-finish--completed h3 {
+  color: #138bc4;
+}
+.learning-path .lp-empty {
+  padding: 36px 20px;
+  margin: 0;
+  text-align: center;
+  font-size: 16px;
+  color: var(--lp-muted);
+}
+.learning-path .lp-sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
+}
+.learning-path--full .lp-track {
+  margin-top: 30px;
+}
+
+@media (min-width: 1000px) {
+  .learning-path--full {
+    max-width: 720px;
+    margin-inline: auto;
+  }
+  .learning-path--full .lp-heading {
+    padding-inline: 30px;
+  }
+  .learning-path--full .lp-track {
+    margin-top: 38px;
+  }
+}
+@media (max-width: 420px) {
+  .learning-path .lp-heading {
+    gap: 10px;
+    min-height: 94px;
+    padding: 17px 15px;
+  }
+  .learning-path .lp-heading-icon {
+    width: 42px;
+    height: 42px;
+    flex-basis: 42px;
+    border-radius: 13px;
+  }
+  .learning-path .lp-heading h2 {
+    font-size: 20px;
+  }
+  .learning-path .lp-eyebrow {
+    font-size: 12px;
+  }
+  .learning-path .lp-heading-count {
+    font-size: 22px;
+  }
+  .learning-path .lp-heading-count span {
+    font-size: 15px;
+  }
+  .learning-path .lp-intro {
+    padding-inline: 16px;
+    font-size: 14px;
+  }
+  .learning-path .lp-friend--right {
+    right: 0;
+  }
+  .learning-path .lp-friend--left {
+    left: 0;
+  }
+  .learning-path .lp-friend {
+    width: 96px;
+  }
+  .learning-path .lp-friend .mascot {
+    width: 92px;
+    height: 92px;
+  }
+  .learning-path .lp-friend span {
+    font-size: 12px;
+  }
+  .learning-path .lp-lesson-caption {
+    max-width: 66%;
+    width: 195px;
+  }
+  .learning-path .lp-decor {
+    width: 61px;
+    height: 61px;
+  }
+  .learning-path .lp-decor--left {
+    left: 4px;
+  }
+  .learning-path .lp-decor--right {
+    right: 4px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .learning-path *,
+  .learning-path *:before,
+  .learning-path *:after {
+    animation: none !important;
+    transition: none !important;
+  }
+}

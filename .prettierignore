@@ -1,0 +1,13 @@
+src/data/*.json
+package-lock.json
+node_modules
+dist
+dist-android
+dist-pages-test
+android
+test-results
+playwright-report
+test-results-production
+playwright-report-production
+test-results-pages
+playwright-report-pages

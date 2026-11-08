@@ -1,0 +1,138 @@
+{
+  "schemaVersion": 1,
+  "researchedAt": "2026-11-02",
+  "timezone": "Asia/Seoul",
+  "description": "공식 공개 경로 확인과 로컬 기출 내용 검토를 구분한 Siikawa 제작 기록. 학교 공식 출제 분류나 해설이 아님.",
+  "queryCountThisResearcher": 15,
+  "additionalQueryCountAppResearcher": 12,
+  "notes": [
+    "물리·화학 담당의 추가 검색은 docs/HISTORY_ANALYSIS.md에 별도로 기록한다.",
+    "웹에서 목록을 열람한 사실은 모든 첨부 문항을 읽었다는 뜻이 아니다.",
+    "학원·블로그는 공식 경로 탐색에만 사용하고 정답·출제 사실 근거로 사용하지 않았다.",
+    "기출은 개념 분석에 사용했으며 원문 문장과 그림을 앱 문항으로 전재하지 않았다.",
+    "콘텐츠는 자체 작성 초안이며 전문 교사·교수의 독립 검수 완료를 주장하지 않는다."
+  ],
+  "sources": [
+    {
+      "id": "sshs-official-exams",
+      "title": "서울과학고 입학관리부 기출 게시판",
+      "url": "https://admission-sshs.info/24",
+      "kind": "official-school",
+      "access": "list-and-notice-read",
+      "observed": "2021~2026 기출 및 일부 풀이 안내 목록. 2026 문항 공개 2026-03-25, 2025 풀이 안내 2026-01-13.",
+      "limits": "웹에서 첨부 전체 문항이나 공식 풀이 영상을 분석하지 않았다. 문항 내용은 로컬 PDF로 별도 검토."
+    },
+    {
+      "id": "sshs-2026-notice",
+      "title": "2026학년도 서울과학고 입학전형 2단계 문제 공개",
+      "url": "https://admission-sshs.info/24/?bmode=view&idx=170539319",
+      "kind": "official-school",
+      "access": "notice-read",
+      "observed": "2단계 문제 공개와 학교 저작권·전재/복제 금지 안내.",
+      "limits": "공지 본문 확인은 성공했으며 앱 담당 후속 재시도에서도 성공했다. 첨부 문항 텍스트는 미확보."
+    },
+    {
+      "id": "sshs-2025-solutions",
+      "title": "서울과학고 2025학년도 기출문제 풀이 안내",
+      "url": "https://admission-sshs.info/24/?bmode=view&idx=169477657",
+      "kind": "official-school",
+      "access": "notice-links-read",
+      "observed": "앱 담당이 공식 유튜브 풀이 링크 존재 확인.",
+      "limits": "영상 내용 미분석."
+    },
+    {
+      "id": "sshs-2024-solutions",
+      "title": "서울과학고 2024학년도 기출문제 풀이 안내",
+      "url": "https://admission-sshs.info/24/?bmode=view&idx=157718248",
+      "kind": "official-school",
+      "access": "notice-links-read",
+      "observed": "앱 담당이 공식 풀이 영상 링크 존재 확인.",
+      "limits": "영상 내용 미분석."
+    },
+    {
+      "id": "gshs-official-exams",
+      "title": "경기과학고 기출문항 게시판",
+      "url": "https://gs-h.goesw.kr/gs-h/na/ntt/selectNttList.do?bbsId=1120&mi=1323",
+      "kind": "official-school",
+      "access": "list-read",
+      "observed": "2023~2026 자료 4건, 2026 기출·해설동영상 목록 게시 2026-03-18.",
+      "limits": "각 첨부·영상 전문 미분석."
+    },
+    {
+      "id": "gshs-2026-notice",
+      "title": "경기과학고 2026학년도 기출문항 및 해설동영상 공개 안내",
+      "url": "https://gs-h.goesw.kr/gs-h/na/ntt/selectNttInfo.do?bbsId=1113&mi=1314&nttSn=544103",
+      "kind": "official-school",
+      "access": "notice-read-by-app-researcher",
+      "observed": "등록일 2026-03-25의 기출·해설동영상 공개 안내를 확인.",
+      "limits": "공지 확인이며 영상 내용 미분석."
+    },
+    {
+      "id": "dshs-official-exams",
+      "title": "대구과학고 기출문제 게시판",
+      "url": "https://dshs.dge.hs.kr/dshsh/na/ntt/selectNttList.do?bbsId=10018631&mi=10018631",
+      "kind": "official-school",
+      "access": "list-read",
+      "observed": "2021~2026 공개 목록, 2026 게시일 2026-03-03.",
+      "limits": "웹에서 첨부 전체 전문 미분석."
+    },
+    {
+      "id": "iasa-official-exams",
+      "title": "인천과학예술영재학교 입학자료실",
+      "url": "https://iasa.icehs.kr/boardCnts/list.do?boardID=308156&m=0302&s=isaa",
+      "kind": "official-school",
+      "access": "list-read-by-other-researcher",
+      "observed": "앱/물리·화학 담당이 2022~2026 목록 확인, 2026 게시일 2026-02-04.",
+      "limits": "수학·생명·지구 담당의 요청은 빈 본문. 2025 문항 내용은 로컬 PDF로 검토."
+    },
+    {
+      "id": "ksa-official-exams",
+      "title": "한국과학영재학교 입학 자료실",
+      "url": "https://admission.ksa.hs.kr/iphak_kor/bbs_list.php?bbsID=kor_pds",
+      "kind": "official-school",
+      "access": "timeout",
+      "observed": "공식 자료실 경로와 연결만 확인.",
+      "limits": "직접 요청 시간 초과. 2024~2026 문항 내용은 로컬 PDF로 검토."
+    },
+    {
+      "id": "sasa-official-exams",
+      "title": "세종과학예술영재학교 기출 게시판",
+      "url": "https://sasa.sjeduhs.kr/sasa-s/na/ntt/selectNttList.do?bbsId=3662&mi=6365",
+      "kind": "official-school",
+      "access": "http-502",
+      "observed": "공식 게시판 주소로 접속 시도.",
+      "limits": "본문·개별 문항 미분석."
+    },
+    {
+      "id": "gsa-official-exams",
+      "title": "광주과학고 기출 게시판",
+      "url": "https://gsa.gen.hs.kr/xboard/board.php?tbnum=18",
+      "kind": "official-school",
+      "access": "timeout",
+      "observed": "공식 게시판 주소로 접속 시도.",
+      "limits": "본문·개별 문항 미분석."
+    },
+    {
+      "id": "djshs-official-exams",
+      "title": "대전과학고 기출 게시판",
+      "url": "https://djshs.djsch.kr/boardCnts/list.do?boardID=85790&m=0702&s=djshs",
+      "kind": "official-school",
+      "access": "timeout",
+      "observed": "공식 게시판 주소로 접속 시도.",
+      "limits": "본문·개별 문항 미분석."
+    }
+  ],
+  "localContentAnalysis": [
+    {"path":"history/과학영재학교/한국과학영재학교_2026_수학.pdf","pagesRead":[1,2,3,4],"concepts":["약수와 곱 구조","평균과 절사평균","조 편성과 일대일 대응","반복 규칙"]},
+    {"path":"history/과학영재학교/한국과학영재학교_2025_수학.pdf","pagesRead":[1,2,3,4],"concepts":["이차방정식 근의 조건","반사 경로와 주기","정수 배열","불변량"]},
+    {"path":"history/과학영재학교/한국과학영재학교_2024_수학.pdf","pagesRead":[1,2,3,4,5],"concepts":["직선과 비용","나머지 수 체계","반복 변환","조합"]},
+    {"path":"history/과학영재학교/인천과학예술영재학교_2025_수학.pdf","pagesRead":[6,7,8],"focusPages":[6,7,8],"concepts":["접기와 기하","길이와 넓이비","원주각","각 이등분선"]},
+    {"path":"history/과학영재학교/한국과학영재학교_2026_과학.pdf","pagesRead":[1,2,3,4,5,6],"focusPages":[3,4,5,6],"concepts":["호흡·순환·세포 에너지","균근 공생과 대조 실험","복사량과 행성 대기","자전·공전과 낮밤","해륙풍","염분·염류 조성비"]},
+    {"path":"history/과학영재학교/한국과학영재학교_2025_과학.pdf","pagesRead":[3,4,5,6],"focusPages":[3,4,5,6],"concepts":["겨울잠과 대사","철새와 에너지 저장","영양소 검출·소화","변량과 관측 조건"]},
+    {"path":"history/과학영재학교/한국과학영재학교_2024_과학.pdf","pagesRead":[3,4,5],"concepts":["공생과 분류","광합성·식물 호흡","변인 통제"]},
+    {"path":"history/과학영재학교/서울과고_2025(창의력문제해결력검사II).pdf","pagesRead":[1,2,3,4],"focusPages":[3],"concepts":["표면적·부피비","폐포","공극과 풍화"]},
+    {"path":"history/과학영재학교/인천과학예술영재학교_2025_과학.pdf","pagesRead":[4,5,6,7,8,9],"concepts":["계기와 측정","부력·용수철","달 관측","발효와 농도"]}
+  ],
+  "contentCounts": {"mathPrinciples":24,"mathVariants":96,"mathMissions":8,"biologyPrinciples":18,"biologyVariants":72,"biologyMissions":6,"earthPrinciples":18,"earthVariants":72,"earthMissions":6},
+  "reviewStatus": "draft"
+}

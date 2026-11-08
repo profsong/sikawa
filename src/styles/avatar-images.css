@@ -1,0 +1,37 @@
+/* Illustrated transparent avatars appear directly on the room and app backgrounds. */
+svg.mascot.mascot-photo {
+  display: inline-block;
+  flex-shrink: 0;
+  overflow: hidden;
+  border-radius: 15px;
+  background: transparent;
+  vertical-align: middle;
+}
+.mascot-photo > image {
+  pointer-events: none;
+}
+.profile > svg.mascot-photo {
+  transform: none;
+  border-radius: 50%;
+}
+.companion-picker svg.mascot-photo {
+  border-radius: 12px;
+}
+.room-scene-character > svg.mascot-photo {
+  border-radius: 19px;
+  filter: none;
+}
+.room-shop-avatar > svg.mascot-photo {
+  border-radius: 15px;
+}
+.room-item-preview > svg.mascot-photo {
+  max-width: 100%;
+  border-radius: 12px;
+}
+.room-item-preview--accessory > svg.mascot-photo {
+  width: 108px;
+  height: 108px;
+}
+.mascot-photo .photo-wardrobe-overlay {
+  pointer-events: none;
+}

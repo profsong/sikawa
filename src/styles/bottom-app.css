@@ -1,0 +1,205 @@
+/* The same bottom-navigation app layout is used at every viewport width. */
+.app-shell .workspace {
+  margin-left: 0;
+}
+.app-shell .topbar {
+  position: sticky;
+  top: 0;
+  z-index: 25;
+  height: 74px;
+  max-width: 620px;
+  padding: 0 22px;
+  background: var(--panel);
+}
+.app-shell .breadcrumb {
+  display: none;
+}
+.app-shell .topbar-right {
+  width: 100%;
+  justify-content: space-between;
+  gap: 18px;
+}
+.app-shell .page {
+  max-width: 620px;
+  padding-bottom: calc(115px + env(safe-area-inset-bottom));
+}
+.app-shell .home-columns {
+  grid-template-columns: minmax(0, 1fr);
+}
+.app-shell .settings-grid,
+.app-shell .progress-layout,
+.app-shell .review-layout {
+  grid-template-columns: minmax(0, 1fr);
+}
+.app-shell .review-layout > div:first-child {
+  width: 100%;
+  max-width: 430px;
+  margin-inline: auto;
+}
+.app-shell .flow-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 25px 18px;
+}
+.app-shell .flow-item:nth-child(3) {
+  border-left: 0;
+  padding-left: 0;
+}
+.app-shell .seed-grid {
+  grid-template-columns: minmax(0, 1fr);
+}
+.app-shell .deck-pill {
+  flex-direction: column;
+  min-height: 76px;
+  padding: 8px 2px;
+  gap: 6px;
+  font-size: 12px;
+}
+.app-shell .deck-pill small {
+  display: none;
+}
+.app-shell .bottom-nav {
+  position: fixed;
+  inset: auto 0 0;
+  z-index: 40;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  min-height: calc(78px + env(safe-area-inset-bottom));
+  padding: 8px 6px calc(8px + env(safe-area-inset-bottom));
+  border-top: 2px solid var(--line);
+  background: var(--panel);
+}
+.app-shell .bottom-nav button {
+  display: flex;
+  flex: 1 1 0;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  min-width: 0;
+  max-width: 98px;
+  min-height: 56px;
+  padding: 6px 3px;
+  border: 2px solid transparent;
+  border-radius: 12px;
+  color: #aaa;
+  font-size: 12px;
+  font-weight: 800;
+}
+.app-shell .bottom-nav button > svg,
+.bottom-nav-icon > svg {
+  width: 26px;
+  height: 26px;
+  stroke-width: 2.6;
+}
+.app-shell .bottom-nav button.active {
+  color: #1899d6;
+  border-color: #84d8ff;
+  background: #ddf4ff;
+}
+.app-shell .bottom-nav button:nth-child(2) svg {
+  color: #58cc02;
+}
+.app-shell .bottom-nav button:nth-child(3) svg {
+  color: #ff9600;
+}
+.app-shell .bottom-nav button:nth-child(4) svg {
+  color: #a560e8;
+}
+.app-shell .bottom-nav button:nth-child(5) svg {
+  color: #ffc800;
+}
+.app-shell .bottom-nav button:nth-child(6) svg {
+  color: #91a1a8;
+}
+.bottom-nav-icon {
+  position: relative;
+  display: grid;
+  place-items: center;
+}
+.bottom-nav-badge {
+  position: absolute;
+  top: -6px;
+  right: -10px;
+  min-width: 17px;
+  padding: 1px 4px;
+  border: 2px solid var(--panel);
+  border-radius: 12px;
+  background: #ff9600;
+  color: #fff;
+  font-size: 9px;
+  line-height: 1.3;
+}
+[data-theme='night'] .app-shell .bottom-nav button.active {
+  color: #49c0f8;
+  border-color: #238cba;
+  background: #173b4b;
+}
+@media (max-width: 420px) {
+  .app-shell .deck-pill {
+    font-size: 10px;
+  }
+  .app-shell .bottom-nav button {
+    font-size: 10px;
+  }
+}
+
+/* Keep the next-lesson companion prominent instead of the shell's 78px mobile size. */
+.app-shell .next-lesson-card {
+  --next-mascot-size: 168px;
+  gap: 18px;
+  padding-block: 22px 16px;
+}
+.app-shell .next-lesson-card > .mascot {
+  flex: 0 0 var(--next-mascot-size);
+  width: var(--next-mascot-size);
+  min-width: var(--next-mascot-size);
+  max-width: none;
+  height: var(--next-mascot-size);
+}
+.app-shell .next-lesson-card > div {
+  flex: 1 1 0;
+  min-width: 0;
+}
+.app-shell .next-lesson-card .primary {
+  width: 100%;
+  min-width: 0;
+  max-width: 340px;
+  min-height: 50px;
+  gap: 8px;
+  white-space: normal;
+}
+.app-shell .next-lesson-card p {
+  font-size: 13px;
+  line-height: 1.7;
+}
+@media (max-width: 420px) {
+  .app-shell .next-lesson-card {
+    --next-mascot-size: clamp(144px, 40vw, 168px);
+    gap: 12px;
+    padding-block: 18px 12px;
+  }
+  .app-shell .next-lesson-card p {
+    margin-bottom: 12px;
+    font-size: 12px;
+  }
+  .app-shell .next-lesson-card .primary {
+    padding-inline: 12px;
+    font-size: 13px;
+  }
+}
+@media (max-width: 359px) {
+  .app-shell .next-lesson-card {
+    --next-mascot-size: 148px;
+    flex-direction: column;
+    gap: 12px;
+    text-align: center;
+  }
+  .app-shell .next-lesson-card > div {
+    width: 100%;
+  }
+  .app-shell .next-lesson-card .primary {
+    max-width: none;
+  }
+}

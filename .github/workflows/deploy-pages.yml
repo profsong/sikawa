@@ -1,0 +1,115 @@
+name: Deploy GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions: {}
+
+concurrency:
+  group: github-pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    env:
+      TZ: Asia/Seoul
+    permissions:
+      contents: read
+      pages: read
+    steps:
+      - name: Check out source
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+        with:
+          persist-credentials: false
+
+      - name: Set up Node.js
+        uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7
+        with:
+          node-version: '24'
+          cache: npm
+          cache-dependency-path: package-lock.json
+
+      - name: Read GitHub Pages configuration
+        id: pages
+        uses: actions/configure-pages@45bfe0192ca1faeb007ade9deae92b16b8254a0d # v6
+        with:
+          enablement: false
+
+      - name: Install locked dependencies
+        run: npm ci
+
+      - name: Check types
+        run: npm run typecheck
+
+      - name: Lint
+        run: npm run lint
+
+      - name: Run unit tests
+        run: npm run test
+
+      - name: Build the web app
+        run: npm run build
+        env:
+          # Empty for an account site, /repository for a project site.
+          # Vite normalizes either value to a directory path with a trailing slash.
+          VITE_BASE_PATH: ${{ steps.pages.outputs.base_path }}
+
+      - name: Verify web artifact and Pages paths
+        env:
+          PAGES_BASE_PATH: ${{ steps.pages.outputs.base_path }}
+        run: |
+          node --input-type=module <<'NODE'
+          import assert from 'node:assert/strict';
+          import { readFileSync, readdirSync } from 'node:fs';
+          import { join, relative, sep } from 'node:path';
+
+          const base = `${(process.env.PAGES_BASE_PATH || '').replace(/\/+$/, '')}/`;
+          const entries = ['index.html', 'manifest.webmanifest', 'sw.js'];
+          const files = readdirSync('dist', { recursive: true, withFileTypes: true })
+            .filter((entry) => !entry.isDirectory())
+            .map((entry) => {
+              assert(entry.isFile(), `Expected a regular file: ${entry.name}`);
+              return relative('dist', join(entry.parentPath, entry.name)).split(sep).join('/');
+            });
+          const asset = /^(?:assets\/[^/]+\.(?:js|css)|(?:avatars|icons)\/[^/]+\.(?:png|svg)|workbox-[\w-]+\.js)$/;
+          const unexpected = files.filter((file) => !entries.includes(file) && !asset.test(file));
+          assert.equal(unexpected.length, 0, `Unexpected files in dist: ${unexpected.join(', ')}`);
+          for (const file of entries) assert(files.includes(file), `Missing ${file}`);
+
+          const html = readFileSync('dist/index.html', 'utf8');
+          const links = Array.from(html.matchAll(/\b(?:href|src)="([^"]+)"/g), ([, link]) => link);
+          const manifest = JSON.parse(readFileSync('dist/manifest.webmanifest', 'utf8'));
+          assert.equal(manifest.start_url, base);
+          assert.equal(manifest.scope, base);
+          assert(links.includes(`${base}manifest.webmanifest`), 'Manifest is not linked in index.html');
+          for (const link of [...links, ...manifest.icons.map((icon) => icon.src)]) {
+            assert(link.startsWith(base), `Expected ${link} under ${base}`);
+            assert(files.includes(link.slice(base.length)), `Invalid asset link: ${link}`);
+          }
+          console.log(`Verified ${files.length} files for ${base}`);
+          NODE
+
+      - name: Upload only the web build
+        uses: actions/upload-pages-artifact@fc324d3547104276b827a68afc52ff2a11cc49c9 # v5
+        with:
+          path: dist
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@368f82528645a54fb793d4d04e342629a3f51346 # v5
