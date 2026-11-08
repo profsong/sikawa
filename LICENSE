@@ -1,32 +1,6 @@
-# 시이카와 이용 조건
+Copyright (c) 2026 this repository. All rights reserved.
 
-Copyright © 2026 SangHwa Song. All rights reserved.
-
-이 저장소의 소스 코드, 원리장 콘텐츠(문항·해설·채점 요소·지문), 그림과 아이콘(이하 "시이카와")의 권리는 저작권자에게 있습니다. 아래에서 허용한 범위 밖의 이용은 모두 금지합니다.
-
-## 허용
-1. 배포된 시이카와 웹앱을 열거나 기기에 설치해 학습에 사용하는 것
-2. 이 저장소의 소스 코드와 콘텐츠를 읽고 열람하는 것
-3. 수정하지 않은 시이카와로 연결되는 링크를 공유하는 것
-
-## 금지
-1. 시이카와의 전부 또는 일부를 수정·번역·편집하거나 2차적 저작물을 만드는 것
-2. 원본 또는 수정본을 다른 곳에 다시 게시·배포·판매하는 것
-3. 원리장 콘텐츠를 다른 앱·교재·문제집에 옮겨 싣는 것
-4. 이 고지와 저작권 표시를 지우는 것
-
-## 기타
-- 이 이용 조건은 프로젝트가 새로 작성한 코드·문항·그림에 적용합니다. 외부 의존성 및 원본 기출 자료에는 각 저작권자의 고유한 조건이 적용됩니다.
-- 위 허용 범위 밖의 사용이 필요하면 저작권자에게 서면 허락을 받아야 합니다.
-- 시이카와는 있는 그대로 제공되며, 학습 결과나 입시 결과를 보장하지 않습니다.
-- GitHub에 공개된 저장소는 GitHub 이용약관에 따라 GitHub 안에서 열람·포크될 수 있으며, 이 조건은 그 범위를 넘는 이용을 허락하지 않습니다.
-
----
-
-# 시이카와 Terms of Use
-
-Copyright © 2026 SangHwa Song. All rights reserved.
-
-Permitted: using the deployed 시이카와 web app, viewing this repository's source and content, and sharing links to the unmodified app.
-Not permitted: modifying, translating, or creating derivative works; republishing, redistributing, or selling the original or modified versions; reusing the deck content elsewhere; removing this notice.
-Any other use requires prior written permission from the copyright holder. Provided "as is", without warranty.
+This software is available for personal, educational, and non-commercial use only.
+Any commercial use, including but not limited to selling, licensing, or incorporating 
+this code into commercial products or services, is strictly prohibited without prior 
+written permission from the author.
