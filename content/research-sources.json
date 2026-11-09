@@ -134,5 +134,63 @@
     {"path":"history/과학영재학교/인천과학예술영재학교_2025_과학.pdf","pagesRead":[4,5,6,7,8,9],"concepts":["계기와 측정","부력·용수철","달 관측","발효와 농도"]}
   ],
   "contentCounts": {"mathPrinciples":24,"mathVariants":96,"mathMissions":8,"biologyPrinciples":18,"biologyVariants":72,"biologyMissions":6,"earthPrinciples":18,"earthVariants":72,"earthMissions":6},
+  "referenceExpansion2026Nov": {
+    "date": "2026-11-09",
+    "suppliedPdfs": 80,
+    "pdfPages": 2026,
+    "byteDistinctPdfs": 77,
+    "rasterDistinctPages": 622,
+    "sparsePagesReadWithKoreanOcr": 157,
+    "sameBytesAsLocalHistory": 80,
+    "newContent": {
+      "수학": {
+        "rounds": 16,
+        "principles": 96,
+        "variants": 384,
+        "missions": 32,
+        "addedPrinciples": 36,
+        "addedVariants": 144,
+        "addedMissions": 12
+      },
+      "물리": {
+        "rounds": 14,
+        "principles": 84,
+        "variants": 336,
+        "missions": 28,
+        "addedPrinciples": 24,
+        "addedVariants": 96,
+        "addedMissions": 8
+      },
+      "화학": {
+        "rounds": 13,
+        "principles": 78,
+        "variants": 312,
+        "missions": 26,
+        "addedPrinciples": 18,
+        "addedVariants": 72,
+        "addedMissions": 6
+      },
+      "생명과학": {
+        "rounds": 14,
+        "principles": 84,
+        "variants": 336,
+        "missions": 28,
+        "addedPrinciples": 24,
+        "addedVariants": 96,
+        "addedMissions": 8
+      },
+      "지구과학": {
+        "rounds": 15,
+        "principles": 90,
+        "variants": 360,
+        "missions": 30,
+        "addedPrinciples": 30,
+        "addedVariants": 120,
+        "addedMissions": 10
+      }
+    },
+    "method": "페이지 텍스트·한국어 OCR을 이용한 자료 분류와 선택한 문항의 도표·수식·그림 대조. PDF 쪽과 문항은 각 새 원리와 면접 미션의 source에 기록.",
+    "limits": "표지와 비문항을 포함한 쪽수. 개별 문항 전체의 모범답안 또는 독립 교육 검수를 의미하지 않음."
+  },
   "reviewStatus": "draft"
 }
