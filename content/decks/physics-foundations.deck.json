@@ -3,7 +3,7 @@
   "id": "physics-foundations",
   "title": "물리 · 힘에서 빛까지",
   "description": "힘·운동·전기·자기·빛·열의 핵심 원리. 실제 기출에서 요구한 조건 해석과 실험 근거를 새로운 문제로 연습합니다.",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "language": "ko",
   "reviewStatus": "draft",
   "principles": [
@@ -6551,6 +6551,1416 @@
         ],
         "passCount": 3
       }
+    },
+    {
+      "id": "physics.audit-d.heat-internal-work",
+      "order": 85,
+      "subject": "물리",
+      "name": "들어온 열을 내부에너지와 일로 나누기",
+      "summary": "기체가 열을 받아 온도가 오르고 피스톤도 들어 올리면, 받은 열 Q는 내부에너지 변화 ΔU와 기체가 밖에 한 일 W의 합이다. 피스톤과 짐이 서서히 오를 때 W에는 높아진 물체들의 위치에너지가 들어간다.",
+      "conceptAnswers": [
+        "들어온 열을 내부에너지와 일로 나누기",
+        "열과 팽창 일"
+      ],
+      "hint": "들",
+      "curriculum": "열과 에너지 · 압력과 일",
+      "source": "references/과학영재학교/한국과학영재학교_2026_과학.pdf PDF 1쪽 1-1~1-4. 풀이 원리를 활용해 상황과 수치를 새로 구성.",
+      "variants": [
+        {
+          "id": "physics.audit-d.heat-internal-work.v1",
+          "prompt": "기체가 90 J를 받아 피스톤과 짐을 높이는 데 30 J를 썼다. 다른 손실이 없을 때 기체 내부에너지 변화는?",
+          "choices": [
+            "120 J 증가",
+            "30 J 증가",
+            "60 J 증가",
+            "60 J 감소"
+          ],
+          "correctIndex": 2,
+          "explanation": "90=ΔU+30이므로 ΔU=60 J다."
+        },
+        {
+          "id": "physics.audit-d.heat-internal-work.v2",
+          "prompt": "피스톤의 위치가 잠겨 있고 기체에 열 50 J가 들어갔다. 부피 변화가 없고 손실도 없다. 기체가 바깥에 한 일은?",
+          "choices": [
+            "50 J",
+            "−50 J",
+            "25 J",
+            "0 J"
+          ],
+          "correctIndex": 3,
+          "explanation": "피스톤이 움직이지 않아 부피 팽창 일이 없다. 받은 열은 내부에너지 증가에 쓰인다."
+        },
+        {
+          "id": "physics.audit-d.heat-internal-work.v3",
+          "prompt": "무게 20 N인 짐과 무게 5 N인 피스톤이 함께 0.40 m를 천천히 올라간다. 피스톤 바깥은 진공이고 마찰은 무시한다. 기체가 한 일은?",
+          "choices": [
+            "10 J",
+            "8 J",
+            "2 J",
+            "25 J"
+          ],
+          "correctIndex": 0,
+          "explanation": "기체는 두 물체의 무게 25 N을 모두 들어 올려야 한다. 25×0.4=10 J다."
+        },
+        {
+          "id": "physics.audit-d.heat-internal-work.v4",
+          "prompt": "손실 없는 장치에서 기체가 팽창해 밖에 12 J의 일을 하고 내부에너지 변화가 0이다. 기체가 받은 열은?",
+          "choices": [
+            "0 J",
+            "12 J",
+            "−12 J",
+            "24 J"
+          ],
+          "correctIndex": 1,
+          "explanation": "내부에너지가 늘지 않아도 기체가 밖에 한 일만큼 열을 받아야 한다."
+        }
+      ],
+      "reviewStatus": "draft",
+      "explain": {
+        "prompt": "따뜻한 물체가 피스톤 속 기체를 가열할 때 에너지 이동을 설명하세요.",
+        "rubric": [
+          "열이 이동하는 방향을 설명했다",
+          "기체 온도 상승과 내부에너지를 연결했다",
+          "피스톤 상승을 기체가 한 일로 표시했다",
+          "장치 경계 안팎의 에너지 합을 맞췄다"
+        ],
+        "passCount": 3
+      },
+      "followUps": [
+        "피스톤을 잠가 움직이지 못하게 하면 같은 열이 들어올 때 온도 상승은 어느 쪽이 더 클까요?"
+      ]
+    },
+    {
+      "id": "physics.audit-d.source-capacity-and-equilibrium",
+      "order": 86,
+      "subject": "물리",
+      "name": "열원 질량과 최종 온도 구별",
+      "summary": "같은 초기 온도의 뜨거운 물체라도 열용량이 크면 1°C 식으면서 더 많은 에너지를 공급한다. 차가운 쪽의 열과 일까지 포함한 필요 에너지가 온도에 따라 커진다면, 열원 열용량을 늘릴 때 최종 평형은 뜨거운 쪽으로 이동한다.",
+      "conceptAnswers": [
+        "열원 질량과 최종 온도 구별",
+        "열용량 가중 평형"
+      ],
+      "hint": "열",
+      "curriculum": "열과 에너지 · 평형과 열용량",
+      "source": "references/과학영재학교/한국과학영재학교_2026_과학.pdf PDF 1쪽 1-3, 1-4. 풀이 원리를 활용해 상황과 수치를 새로 구성.",
+      "variants": [
+        {
+          "id": "physics.audit-d.source-capacity-and-equilibrium.v1",
+          "prompt": "80°C 열원 열용량이 12 J/°C, 20°C 물체의 열용량이 6 J/°C이다. 단열 접촉 뒤 평형 온도는?",
+          "choices": [
+            "50°C",
+            "40°C",
+            "70°C",
+            "60°C"
+          ],
+          "correctIndex": 3,
+          "explanation": "12(80−T)=6(T−20)에서 T=60이다."
+        },
+        {
+          "id": "physics.audit-d.source-capacity-and-equilibrium.v2",
+          "prompt": "같은 문제에서 80°C 열원만 열용량 24 J/°C로 바꾸면 평형 온도는?",
+          "choices": [
+            "68°C",
+            "60°C",
+            "52°C",
+            "80°C"
+          ],
+          "correctIndex": 0,
+          "explanation": "24(80−T)=6(T−20)이므로 T=68이다."
+        },
+        {
+          "id": "physics.audit-d.source-capacity-and-equilibrium.v3",
+          "prompt": "열용량 10 J/°C인 A가 12°C 식고, 25 J/°C인 B가 6°C 식었다. 더 많은 열을 잃은 것은?",
+          "choices": [
+            "A",
+            "B",
+            "같다",
+            "두 초기 온도를 알아야 한다"
+          ],
+          "correctIndex": 1,
+          "explanation": "A는 120 J, B는 150 J이다. 온도 변화와 열용량의 곱을 비교한다."
+        },
+        {
+          "id": "physics.audit-d.source-capacity-and-equilibrium.v4",
+          "prompt": "뜨거운 쪽이 평형까지 잃은 에너지 120 J 중 찬 장치가 30 J를 추에 전달했다. 찬 장치 내부에 남은 에너지 증가는?",
+          "choices": [
+            "120 J",
+            "150 J",
+            "90 J",
+            "30 J"
+          ],
+          "correctIndex": 2,
+          "explanation": "기체에 온 열 중 30 J가 추의 위치에너지로 전달되어 장치 내부 변화에는 90 J가 남는다."
+        }
+      ],
+      "reviewStatus": "draft",
+      "explain": {
+        "prompt": "초기 온도가 같은 뜨거운 물체 두 개가 같은 차가운 장치를 각각 데울 때 큰 열용량이 만드는 변화를 설명하세요.",
+        "rubric": [
+          "질량과 열용량을 연결했다",
+          "같은 온도 하락에서 공급 열이 달라짐을 말했다",
+          "에너지 장부에서 새 평형 온도를 판단했다",
+          "온도 하락 크기만으로 열량을 비교할 수 없다고 했다"
+        ],
+        "passCount": 3
+      },
+      "followUps": [
+        "뜨거운 쪽과 찬 쪽의 열용량을 모두 두 배로 하면 평형 온도와 총 열량은 어떻게 달라질까요?"
+      ]
+    },
+    {
+      "id": "physics.audit-d.braking-power-energy",
+      "order": 87,
+      "subject": "물리",
+      "name": "전자기 제동의 순간 출력과 총에너지",
+      "summary": "자석이 중력으로 등속 낙하하면 제동력은 무게와 같고 역학적으로 잃는 순간 출력은 mgv이다. 전체 낙하의 전기 에너지는 mgh에서 남은 운동에너지와 다른 손실을 뺀 값이다. 전력은 단위 시간당 에너지여서, 같은 전체 열량도 낙하 시간에 따라 다른 전력으로 나타난다.",
+      "conceptAnswers": [
+        "전자기 제동의 순간 출력과 총에너지",
+        "유도 제동의 전력과 전력량"
+      ],
+      "hint": "전",
+      "curriculum": "전자기 · 역학과 회로의 에너지",
+      "source": "references/과학영재학교/한국과학영재학교_2026_과학.pdf PDF 2쪽 2-1~2-4. 풀이 원리를 활용해 상황과 수치를 새로 구성.",
+      "variants": [
+        {
+          "id": "physics.audit-d.braking-power-energy.v1",
+          "prompt": "무게 4 N인 자석이 코일 안에서 0.5 m/s로 등속 낙하한다. 다른 제동을 무시할 때 전기계로 전달되는 순간 출력은?",
+          "choices": [
+            "2 W",
+            "4 W",
+            "8 W",
+            "0.5 W"
+          ],
+          "correctIndex": 0,
+          "explanation": "제동력 4 N과 속력 0.5 m/s의 곱이 2 W다."
+        },
+        {
+          "id": "physics.audit-d.braking-power-energy.v2",
+          "prompt": "같은 높이를 내려오는 두 자석이 무게와 처음 속력은 같다. 첫 자석은 충돌 직전 운동에너지 1 J, 둘째는 3 J이다. 다른 손실이 없다면 더 많은 전기 에너지를 준 것은?",
+          "choices": [
+            "둘째 자석",
+            "첫 자석",
+            "같다",
+            "낙하 시간만으로 정할 수 있다"
+          ],
+          "correctIndex": 1,
+          "explanation": "같은 mgh 중 운동에너지로 남은 몫이 작은 쪽이 전기계로 더 많이 전달했다."
+        },
+        {
+          "id": "physics.audit-d.braking-power-energy.v3",
+          "prompt": "무게 5 N인 자석이 2 m 떨어지며 2 J의 운동에너지를 얻었다. 코일 열손실 1 J 외 다른 손실이 없다. 전구가 받은 총 에너지는?",
+          "choices": [
+            "10 J",
+            "8 J",
+            "7 J",
+            "13 J"
+          ],
+          "correctIndex": 2,
+          "explanation": "위치에너지 10 J 중 운동 2 J와 코일 열 1 J를 제외한다."
+        },
+        {
+          "id": "physics.audit-d.braking-power-energy.v4",
+          "prompt": "등속 때 무게가 같고 속력이 두 배가 되면서 동일한 전구 두 개가 전체 출력을 절반씩 나눠 가진다. 원래 전구 하나였을 때와 새 전구 하나의 출력을 비교하면?",
+          "choices": [
+            "두 배",
+            "절반",
+            "네 배",
+            "같다"
+          ],
+          "correctIndex": 3,
+          "explanation": "전체 전력 mgv는 두 배이고 같은 전구 두 개가 나누므로 전구 한 개는 같아진다."
+        }
+      ],
+      "reviewStatus": "draft",
+      "explain": {
+        "prompt": "등속 자석 두 개가 같은 높이를 다른 속력으로 지나갈 때 전력과 전체 전기에너지가 어떻게 다를 수 있는지 설명하세요.",
+        "rubric": [
+          "등속의 힘 평형을 썼다",
+          "출력을 힘×속력으로 계산했다",
+          "전체 위치에너지 감소를 구별했다",
+          "저장·손실·최종 운동에너지 조건을 밝혔다"
+        ],
+        "passCount": 3
+      },
+      "followUps": [
+        "회로를 끊으면 유도 기전력과 유도 전류, 제동 효과는 각각 어떻게 달라질까요?"
+      ]
+    },
+    {
+      "id": "physics.audit-d.pinhole-shape-projection",
+      "order": 88,
+      "subject": "물리",
+      "name": "구멍 모양과 광원 모양의 투영 분리",
+      "summary": "광원 평면에서 가림막까지 a, 가림막에서 화면까지 b이면 직진 경로의 화면 좌표는 (1+b/a)×구멍 위치−(b/a)×광원 위치다. 같은 구멍의 상이 광원 이동과 반대 방향으로 움직인다. 선광원은 이 상들을 이어 붙인 무늬를 만든다.",
+      "conceptAnswers": [
+        "구멍 모양과 광원 모양의 투영 분리",
+        "광원과 구멍의 투영"
+      ],
+      "hint": "구",
+      "curriculum": "빛 · 직선 투영 합성",
+      "source": "references/과학영재학교/인천과학예술영재학교_2024.pdf PDF 12~13쪽 과학 1번. 풀이 원리를 활용해 상황과 수치를 새로 구성.",
+      "variants": [
+        {
+          "id": "physics.audit-d.pinhole-shape-projection.v1",
+          "prompt": "광원과 가림막 거리, 가림막과 화면 거리가 모두 20 cm다. 점광원을 오른쪽으로 1 cm 옮기면 무늬는 어느 쪽으로 얼마나 움직이는가?",
+          "choices": [
+            "오른쪽으로 1 cm",
+            "왼쪽으로 1 cm",
+            "왼쪽으로 2 cm",
+            "움직이지 않는다"
+          ],
+          "correctIndex": 1,
+          "explanation": "광원 좌표에 붙는 계수는 −b/a=−1이다."
+        },
+        {
+          "id": "physics.audit-d.pinhole-shape-projection.v2",
+          "prompt": "점광원의 위치를 고정했다. 구멍과 화면 사이 거리가 광원과 구멍 사이의 두 배이다. 구멍 폭 1 mm는 화면에서 몇 mm인가?",
+          "choices": [
+            "2 mm",
+            "1 mm",
+            "3 mm",
+            "0.5 mm"
+          ],
+          "correctIndex": 2,
+          "explanation": "구멍에 대한 배율은 1+b/a=3이다."
+        },
+        {
+          "id": "physics.audit-d.pinhole-shape-projection.v3",
+          "prompt": "광원 길이와 두 거리는 그대로 두고 구멍 폭만 절반으로 줄였다. 선광원의 무늬에서 변하는 것은?",
+          "choices": [
+            "무늬의 중심 이동 범위가 두 배가 된다",
+            "무늬의 폭과 중심 이동 범위가 모두 두 배가 된다",
+            "구멍 폭은 무늬에 영향을 주지 않는다",
+            "무늬의 폭이 줄고 점 상 중심의 이동 범위는 같다"
+          ],
+          "correctIndex": 3,
+          "explanation": "구멍 크기는 각 점광원의 무늬 폭, 거리비와 광원 길이는 점 상 중심의 범위를 결정한다."
+        },
+        {
+          "id": "physics.audit-d.pinhole-shape-projection.v4",
+          "prompt": "같은 위치의 두 선광원이 위쪽과 왼쪽으로 뻗고 작은 원형 구멍을 쓴다. 화면의 가지 방향은?",
+          "choices": [
+            "아래쪽과 오른쪽",
+            "위쪽과 왼쪽",
+            "위쪽과 오른쪽",
+            "아래쪽과 왼쪽"
+          ],
+          "correctIndex": 0,
+          "explanation": "점 상의 위치가 광원 위치 변화와 반대라 두 방향이 모두 뒤집힌다."
+        }
+      ],
+      "reviewStatus": "draft",
+      "explain": {
+        "prompt": "작은 구멍으로 직선 광원의 상이 생길 때 구멍 폭과 광원 길이가 어떻게 다른 역할을 하는지 설명하세요.",
+        "rubric": [
+          "광원과 구멍의 거리를 정의했다",
+          "광원 이동에 상이 반대로 움직인다고 했다",
+          "구멍 모양은 같은 방향임을 말했다",
+          "선광원은 여러 점광원 상의 합집합이라고 설명했다"
+        ],
+        "passCount": 3
+      },
+      "followUps": [
+        "화면을 가림막 쪽으로 옮기면 광원 투영 배율과 구멍 확대 배율은 각각 어떻게 변할까요?"
+      ]
+    },
+    {
+      "id": "physics.audit-d.mirror-path-occlusion",
+      "order": 89,
+      "subject": "물리",
+      "name": "가림 거울이 있는 반사 경로 검증",
+      "summary": "거울 너머에 광원의 대칭점을 만들고 직선으로 연결하면 반사 후보를 얻는다. 직선이 실제 거울 길이 밖을 만나거나, 반사할 예정이 없는 가림판에 먼저 닿으면 그 후보를 버린다. 빛의 길이와 반사 횟수는 통과하는 후보끼리 비교한다.",
+      "conceptAnswers": [
+        "가림 거울이 있는 반사 경로 검증",
+        "가림과 거울 영상"
+      ],
+      "hint": "가",
+      "curriculum": "빛 · 펼침과 반사 가능 영역",
+      "source": "references/과학영재학교/한국과학영재학교_2025_과학.pdf PDF 2쪽 2-1~2-4. 풀이 원리를 활용해 상황과 수치를 새로 구성.",
+      "variants": [
+        {
+          "id": "physics.audit-d.mirror-path-occlusion.v1",
+          "prompt": "계산한 입사광은 벽과 높이 4 cm에서 만나지만 실제 거울은 높이 0~3 cm에만 있다. 이 후보 경로의 판단은?",
+          "choices": [
+            "벽의 모든 곳이 자동으로 거울처럼 반사한다",
+            "광원 대칭점이 있으면 실제 거울 길이는 무관하다",
+            "해당 거울에서 반사되는 경로가 아니다",
+            "반사점을 가장 가까운 거울 끝으로 옮기면 항상 된다"
+          ],
+          "correctIndex": 2,
+          "explanation": "반사 후보는 실제 반사면과 만나야 한다. 끝으로 옮기면 원래 입사각과 반사각 관계가 보존되지 않는다."
+        },
+        {
+          "id": "physics.audit-d.mirror-path-occlusion.v2",
+          "prompt": "빛의 후보 경로가 (2,3)에서 높이 2까지 있는 가림판의 연장선과 만난다. 이 점에서 무슨 일이 생기는가?",
+          "choices": [
+            "가림판에 반사된다",
+            "그 점에 가까운 끝에서 항상 흡수된다",
+            "시야가 판에 가려진다",
+            "가림판보다 높으므로 그대로 진행한다"
+          ],
+          "correctIndex": 3,
+          "explanation": "가림판은 높이 2에서 끝나므로 높이 3에는 판이 없다."
+        },
+        {
+          "id": "physics.audit-d.mirror-path-occlusion.v3",
+          "prompt": "같은 입사광이 반사율 0.8인 동일한 거울에 한 번 또는 세 번 반사된다. 거리 효과를 무시할 때 세 번 반사 상의 세기는 한 번 반사 상의 몇 배인가?",
+          "choices": [
+            "0.64배",
+            "0.8배",
+            "0.512배",
+            "3배"
+          ],
+          "correctIndex": 0,
+          "explanation": "반사 두 번이 추가되어 0.8²=0.64배다."
+        },
+        {
+          "id": "physics.audit-d.mirror-path-occlusion.v4",
+          "prompt": "빛 경로를 펼친 그림에서 세로 이동 8 cm, 가로 이동 6 cm이다. 실제 반사 경로의 길이는?",
+          "choices": [
+            "14 cm",
+            "10 cm",
+            "2 cm",
+            "48 cm"
+          ],
+          "correctIndex": 1,
+          "explanation": "펼치기는 길이를 보존한다. 직각삼각형의 빗변 √(8²+6²)=10이다."
+        }
+      ],
+      "reviewStatus": "draft",
+      "explain": {
+        "prompt": "거울 뒤 대칭점으로 구한 경로 중 실제 보이는 경로를 선별하는 절차를 설명하세요.",
+        "rubric": [
+          "반사할 경계를 펼쳤다",
+          "직선과 거울이 만나는 점을 찾았다",
+          "거울의 실제 길이와 가림을 확인했다",
+          "유효한 경로의 길이와 반사 횟수를 비교했다"
+        ],
+        "passCount": 3
+      },
+      "followUps": [
+        "반사율이 서로 다른 거울이 있을 때 반사 횟수만으로 밝기 순서를 정할 수 있나요?"
+      ]
+    },
+    {
+      "id": "physics.audit-d.parallel-limit-current",
+      "order": 90,
+      "subject": "물리",
+      "name": "병렬 가지의 총전류와 차단 한계",
+      "summary": "병렬 연결된 부하에는 같은 전압이 걸린다. 가지별 전류를 V/R 또는 P/V로 구해 더하면 전원이 공급하는 전류다. 각 기기가 정상 전압을 받더라도 총전류가 허용량을 넘을 수 있다.",
+      "conceptAnswers": [
+        "병렬 가지의 총전류와 차단 한계",
+        "병렬 부하 과전류"
+      ],
+      "hint": "병",
+      "curriculum": "전기 · 가지 전류와 계통 한계",
+      "source": "references/과학영재학교/인천과학예술영재학교_2022.pdf PDF 15쪽 과학 1-(1), 1-(2). 풀이 원리를 활용해 상황과 수치를 새로 구성.",
+      "variants": [
+        {
+          "id": "physics.audit-d.parallel-limit-current.v1",
+          "prompt": "전원 12 V에 6 Ω와 12 Ω를 병렬 연결한다. 공급 전류는?",
+          "choices": [
+            "1 A",
+            "2 A",
+            "2/3 A",
+            "3 A"
+          ],
+          "correctIndex": 3,
+          "explanation": "각 가지가 2 A, 1 A이므로 총 3 A다."
+        },
+        {
+          "id": "physics.audit-d.parallel-limit-current.v2",
+          "prompt": "전압 200 V인 모형에 400 W 부하와 600 W 부하를 병렬 연결했다. 정격 4 A인 한계를 넘는가?",
+          "choices": [
+            "넘는다. 총 5 A다",
+            "넘지 않는다. 총 3 A다",
+            "넘지 않는다. 총 2 A다",
+            "넘는지 판단하려면 두 저항의 합만 있으면 된다"
+          ],
+          "correctIndex": 0,
+          "explanation": "각각 P/V로 2 A와 3 A라 합이 5 A다."
+        },
+        {
+          "id": "physics.audit-d.parallel-limit-current.v3",
+          "prompt": "이상적인 일정 전원에 세 번째 같은 병렬 가지를 추가한다. 기존 두 가지의 각 전류와 총전류는 어떻게 되는가?",
+          "choices": [
+            "각 전류는 줄고 총전류는 같다",
+            "각 전류는 같고 총전류는 증가한다",
+            "각 전류와 총전류가 모두 감소한다",
+            "각 전류는 늘고 총전류는 같다"
+          ],
+          "correctIndex": 1,
+          "explanation": "기존 가지의 V와 R이 그대로라 각 전류는 같다. 새 가지의 전류만 총합에 추가된다."
+        },
+        {
+          "id": "physics.audit-d.parallel-limit-current.v4",
+          "prompt": "허용 전류 6 A인 회로의 현재 전류는 2.5 A와 1.0 A의 합이다. 3.0 A 가지를 동시에 추가하면?",
+          "choices": [
+            "총 5.5 A라 한계 이하다",
+            "총 3.5 A로 변하지 않는다",
+            "총 6.5 A라 한계를 넘는다",
+            "총 3.0 A로 줄어든다"
+          ],
+          "correctIndex": 2,
+          "explanation": "2.5+1.0+3.0=6.5 A이다."
+        }
+      ],
+      "reviewStatus": "draft",
+      "explain": {
+        "prompt": "여러 기기가 같은 멀티탭에서 개별로 작동하는데 추가 기기를 켰을 때 보호 장치가 작동하는 과정을 설명하세요.",
+        "rubric": [
+          "병렬 가지의 전압이 같음을 말했다",
+          "각 부하의 전류를 확인했다",
+          "전원 총전류를 가지 합으로 구했다",
+          "허용 전류와 비교했다"
+        ],
+        "passCount": 3
+      },
+      "followUps": [
+        "전력 표시가 큰 기기 두 개가 교대로만 켜지는 경우와 동시에 켜지는 경우의 총전류는 어떻게 다를까요?"
+      ]
+    },
+    {
+      "id": "physics.audit-d.periodic-image-sampling",
+      "order": 91,
+      "subject": "물리",
+      "name": "주기 무늬와 영상의 정지 조건",
+      "summary": "똑같은 무늬가 한 바퀴에 n번 반복되는 원판을 초당 f장으로 찍는다. 실제 회전율이 r바퀴/초이면 연속 사진 사이에 무늬 r·n/f개만큼 진행한다. 이 값이 양의 정수일 때 실제로 움직여도 연속 사진은 같은 무늬를 보여 준다.",
+      "conceptAnswers": [
+        "주기 무늬와 영상의 정지 조건",
+        "회전 표본화"
+      ],
+      "hint": "주",
+      "curriculum": "파동과 정보 · 회전 대칭과 표본화",
+      "source": "references/과학영재학교/대구과고_2021.hwp 영역Ⅱ 예시 1-(1). 풀이 원리를 활용해 상황과 수치를 새로 구성.",
+      "variants": [
+        {
+          "id": "physics.audit-d.periodic-image-sampling.v1",
+          "prompt": "같은 무늬가 한 바퀴에 5번 반복된다. 초당 30장으로 촬영하고 정지 상태에서 회전율을 높인다. 처음 멈춰 보이는 양의 회전율은?",
+          "choices": [
+            "초당 6바퀴",
+            "초당 5바퀴",
+            "초당 30바퀴",
+            "초당 150바퀴"
+          ],
+          "correctIndex": 0,
+          "explanation": "사진 사이에 원판이 1/5바퀴 돌아야 한다. 30×1/5=6바퀴/초다."
+        },
+        {
+          "id": "physics.audit-d.periodic-image-sampling.v2",
+          "prompt": "같은 무늬가 한 바퀴에 8번 반복된다. 초당 40장 영상에서 세 번째로 멈춰 보이는 양의 회전율은?",
+          "choices": [
+            "초당 5바퀴",
+            "초당 15바퀴",
+            "초당 10바퀴",
+            "초당 24바퀴"
+          ],
+          "correctIndex": 1,
+          "explanation": "정지처럼 보이는 회전율은 초당 5바퀴의 정수배다. 세 번째는 초당 15바퀴다."
+        },
+        {
+          "id": "physics.audit-d.periodic-image-sampling.v3",
+          "prompt": "원판의 한 바퀴에 같은 무늬가 3번 반복된다. 네 번째 멈춘 것처럼 보일 때 초당 20바퀴 돈다면 카메라는 초당 몇 장을 찍는가?",
+          "choices": [
+            "20장",
+            "24장",
+            "15장",
+            "60장"
+          ],
+          "correctIndex": 2,
+          "explanation": "연속 사진 사이 무늬 진행 개수는 20×3/f=4이므로 f=15이다."
+        },
+        {
+          "id": "physics.audit-d.periodic-image-sampling.v4",
+          "prompt": "같은 무늬가 4번 반복되는 원판에 한 위치에서만 보이는 식별점을 찍었다. 식별점까지 포함해 똑같은 영상을 주는 최소 회전각은?",
+          "choices": [
+            "90°",
+            "180°",
+            "270°",
+            "360°"
+          ],
+          "correctIndex": 3,
+          "explanation": "무늬만 보면 90°마다 같지만 식별점은 한 바퀴 돌아야 같은 자리에 온다."
+        }
+      ],
+      "reviewStatus": "draft",
+      "explain": {
+        "prompt": "회전 원판이 점점 빨라질 때 영상에서 여러 차례 멈춰 보이는 이유를 설명하세요.",
+        "rubric": [
+          "같은 무늬가 반복되는 각을 구했다",
+          "연속 사진 사이의 시간을 표시했다",
+          "한 번에 진행한 무늬 수를 계산했다",
+          "여러 양의 정수배가 가능한 이유를 말했다"
+        ],
+        "passCount": 3
+      },
+      "followUps": [
+        "원판에 있는 같은 무늬 하나에만 점을 찍으면 같은 촬영 속도에서 정지처럼 보이는 회전율이 어떻게 바뀔까요?"
+      ]
+    },
+    {
+      "id": "physics.audit-d.apparent-rotation-residual",
+      "order": 92,
+      "subject": "물리",
+      "name": "영상에서 역회전으로 보이는 잔여각",
+      "summary": "한 컷 사이의 실제 회전각에서 반복 무늬의 정수배를 빼도 다음 사진의 배치는 같다. 시청자가 가까운 무늬를 같은 대상으로 이을 때, 가장 작은 크기의 잔여각을 겉보기 이동으로 해석할 수 있다. 잔여각의 부호가 실제 회전과 반대인 경우 역회전처럼 보인다.",
+      "conceptAnswers": [
+        "영상에서 역회전으로 보이는 잔여각",
+        "표본 영상의 겉보기 회전"
+      ],
+      "hint": "영",
+      "curriculum": "파동과 정보 · 주기와 겉보기 이동",
+      "source": "references/과학영재학교/대구과고_2021.hwp 영역Ⅱ 예시 1-(1)의 정지 조건을 겉보기 방향으로 확장. 풀이 원리를 활용해 상황과 수치를 새로 구성.",
+      "variants": [
+        {
+          "id": "physics.audit-d.apparent-rotation-residual.v1",
+          "prompt": "한 바퀴에 같은 무늬가 6개 있다. 컷 사이 실제 이동이 시계 방향 58°이고 가까운 무늬를 추적하면 어떻게 보이는가?",
+          "choices": [
+            "시계 방향 2°",
+            "반시계 방향 2°",
+            "시계 방향 58°가 유일하다",
+            "멈춘다"
+          ],
+          "correctIndex": 1,
+          "explanation": "같은 모양이 60°마다 반복된다. 58°에서 60°를 빼면 시계 방향을 양으로 두었을 때 −2°이다."
+        },
+        {
+          "id": "physics.audit-d.apparent-rotation-residual.v2",
+          "prompt": "한 바퀴에 같은 무늬가 4개 있다. 연속 사진 사이에 시계 방향으로 96° 돌 때 가장 작은 겉보기 회전은?",
+          "choices": [
+            "반시계 방향 6°",
+            "반시계 방향 84°",
+            "시계 방향 6°",
+            "0°"
+          ],
+          "correctIndex": 2,
+          "explanation": "반복각이 90°이므로 96°−90°=6°이다."
+        },
+        {
+          "id": "physics.audit-d.apparent-rotation-residual.v3",
+          "prompt": "반복각이 72°인 무늬가 컷 사이 시계 방향으로 144° 움직인다. 겉보기 회전각은?",
+          "choices": [
+            "시계 방향 72°",
+            "반시계 방향 36°",
+            "시계 방향 144°가 유일하다",
+            "0°"
+          ],
+          "correctIndex": 3,
+          "explanation": "144°는 반복각의 두 배라 무늬 배치가 그대로다."
+        },
+        {
+          "id": "physics.audit-d.apparent-rotation-residual.v4",
+          "prompt": "같은 무늬가 8번 반복되는 원판이 한 컷 사이 22.5° 회전했다. 가장 작은 크기의 변위를 택하면 방향이 정해지는가?",
+          "choices": [
+            "정반대인 두 방향이 같은 크기로 가능하다",
+            "시계 방향만 가능하다",
+            "반시계 방향만 가능하다",
+            "이동량은 반드시 0°다"
+          ],
+          "correctIndex": 0,
+          "explanation": "반복각 45°의 절반이다. +22.5°와 −22.5° 모두 같은 다음 배치를 만든다."
+        }
+      ],
+      "reviewStatus": "draft",
+      "explain": {
+        "prompt": "실제로 한 방향으로 도는 무늬가 영상에서 반대 방향으로 조금씩 움직이는 조건을 설명하세요.",
+        "rubric": [
+          "무늬의 반복각을 찾았다",
+          "한 컷 간 실제 회전각을 확인했다",
+          "같은 배치에 해당하는 더 작은 잔여각을 구했다",
+          "회전 부호와 겉보기 방향을 연결했다"
+        ],
+        "passCount": 3
+      },
+      "followUps": [
+        "남은 회전각이 반복각의 정확히 절반이면 방향을 하나로 정할 수 있을까요?"
+      ]
+    },
+    {
+      "id": "physics.audit-d.heat-weighted-state",
+      "order": 93,
+      "subject": "물리",
+      "name": "열용량 가중 온도와 개별 온도",
+      "summary": "외부 공급열과 두 물체의 열용량을 알면 두 물체의 에너지 합을 계산할 수 있다. 두 온도가 아직 같지 않다면 에너지 합을 나타내는 열용량 가중평균은 개별 물체의 온도가 아니다. 한 물체의 온도까지 측정하면 나머지를 구할 수 있지만 시간에 따른 이동률을 예측하려면 추가 정보가 필요하다.",
+      "conceptAnswers": [
+        "열용량 가중 온도와 개별 온도",
+        "가열 중 혼합의 과도 상태"
+      ],
+      "hint": "열",
+      "curriculum": "열과 에너지 · 열평형에 이르기 전의 상태",
+      "source": "references/과학영재학교/인천과학예술영재학교_2024.pdf PDF 21쪽 과학 9-(1)의 온도 기록과 열량 해석. 풀이 원리를 활용해 상황과 수치를 새로 구성.",
+      "variants": [
+        {
+          "id": "physics.audit-d.heat-weighted-state.v1",
+          "prompt": "열용량이 30 J/°C인 A와 10 J/°C인 B의 온도가 각각 50°C와 10°C다. 이때 열용량 가중평균은?",
+          "choices": [
+            "30°C",
+            "50°C",
+            "40°C",
+            "25°C"
+          ],
+          "correctIndex": 2,
+          "explanation": "전체 열용량 40으로 온도에 열용량을 곱한 합 1,600을 나누면 40°C다."
+        },
+        {
+          "id": "physics.audit-d.heat-weighted-state.v2",
+          "prompt": "단열 용기에서 A는 열용량 60 J/°C, 40°C, B는 열용량 20 J/°C, 10°C였다. 둘에 총 800 J를 공급한 직후 A가 45°C로 측정됐다. 손실을 무시할 때 B의 온도는?",
+          "choices": [
+            "45°C",
+            "30°C",
+            "50°C",
+            "35°C"
+          ],
+          "correctIndex": 3,
+          "explanation": "A가 저장한 증가는 60×5=300 J라 B에는 500 J가 더해졌다. B는 500/20=25°C 올라 35°C다."
+        },
+        {
+          "id": "physics.audit-d.heat-weighted-state.v3",
+          "prompt": "열용량이 같은 물체 두 개가 외부 공급열 100 J를 받았다. 두 물체의 온도가 아직 다르다는 점과 전체 열량만 안다. 다음 순간 각 온도를 정확히 계산하려면?",
+          "choices": [
+            "개별 온도와 열전달 속도를 정할 자료가 더 필요하다",
+            "두 물체는 반드시 같은 온도다",
+            "온도 상승은 각각 50°C다",
+            "어느 물체에 열이 들어갔는지와 무관하게 온도는 고정된다"
+          ],
+          "correctIndex": 0,
+          "explanation": "에너지 합은 하나의 식만 준다. 개별 온도 및 시간 변화에는 더 많은 측정 또는 열전달 모형이 필요하다."
+        },
+        {
+          "id": "physics.audit-d.heat-weighted-state.v4",
+          "prompt": "열용량 80 J/°C와 20 J/°C의 두 물체가 항상 같은 온도를 유지할 만큼 천천히 열을 받는다. 함께 500 J를 받았을 때 공통 온도 변화는?",
+          "choices": [
+            "6.25°C 상승",
+            "5°C 상승",
+            "25°C 상승",
+            "4°C 상승"
+          ],
+          "correctIndex": 1,
+          "explanation": "두 물체가 같은 크기로 온도가 오르므로 전체 열용량 100으로 나눈다."
+        }
+      ],
+      "reviewStatus": "draft",
+      "explain": {
+        "prompt": "가열 중 두 물체가 열을 주고받는 장치에서 열량계의 에너지 합만으로 각 온도가 정해지는지 설명하세요.",
+        "rubric": [
+          "각 물체의 열용량을 구별했다",
+          "받은 열로 전체 에너지 변화를 구했다",
+          "공통 온도인지 개별 온도인지 확인했다",
+          "한 물체의 온도 또는 열전달 조건이 추가로 필요함을 말했다"
+        ],
+        "passCount": 3
+      },
+      "followUps": [
+        "두 물체가 이미 같은 온도를 유지하며 천천히 가열된다는 조건을 더하면 어떤 계산이 가능할까요?"
+      ]
+    },
+    {
+      "id": "physics.audit-d.heat-contact-area-rate",
+      "order": 94,
+      "subject": "물리",
+      "name": "접촉 면적과 열평형 시간",
+      "summary": "물체 둘만 열을 주고받는다면 최종 공통 온도는 시작 온도와 두 열용량으로 결정된다. 같은 재료와 구조에서 접촉 면적을 넓히면 같은 순간 온도 차에 대해 전도되는 열의 속도가 보통 커져, 최종 온도에는 더 빨리 가까워진다.",
+      "conceptAnswers": [
+        "접촉 면적과 열평형 시간",
+        "열교환 면적과 이동률"
+      ],
+      "hint": "접",
+      "curriculum": "열과 에너지 · 열전달 면적과 평형",
+      "source": "references/과학영재학교/대구과고_2021.hwp 영역Ⅱ 예시 2-(1), 2-(2). 풀이 원리를 활용해 상황과 수치를 새로 구성.",
+      "variants": [
+        {
+          "id": "physics.audit-d.heat-contact-area-rate.v1",
+          "prompt": "단열된 두 실험에 똑같은 뜨거운 블록과 찬 블록을 넣었다. 하나는 접촉 면적만 더 넓다. 최종 공통 온도는?",
+          "choices": [
+            "넓은 면에서 더 높다",
+            "좁은 면에서 더 높다",
+            "항상 뜨거운 블록의 처음 온도이다",
+            "두 실험에서 같다"
+          ],
+          "correctIndex": 3,
+          "explanation": "에너지 합과 각 열용량이 같아 평형 온도는 같다. 접촉 면적은 열이 이동하는 속도를 바꾼다."
+        },
+        {
+          "id": "physics.audit-d.heat-contact-area-rate.v2",
+          "prompt": "두 블록의 재질, 온도 차, 단위 면적당 열전달 조건이 모두 같다. 접촉 면적을 세 배로 늘렸을 때 같은 순간 초기 열 이동률은?",
+          "choices": [
+            "세 배",
+            "아홉 배",
+            "1/3배",
+            "변화 없다"
+          ],
+          "correctIndex": 0,
+          "explanation": "각 단위 면적을 지나가는 열이 같다는 조건이므로 총 면적과 열 이동률이 비례한다."
+        },
+        {
+          "id": "physics.audit-d.heat-contact-area-rate.v3",
+          "prompt": "두 실험의 온도 그래프에서 한 실험은 20초에, 다른 실험은 50초에 평형 온도의 1°C 이내에 도달했다. 같은 물체와 재질, 같은 초기 온도에서 접촉 면적만 다르다면 어느 쪽이 더 넓은가?",
+          "choices": [
+            "50초에 도달한 실험",
+            "20초에 도달한 실험",
+            "두 면적은 같다",
+            "평형 온도를 더 높게 보인 실험"
+          ],
+          "correctIndex": 1,
+          "explanation": "넓은 접촉 면에서 같은 온도 차일 때 열이 더 빠르게 전달되어 같은 평형에 먼저 가까워진다."
+        },
+        {
+          "id": "physics.audit-d.heat-contact-area-rate.v4",
+          "prompt": "열용량이 각각 6 J/°C와 2 J/°C인 블록이 50°C와 10°C에서 만났다. 단열 장치에서 두 블록이 넓게 접촉한 뒤의 평형 온도는?",
+          "choices": [
+            "30°C",
+            "50°C",
+            "40°C",
+            "20°C"
+          ],
+          "correctIndex": 2,
+          "explanation": "6(50−T)=2(T−10)이므로 T=40°C다. 면적은 이 값까지 접근하는 속도에 영향을 준다."
+        }
+      ],
+      "reviewStatus": "draft",
+      "explain": {
+        "prompt": "같은 물체 두 개를 넓은 면과 좁은 면으로 접촉시킨 두 실험의 그래프를 비교하세요.",
+        "rubric": [
+          "두 물체의 열용량과 처음 온도를 비교했다",
+          "평형 온도를 에너지 합으로 결정했다",
+          "같은 온도 차에서 면적이 속도에 미치는 영향을 설명했다",
+          "두 그래프가 접근하는 값과 접근 속도를 구별했다"
+        ],
+        "passCount": 3
+      },
+      "followUps": [
+        "접촉 면적을 넓히면서 그 사이에 두꺼운 단열층도 추가했다면 두 변화의 효과를 어떻게 분리할까요?"
+      ]
+    },
+    {
+      "id": "physics.audit-d.contact-charge-relaxation",
+      "order": 95,
+      "subject": "물리",
+      "name": "접촉 직후의 전하와 이후 방전",
+      "summary": "접촉하는 두 물체 사이에서 전자가 옮겨가면 한 물체의 전하 증가만큼 다른 물체의 전하가 감소한다. 접촉 뒤 전하를 주변으로 흘려보낼 수 있는 경로가 생기면 두 물체만의 전하 합은 그 이후 변할 수 있다. 접촉 시점과 그 뒤의 그래프를 나눠 변화의 원인을 해석한다.",
+      "conceptAnswers": [
+        "접촉 직후의 전하와 이후 방전",
+        "접촉 전하 재분배"
+      ],
+      "hint": "접",
+      "curriculum": "전기 · 전하 보존과 센서 신호",
+      "source": "references/과학영재학교/대구과고_2021.hwp 영역Ⅱ 예시 7-(1), 7-(2). 풀이 원리를 활용해 상황과 수치를 새로 구성.",
+      "variants": [
+        {
+          "id": "physics.audit-d.contact-charge-relaxation.v1",
+          "prompt": "절연된 두 물체 중 X의 전하가 접촉 직후 −4 nC에서 +1 nC로 변했다. 접촉하는 동안 주변과 전하를 교환하지 않았다. Y의 전하 변화는?",
+          "choices": [
+            "5 nC 감소",
+            "5 nC 증가",
+            "3 nC 감소",
+            "1 nC 증가"
+          ],
+          "correctIndex": 0,
+          "explanation": "X의 전하가 5 nC 증가하므로 전하 합을 보존하려면 Y는 5 nC 감소한다."
+        },
+        {
+          "id": "physics.audit-d.contact-charge-relaxation.v2",
+          "prompt": "접촉 순간 X가 전자를 잃었다. X의 전하량에 생기는 변화는?",
+          "choices": [
+            "전하량이 더 음의 값으로 변한다",
+            "전하량이 더 양의 값으로 변한다",
+            "전하량은 반드시 0이 된다",
+            "전자 이동은 전하량을 바꾸지 않는다"
+          ],
+          "correctIndex": 1,
+          "explanation": "전자는 음전하이므로 X에서 빠지면 X의 순전하가 증가한다."
+        },
+        {
+          "id": "physics.audit-d.contact-charge-relaxation.v3",
+          "prompt": "X의 전하가 접촉 직후 +6 nC였다. Y와 분리한 뒤 시간이 지나며 +1 nC, 0 nC에 가까워졌다. 그래프의 변화와 일치하는 것은?",
+          "choices": [
+            "X와 Y 사이에 처음과 같은 접촉이 계속됐다",
+            "X의 전하가 증가했다",
+            "X가 주변과 전하를 교환했다",
+            "X에서 전하가 아무 곳으로도 가지 않고 사라졌다"
+          ],
+          "correctIndex": 2,
+          "explanation": "분리 이후 X의 전하가 줄어드는 현상은 공기나 지지체를 통해 다른 곳과 전하를 교환하는 것으로 설명할 수 있다."
+        },
+        {
+          "id": "physics.audit-d.contact-charge-relaxation.v4",
+          "prompt": "서로 닿기 전 순전하가 각각 +9 nC와 −3 nC인 물체를 외부와 절연해 접촉시켰다. 접촉 직후 두 물체 전하의 합은?",
+          "choices": [
+            "+12 nC",
+            "−6 nC",
+            "0 nC",
+            "+6 nC"
+          ],
+          "correctIndex": 3,
+          "explanation": "절연된 두 물체의 전하 합 +9−3=+6 nC는 보존된다. 각각의 전하는 전기적 조건에 따라 달라질 수 있다."
+        }
+      ],
+      "reviewStatus": "draft",
+      "explain": {
+        "prompt": "두 물체의 전하 그래프에서 순간 재분배와 이후 주변으로의 방전을 구별하는 방법을 설명하세요.",
+        "rubric": [
+          "두 물체의 접촉 직전 전하를 확인했다",
+          "접촉 직후 전하 증가와 감소를 비교했다",
+          "전자의 방향을 양전하 변화와 구별했다",
+          "후속 변화가 일어날 때 고려할 계의 범위를 밝혔다"
+        ],
+        "passCount": 3
+      },
+      "followUps": [
+        "전하를 잃는 듯한 두 물체의 전하 합을 보존하려면 어떤 주변 물체를 함께 추적해야 할까요?"
+      ]
+    },
+    {
+      "id": "physics.audit-d.two-chamber-piston",
+      "order": 96,
+      "subject": "물리",
+      "name": "두 기체실을 가르는 피스톤의 이동",
+      "summary": "기체실 A와 B를 가르는 마찰 없는 피스톤에서 압력은 양쪽 면에 반대 방향으로 작용한다. 다른 힘을 무시하면 피스톤은 처음에 압력이 더 낮은 쪽으로 움직인다. 움직이면 높은 압력 쪽의 부피는 증가하고 낮은 압력 쪽의 부피는 감소한다. 빠른 팽창에서는 외부 열 이동이 작고 기체가 일을 하면서 냉각될 수 있다.",
+      "conceptAnswers": [
+        "두 기체실을 가르는 피스톤의 이동",
+        "피스톤 압력 차와 부피"
+      ],
+      "hint": "두",
+      "curriculum": "기체와 압력 · 피스톤과 빠른 팽창",
+      "source": "references/과학영재학교/대구과고_2021.hwp 영역Ⅱ 예시 8-(1), 8-(2). 풀이 원리를 활용해 상황과 수치를 새로 구성.",
+      "variants": [
+        {
+          "id": "physics.audit-d.two-chamber-piston.v1",
+          "prompt": "A가 왼쪽, B가 오른쪽인 두 기체실의 압력이 처음 같다. B의 압력만 순간 낮췄다. 피스톤은 처음에 어느 쪽으로 움직이는가?",
+          "choices": [
+            "왼쪽",
+            "오른쪽",
+            "어느 쪽으로도 움직이지 않는다",
+            "두 방향으로 동시에 움직인다"
+          ],
+          "correctIndex": 1,
+          "explanation": "왼쪽 A의 압력이 더 강하게 밀어 피스톤이 오른쪽으로 움직인다."
+        },
+        {
+          "id": "physics.audit-d.two-chamber-piston.v2",
+          "prompt": "A가 위, B가 아래인 장치에서 위쪽 A의 압력만 먼저 낮아졌다. 피스톤이 가볍고 마찰이 없을 때 바로 나타나는 B의 변화는?",
+          "choices": [
+            "피스톤이 내려가고 B의 부피가 늘어난다",
+            "피스톤이 올라가고 B의 부피가 줄어든다",
+            "피스톤이 올라가고 B의 부피가 늘어난다",
+            "피스톤은 움직이지 않고 B의 부피만 줄어든다"
+          ],
+          "correctIndex": 2,
+          "explanation": "더 큰 B의 압력이 피스톤을 위로 밀면 B의 상단 경계가 올라가 부피가 증가한다."
+        },
+        {
+          "id": "physics.audit-d.two-chamber-piston.v3",
+          "prompt": "피스톤과 닿아 있는 기체가 갑자기 팽창하여 피스톤에 24 J의 일을 했다. 열의 출입은 무시한다. 기체 내부에너지 변화는?",
+          "choices": [
+            "24 J 증가",
+            "변화 없음",
+            "48 J 증가",
+            "24 J 감소"
+          ],
+          "correctIndex": 3,
+          "explanation": "기체가 에너지를 받아오지 않고 밖에 일을 했으므로 내부에너지는 24 J 줄어든다."
+        },
+        {
+          "id": "physics.audit-d.two-chamber-piston.v4",
+          "prompt": "A와 B를 나눈 피스톤의 양쪽 면적이 각각 5 cm²이다. A가 B보다 4,000 Pa 더 높고, 다른 힘을 무시한다. 순힘은?",
+          "choices": [
+            "B 쪽으로 2 N",
+            "A 쪽으로 2 N",
+            "B 쪽으로 20 N",
+            "A 쪽으로 0.2 N"
+          ],
+          "correctIndex": 0,
+          "explanation": "5 cm²는 0.0005 m²이다. 압력 차에 면적을 곱하면 2 N이며 A가 B 쪽으로 더 강하게 민다."
+        }
+      ],
+      "reviewStatus": "draft",
+      "explain": {
+        "prompt": "피스톤 반대쪽 공기를 갑자기 팽창시켰을 때 목표 기체의 변화를 설명하세요.",
+        "rubric": [
+          "기체실 위치와 피스톤 방향을 표시했다",
+          "어느 쪽의 압력이 먼저 감소하는지 판단했다",
+          "피스톤 이동에 따른 목표 기체 부피를 말했다",
+          "기체가 한 일과 냉각의 조건을 연결했다"
+        ],
+        "passCount": 3
+      },
+      "followUps": [
+        "피스톤이 무겁거나 마찰이 있다면 어느 힘과 압력 조건을 추가로 확인해야 할까요?"
+      ]
+    },
+    {
+      "id": "physics.audit-b.sealed-surface-head",
+      "order": 97,
+      "subject": "물리",
+      "name": "밀폐 수면의 압력 수두",
+      "summary": "이어진 액체가 정지하면 같은 높이의 압력이 같다. 밀폐 쪽 기체 압력이 대기압보다 ΔP만큼 크면 그쪽 수면은 열린 쪽보다 ΔP/(ρg)만큼 낮다. 기체 부피와 압력이 함께 달라지면 압력 법칙과 전체 액체 부피를 함께 쓴다.",
+      "conceptAnswers": [
+        "밀폐 수면의 압력 수두",
+        "압력 수두",
+        "밀폐 수두"
+      ],
+      "hint": "밀",
+      "curriculum": "유체 · 연결관과 압력",
+      "source": "references/과학고/과학고문제.pdf PDF 117쪽 6(1) 및 141쪽 1(1)~(2). 풀이 원리를 활용해 상황과 수치를 새로 구성.",
+      "variants": [
+        {
+          "id": "physics.audit-b.sealed-surface-head.v1",
+          "prompt": "바닥이 연결된 두 수조에 물이 정지해 있다. A는 열린 수조이며 B의 수면 위 기체는 대기보다 15 kPa 높다. 물의 ρg를 10 kPa/m로 두면 수면은?",
+          "choices": [
+            "B가 1.5 m 높다",
+            "A가 15 m 높다",
+            "A가 1.5 m 높다",
+            "두 수면이 같다"
+          ],
+          "correctIndex": 2,
+          "explanation": "높은 기체 압력이 누르는 B 수면이 더 낮다. 높이 차는 15/10=1.5 m이다."
+        },
+        {
+          "id": "physics.audit-b.sealed-surface-head.v2",
+          "prompt": "바닥이 연결된 열린 수조 A와 밀폐 수조 B에서 평형 수면은 B가 0.40 m 높다. 물의 ρg는 10 kPa/m이다. B의 수면 위 기체 압력은 대기압에 비해?",
+          "choices": [
+            "4 kPa 높다",
+            "0.04 kPa 낮다",
+            "같다",
+            "4 kPa 낮다"
+          ],
+          "correctIndex": 3,
+          "explanation": "수면이 높은 쪽의 기체 압력이 낮아야 같은 바닥 압력을 만든다. 10×0.40=4 kPa이다."
+        },
+        {
+          "id": "physics.audit-b.sealed-surface-head.v3",
+          "prompt": "밀폐 수조의 공기를 일정 온도에서 6 L에서 5 L로 줄였다. 초기 압력은 100 kPa, 대기압은 일정하게 100 kPa이다. 이 수조와 연결된 열린 수조의 수면은 밀폐 쪽보다 얼마나 높은가? 물의 ρg는 10 kPa/m이다.",
+          "choices": [
+            "2 m",
+            "1 m",
+            "10 m",
+            "0.2 m"
+          ],
+          "correctIndex": 0,
+          "explanation": "밀폐 기체의 압력은 100×6/5=120 kPa다. 차 20 kPa가 수면 2 m에 해당한다."
+        },
+        {
+          "id": "physics.audit-b.sealed-surface-head.v4",
+          "prompt": "같은 단면적을 가진 A와 B의 바닥을 잇는다. A는 열려 있고 B의 수면 위 압력은 공급 장치가 대기보다 10 kPa 높게 유지한다. 바닥 기준 두 수면 높이 합이 7 m일 때 B의 높이는? 물의 ρg는 10 kPa/m이다.",
+          "choices": [
+            "3.5 m",
+            "3 m",
+            "4 m",
+            "6 m"
+          ],
+          "correctIndex": 1,
+          "explanation": "압력 차 10 kPa에서 A가 B보다 1 m 높다. hA+hB=7, hA−hB=1이므로 hB=3 m이다."
+        }
+      ],
+      "reviewStatus": "draft",
+      "explain": {
+        "prompt": "한쪽 수면 위 기체가 밀폐된 연결 탱크에서 액체를 더 넣으면 두 수면의 높이가 왜 달라질 수 있는지 설명하세요.",
+        "rubric": [
+          "같은 높이의 액체 압력이 같아야 함을 말했다",
+          "수면 위의 기체 압력을 각각 표시했다",
+          "높이 차와 압력 차를 ρgΔh로 연결했다",
+          "밀폐 기체의 부피 변화와 액체 부피 수지를 구별했다"
+        ],
+        "passCount": 3
+      },
+      "followUps": [
+        "관을 열어 두 기체의 압력을 같게 만들면 두 수면은 어떻게 바뀔까요?"
+      ]
+    },
+    {
+      "id": "physics.audit-b.spring-buoyancy-balance",
+      "order": 98,
+      "subject": "물리",
+      "name": "스프링과 부력이 함께 만드는 평형",
+      "summary": "일정 단면 물체가 일부 잠기면 잠긴 깊이 1 m당 부력 증가량은 c=ρgA다. 물체가 아래로 움직일 때 부력이 c만큼, 위 스프링의 당기는 힘은 k만큼 커지므로 두 효과가 함께 평형을 회복한다. 물 높이 변화와 물체의 변위를 따로 잰다.",
+      "conceptAnswers": [
+        "스프링과 부력이 함께 만드는 평형",
+        "부력과 탄성의 평형",
+        "탄성 부력 평형"
+      ],
+      "hint": "스",
+      "curriculum": "힘의 평형 · 탄성과 부력",
+      "source": "references/과학고/과학고문제.pdf PDF 81쪽 11번 및 104쪽 10번. 풀이 원리를 활용해 상황과 수치를 새로 구성.",
+      "variants": [
+        {
+          "id": "physics.audit-b.spring-buoyancy-balance.v1",
+          "prompt": "스프링에 매달린 기둥이 물에 일부 잠겨 있다. 수면을 8 cm 올려도 스프링은 장력을 유지하며 기둥은 일부만 잠긴다. 탄성 계수가 30 N/m, 잠긴 깊이 1 m당 부력 증가량이 10 N일 때 새 평형에서 기둥은 얼마나 올라오는가?",
+          "choices": [
+            "4 cm",
+            "6 cm",
+            "8 cm",
+            "2 cm"
+          ],
+          "correctIndex": 3,
+          "explanation": "수면 상승을 y, 기둥 상승을 z라 두면 30z=10(y−z)다. z=y/4=2 cm이다."
+        },
+        {
+          "id": "physics.audit-b.spring-buoyancy-balance.v2",
+          "prompt": "정지한 수면에서 위 스프링에 매달린 기둥에 아래로 6 N의 힘을 추가한다. 일부 잠긴 동안 탄성 계수 20 N/m, 부력의 깊이별 증가율 40 N/m이다. 새 평형까지 내려가는 길이는?",
+          "choices": [
+            "0.10 m",
+            "0.15 m",
+            "0.30 m",
+            "0.60 m"
+          ],
+          "correctIndex": 0,
+          "explanation": "아래 변위 d에서 스프링 힘과 부력이 각각 20d, 40d 증가한다. 60d=6이다."
+        },
+        {
+          "id": "physics.audit-b.spring-buoyancy-balance.v3",
+          "prompt": "압축되지 않는 기둥이 위 스프링에 매달려 있고 물에 완전히 잠겼다. 수면을 조금 더 올려도 바닥에 닿지 않는다. 다시 평형을 이루면 무엇이 달라지는가?",
+          "choices": [
+            "부력",
+            "수면에서 기둥까지의 깊이",
+            "스프링 길이",
+            "밀려난 물의 부피"
+          ],
+          "correctIndex": 1,
+          "explanation": "물 밀도와 잠긴 부피가 같아 부력과 스프링 힘이 그대로다. 수면만 올라가 상대 깊이가 증가한다."
+        },
+        {
+          "id": "physics.audit-b.spring-buoyancy-balance.v4",
+          "prompt": "물에 일부 잠긴 물체가 위 스프링에 매달려 있다. 같은 높이만큼 물을 올렸더니 잠긴 깊이 증가가 작은 쪽은? 두 장치에서 물체 단면은 같고 A의 스프링이 B보다 단단하다.",
+          "choices": [
+            "A",
+            "같다",
+            "B",
+            "스프링 종류로는 비교할 수 없다"
+          ],
+          "correctIndex": 2,
+          "explanation": "물체 상승량은 c/(k+c)×수면 상승이다. 더 부드러운 B가 더 많이 올라오므로 잠긴 깊이는 덜 늘어난다."
+        }
+      ],
+      "reviewStatus": "draft",
+      "explain": {
+        "prompt": "물에 일부 잠긴 기둥을 위에 매단 스프링에서 물 높이를 올릴 때 스프링과 잠긴 깊이가 어떻게 변하는지 설명하세요.",
+        "rubric": [
+          "물체가 위로 움직여 스프링 당김이 줄어듦을 말했다",
+          "잠긴 깊이는 수면 상승에서 물체 상승을 뺀 값이라고 했다",
+          "부력 증가와 스프링 힘 감소가 같음을 설명했다",
+          "완전히 잠기면 깊이에 대한 부력 증가가 멈춤을 말했다"
+        ],
+        "passCount": 3
+      },
+      "followUps": [
+        "기둥을 면적이 두 배인 기둥으로 바꾸면 같은 수면 상승에서 물체가 올라오는 양은 어떻게 달라질까요?"
+      ]
+    },
+    {
+      "id": "physics.audit-b.moving-echo-reflection-time",
+      "order": 99,
+      "subject": "물리",
+      "name": "이동 표적의 메아리와 반사 시각",
+      "summary": "송신기와 수신기가 같은 고정 지점에 있고 파동의 속력이 일정하면, 반사 순간은 송신과 수신 시각의 가운데다. 그 순간의 표적 거리는 속력과 왕복 시간의 곱을 2로 나눈 값이다. 두 거리의 차는 두 반사 시각 사이에 생긴다.",
+      "conceptAnswers": [
+        "이동 표적의 메아리와 반사 시각",
+        "메아리 반사 시각",
+        "이동 표적 반사 시간"
+      ],
+      "hint": "이",
+      "curriculum": "파동 · 반사와 상대 운동",
+      "source": "references/과학고/과학고문제.pdf PDF 76쪽 4(2). 풀이 원리를 활용해 상황과 수치를 새로 구성.",
+      "variants": [
+        {
+          "id": "physics.audit-b.moving-echo-reflection-time.v1",
+          "prompt": "고정 장치가 0초와 1.00초에 각각 음파를 보냈고 두 왕복 시간이 0.60초와 0.80초였다. 두 반사 시각 사이의 시간은?",
+          "choices": [
+            "1.10초",
+            "1.00초",
+            "0.90초",
+            "0.20초"
+          ],
+          "correctIndex": 0,
+          "explanation": "두 반사 시각은 0.30초, 1.40초이다. 따라서 차는 1.10초이다."
+        },
+        {
+          "id": "physics.audit-b.moving-echo-reflection-time.v2",
+          "prompt": "고정 센서와 표적은 같은 직선 위에 있고 표적도 그 직선을 따라 움직인다. 음속 300 m/s에서 두 펄스의 왕복 시간은 0.60초와 0.40초, 반사 시각은 1.0초와 2.5초였다. 그 사이 표적의 평균 속도는?",
+          "choices": [
+            "멀어지는 쪽으로 20 m/s",
+            "가까워지는 쪽으로 20 m/s",
+            "가까워지는 쪽으로 40 m/s",
+            "멀어지는 쪽으로 60 m/s"
+          ],
+          "correctIndex": 1,
+          "explanation": "거리 90 m에서 60 m로 1.5초 동안 줄었다. 평균 속력은 30/1.5=20 m/s이다."
+        },
+        {
+          "id": "physics.audit-b.moving-echo-reflection-time.v3",
+          "prompt": "두 번의 반사 시각을 계산할 때 ‘송신·수신의 가운데’를 바로 사용하기에 충분한 조건은?",
+          "choices": [
+            "송신기는 고정하고 수신기는 표적과 함께 움직인다",
+            "송신기와 수신기 사이가 멀어도 두 장치의 시계만 맞춘다",
+            "같은 고정 장치에서 송신·수신하고 두 방향의 파동 속력이 같다",
+            "바람 때문에 가는 길과 돌아오는 길의 파동 속력이 서로 다르다"
+          ],
+          "correctIndex": 2,
+          "explanation": "반사 순간의 표적을 기준으로 나가는 거리와 돌아오는 거리가 같고 양 방향 속력도 같을 때 반으로 나눌 수 있다."
+        },
+        {
+          "id": "physics.audit-b.moving-echo-reflection-time.v4",
+          "prompt": "고정 센서가 2.0초에 쏜 펄스를 2.6초에, 3.2초에 쏜 펄스를 3.4초에 받았다. 표적은 센서와 같은 직선 위에서 센서를 지나지 않고 움직인다. 음속이 250 m/s이면 두 반사 시각 사이에 표적은 얼마나 이동했는가?",
+          "choices": [
+            "50 m 멀어졌다",
+            "100 m 가까워졌다",
+            "25 m 가까워졌다",
+            "50 m 가까워졌다"
+          ],
+          "correctIndex": 3,
+          "explanation": "거리 250×0.6/2=75 m와 250×0.2/2=25 m를 비교하면 50 m 줄었다."
+        }
+      ],
+      "reviewStatus": "draft",
+      "explain": {
+        "prompt": "서로 다른 시각에 쏜 두 초음파로 움직이는 표적의 평균 속도를 구하는 절차를 설명하세요.",
+        "rubric": [
+          "왕복 시간을 송수신 시각의 차로 구했다",
+          "반사 순간을 두 시각의 가운데로 잡았다",
+          "거리에서 왕복 시간의 절반을 사용했다",
+          "거리 차를 반사 시각 차로 나누고 방향을 읽었다"
+        ],
+        "passCount": 3
+      },
+      "followUps": [
+        "송신기와 수신기가 서로 다른 위치라면 반사 시각이 항상 가운데일까요?"
+      ]
+    },
+    {
+      "id": "physics.audit-b.lens-aperture-partial-mask",
+      "order": 100,
+      "subject": "물리",
+      "name": "렌즈 구경 일부를 가릴 때 생기는 상",
+      "summary": "이상적인 얇은 렌즈에서 물체의 각 점에서 여러 경로로 출발한 광선이 화면의 한 점에 모인다. 모든 상점에 열린 구경이 남는다면 렌즈 일부를 막아도 상은 잘리지 않고 밝기가 줄어든다. 물체를 가린 경우와 렌즈 면을 가린 경우를 구분한다.",
+      "conceptAnswers": [
+        "렌즈 구경 일부를 가릴 때 생기는 상",
+        "렌즈 구경 차폐",
+        "부분 가림 렌즈"
+      ],
+      "hint": "렌",
+      "curriculum": "빛 · 실상과 구경",
+      "source": "references/과학고/과학고문제.pdf PDF 122쪽 3(2). 풀이 원리를 활용해 상황과 수치를 새로 구성.",
+      "variants": [
+        {
+          "id": "physics.audit-b.lens-aperture-partial-mask.v1",
+          "prompt": "두 점이 있는 표지판을 볼록렌즈로 초점이 맞는 화면에 비춘다. 렌즈의 아래쪽 절반을 가린 뒤에도 두 점 모두에서 나온 광선이 열린 쪽을 통과한다. 화면에 남는 것은?",
+          "choices": [
+            "위쪽 점만 남고 밝기는 같다",
+            "제 위치에 두 점 모두 남고 어두워진다",
+            "아래쪽 점만 남고 밝기는 같다",
+            "두 점 위치가 서로 바뀌고 밝아진다"
+          ],
+          "correctIndex": 1,
+          "explanation": "남은 렌즈 영역으로 들어온 광선도 원래 상점에 모인다. 각 상점으로 가는 광량은 감소한다."
+        },
+        {
+          "id": "physics.audit-b.lens-aperture-partial-mask.v2",
+          "prompt": "렌즈 원형 구경에 광선이 고르게 들어오고 마스크가 상의 어느 점도 완전히 차단하지 않는다. 구경 면적 40%를 가리면 회절 등을 무시한 화면의 총 광량은 처음의 얼마인가?",
+          "choices": [
+            "40%",
+            "20%",
+            "60%",
+            "100%"
+          ],
+          "correctIndex": 2,
+          "explanation": "고르게 입사하는 기하 모형에서 열린 면적 100−40=60%만 광량을 전달한다."
+        },
+        {
+          "id": "physics.audit-b.lens-aperture-partial-mask.v3",
+          "prompt": "완전히 열어 둔 렌즈에 두 점광원을 비춘다. 이번에는 렌즈가 아니라 두 점광원 중 하나만 불투명 덮개로 완전히 감쌌다. 반사광이 없으면 화면에서 무엇이 달라지는가?",
+          "choices": [
+            "두 상이 같은 비율로 어두워진다",
+            "두 상의 위치가 바뀐다",
+            "다른 점의 상도 함께 사라진다",
+            "가린 점의 상만 사라진다"
+          ],
+          "correctIndex": 3,
+          "explanation": "가린 점에서 나온 광선은 렌즈의 어느 부분에도 도달할 수 없다. 다른 점의 광로는 그대로다."
+        },
+        {
+          "id": "physics.audit-b.lens-aperture-partial-mask.v4",
+          "prompt": "같은 물체에서 나온 빛을 두 구역을 가진 볼록렌즈가 받는다. 열린 구역 A만 쓸 때 밝기 2, B만 쓸 때 밝기 3으로, 두 경우 모두 같은 위치의 상점에 초점이 맞는다. 서로 간섭하지 않는 두 광량을 모두 받으면?",
+          "choices": [
+            "같은 위치의 상점에서 밝기 5",
+            "두 위치에 밝기 2와 3인 상점",
+            "같은 위치의 상점에서 밝기 1",
+            "같은 위치의 상점에서 밝기 6"
+          ],
+          "correctIndex": 0,
+          "explanation": "두 영역이 물체점을 같은 곳에 모으고, 간섭을 무시할 때 도달한 광량은 더해진다."
+        }
+      ],
+      "reviewStatus": "draft",
+      "explain": {
+        "prompt": "렌즈 가운데를 불투명 원으로 막았는데 화면에서 물체 전체가 어둡게 보이는 이유를 설명하세요.",
+        "rubric": [
+          "한 물체점에서 여러 광선이 나감을 말했다",
+          "열린 구경을 지나는 광선도 같은 상점에 모인다고 했다",
+          "각 상점의 광량이 줄어듦을 설명했다",
+          "물체 자체를 가리는 상황과 구별했다"
+        ],
+        "passCount": 3
+      },
+      "followUps": [
+        "상이 잘 맺히는 곳에서 화면을 앞쪽으로 옮기면 같은 상점의 광선들은 어떻게 보일까요?"
+      ]
+    },
+    {
+      "id": "physics.audit-b.periodic-contacts-overlap",
+      "order": 101,
+      "subject": "물리",
+      "name": "회전 접점이 겹쳐 닫히는 시간",
+      "summary": "회전 접점이 두 단자에 동시에 닿는 각도 구간을 한 회전의 시간 구간으로 환산한다. 두 가지가 모두 연결되어야 하는 조건은 통전 시간의 교집합이다. 공동 반복 주기 안에서 겹치는 시간을 먼저 세면 긴 관찰 구간도 계산할 수 있다.",
+      "conceptAnswers": [
+        "회전 접점이 겹쳐 닫히는 시간",
+        "회전 접점 겹침",
+        "주기 통전 교집합"
+      ],
+      "hint": "회",
+      "curriculum": "전기 회로 · 접점과 주기",
+      "source": "references/과학고/과학고문제.pdf PDF 109쪽 22번. 풀이 원리를 활용해 상황과 수치를 새로 구성.",
+      "variants": [
+        {
+          "id": "physics.audit-b.periodic-contacts-overlap.v1",
+          "prompt": "접점이 12초에 한 바퀴 등속 회전한다. 매 바퀴 60°인 한 구간에서만 닫힌다면 3바퀴 동안 닫힌 시간은?",
+          "choices": [
+            "2초",
+            "12초",
+            "6초",
+            "18초"
+          ],
+          "correctIndex": 2,
+          "explanation": "한 바퀴당 12×60/360=2초이다. 세 바퀴에서는 6초이다."
+        },
+        {
+          "id": "physics.audit-b.periodic-contacts-overlap.v2",
+          "prompt": "A는 매 8초 중 처음 3초, B는 매 4초 중 처음 2초 닫힌다. 0초에 함께 주기를 시작할 때 20초 동안 둘 다 닫힌 시간은?",
+          "choices": [
+            "5초",
+            "8초",
+            "10초",
+            "6초"
+          ],
+          "correctIndex": 3,
+          "explanation": "A가 닫힌 구간 [0,3), [8,11), [16,19)마다 B와 2초씩 겹친다."
+        },
+        {
+          "id": "physics.audit-b.periodic-contacts-overlap.v3",
+          "prompt": "두 접점은 각각 양의 저항을 갖는 병렬 가지를 연결하고, 전구는 전체 가지 앞에 직렬이다. 같은 이상 전지를 쓸 때 전구 전류가 가장 큰 경우는?",
+          "choices": [
+            "두 접점이 모두 닫힌 때",
+            "하나만 닫힌 때",
+            "두 접점이 모두 열린 때",
+            "연결 상태와 관계없이 같다"
+          ],
+          "correctIndex": 0,
+          "explanation": "양의 저항 가지를 추가로 병렬 연결하면 합성 저항이 감소해 공통 전구의 전류가 증가한다."
+        },
+        {
+          "id": "physics.audit-b.periodic-contacts-overlap.v4",
+          "prompt": "A는 주기 6초마다 처음 2초 닫힌다. B는 같은 주기마다 1초부터 4초까지 닫힌다. B의 시작 각도를 바꿔 매 주기 0초부터 3초까지 닫히게 하면 공동 통전 시간은 주기당 어떻게 바뀌는가?",
+          "choices": [
+            "3초에서 2초로 줄어든다",
+            "1초에서 2초로 늘어난다",
+            "1초에서 3초로 늘어난다",
+            "2초에서 2초로 같다"
+          ],
+          "correctIndex": 1,
+          "explanation": "처음에는 [1,2)가 겹치고, 이동 후에는 [0,2)가 모두 겹친다."
+        }
+      ],
+      "reviewStatus": "draft",
+      "explain": {
+        "prompt": "회전하는 두 접점이 모두 연결된 동안 표시등이 켜질 때 누적 시간을 구하는 방법을 설명하세요.",
+        "rubric": [
+          "각 접점의 통전 각을 시간으로 바꿨다",
+          "둘 다 통전하는 교집합을 골랐다",
+          "공동 반복 주기를 정했다",
+          "관찰 구간 마지막의 남은 구간을 반영했다"
+        ],
+        "passCount": 3
+      },
+      "followUps": [
+        "한 접점의 회전 주기는 그대로 두고 처음 각도를 바꾸면 최대 밝기 시간은 어떤 영향을 받을까요?"
+      ]
+    },
+    {
+      "id": "physics.audit-b.partial-field-current-loop",
+      "order": 102,
+      "subject": "물리",
+      "name": "자기장 경계를 지나는 전류 고리",
+      "summary": "균일한 자기장에 온전히 들어간 고리에서 맞은편 변의 전류 방향은 반대여서 전체 자기력이 상쇄된다. 경계에서는 일부 변만 장 안에 들어 있으므로 한 방향 힘이 남을 수 있다. 전류 방향이 고정된 고리의 운동은 장에 들어가고 나오는 구간마다 알짜힘이 달라진다.",
+      "conceptAnswers": [
+        "자기장 경계를 지나는 전류 고리",
+        "부분 자기장 고리",
+        "자기장 경계와 합력"
+      ],
+      "hint": "자",
+      "curriculum": "전자기 · 도선의 힘과 구간 운동",
+      "source": "references/과학고/과학고문제.pdf PDF 91쪽 4(1)~(2). 풀이 원리를 활용해 상황과 수치를 새로 구성.",
+      "variants": [
+        {
+          "id": "physics.audit-b.partial-field-current-loop.v1",
+          "prompt": "종이 밖을 향하는 균일한 장 안에 사각 고리의 아래 수평변만 있고 그 전류는 오른쪽이다. 옆 변 힘의 연직 성분은 없다. 고리의 연직 자기력은?",
+          "choices": [
+            "위쪽",
+            "없다",
+            "오른쪽",
+            "아래쪽"
+          ],
+          "correctIndex": 3,
+          "explanation": "오른쪽 전류와 종이 밖 자기장의 벡터곱은 종이 면에서 아래쪽이다."
+        },
+        {
+          "id": "physics.audit-b.partial-field-current-loop.v2",
+          "prompt": "정사각형 전류 고리의 네 변 전체가 같은 균일 자기장에 있다. 장 방향이 고리 면에 수직일 때 고리 전체의 자기력은?",
+          "choices": [
+            "0",
+            "한 변 힘의 두 배",
+            "한 변 힘의 네 배",
+            "전류가 흐르는 방향과 같다"
+          ],
+          "correctIndex": 0,
+          "explanation": "맞은편 두 변의 힘 크기가 같고 방향은 반대라 각각 상쇄된다."
+        },
+        {
+          "id": "physics.audit-b.partial-field-current-loop.v3",
+          "prompt": "아래 변은 종이 밖 자기장 안에서 오른쪽으로 전류가 흐른다. 위 변은 같은 세기의 종이 안 자기장 안에서 왼쪽으로 전류가 흐른다. 옆 변에는 연직 힘이 없다. 두 수평변 힘의 합 방향은?",
+          "choices": [
+            "위쪽",
+            "아래쪽",
+            "서로 상쇄되어 0",
+            "종이 밖"
+          ],
+          "correctIndex": 1,
+          "explanation": "위에서는 전류와 장 방향이 둘 다 반전했으므로 벡터곱 방향이 아래 변과 같다."
+        },
+        {
+          "id": "physics.audit-b.partial-field-current-loop.v4",
+          "prompt": "종이 면에 있는 고리의 길이 0.20 m인 수평변 한 개가 전류 3 A를 흘리고, 종이 밖을 향한 0.40 T 자기장 안에 있다. 질량 0.06 kg의 고리에 이 변이 더하는 연직 가속도 크기는?",
+          "choices": [
+            "0.24 m/s²",
+            "2 m/s²",
+            "4 m/s²",
+            "24 m/s²"
+          ],
+          "correctIndex": 2,
+          "explanation": "도선 힘은 BIL=0.40×3×0.20=0.24 N이고, 질량으로 나누면 4 m/s²이다."
+        }
+      ],
+      "reviewStatus": "draft",
+      "explain": {
+        "prompt": "일정 전류가 흐르는 사각 고리가 자기장 영역에 들어갈 때, 모두 들어갔을 때, 나올 때의 힘을 설명하세요.",
+        "rubric": [
+          "장 안에 들어간 변만 표시했다",
+          "전류 방향과 자기장으로 변마다 힘 방향을 정했다",
+          "두 맞은편 변이 모두 있을 때 상쇄를 설명했다",
+          "합력 변화로 가속도 구간을 비교했다"
+        ],
+        "passCount": 3
+      },
+      "followUps": [
+        "고리를 움직이지 않고 자기장 경계만 이동시켜도 어떤 변이 힘을 받는지는 같은 방식으로 판정할 수 있을까요?"
+      ]
     }
   ],
   "missions": [
@@ -7264,6 +8674,162 @@
         "correctIndex": 0,
         "explanation": "용기 폭이 달라 부피를 직접 추가하며 표시해야 한다. 72 mA를 포함하는 가장 작은 범위는 160 mA라 한 칸이 4 mA이다.",
         "evidenceQuote": "12 mL씩 정확히 옮기는 도구가 있고 센서 회로의 예상 전류는 72 mA이다."
+      }
+    },
+    {
+      "id": "mission.physics.audit-d.energy-shifts",
+      "title": "열원과 발전기의 에너지 기록",
+      "principleIds": [
+        "physics.audit-d.heat-internal-work",
+        "physics.audit-d.source-capacity-and-equilibrium",
+        "physics.audit-d.braking-power-energy"
+      ],
+      "passage": "전시 장치의 기체가 뜨거운 열원에서 에너지 160 J를 받고 추에 40 J의 일을 했다. 다른 전시 장치는 무게 3 N인 자석을 0.8 m/s로 등속으로 떨어뜨려 전구를 켠다. 두 장치 모두 마찰이나 다른 손실은 무시한다.",
+      "followUp": "첫 열원의 초기 온도는 그대로 두고 열용량만 크게 만들면 새 평형은 어느 쪽으로 옮겨갈까요?",
+      "source": "references/과학영재학교/한국과학영재학교_2026_과학.pdf PDF 1~2쪽 1번과 2번. 상황과 수치는 새로 구성.",
+      "reviewStatus": "draft",
+      "question": {
+        "id": "mission.physics.audit-d.energy-shifts.q",
+        "prompt": "기체의 내부에너지 증가와 자석 장치의 순간 전기 출력은?",
+        "choices": [
+          "160 J, 2.4 W",
+          "120 J, 2.4 W",
+          "120 J, 3.8 W",
+          "200 J, 0.8 W"
+        ],
+        "correctIndex": 1,
+        "explanation": "받은 열에서 외부 일을 빼면 120 J이다. 등속 중 중력과 같은 제동력이 3 N, 힘과 속력의 곱은 2.4 W다.",
+        "evidenceQuote": "다른 전시 장치는 무게 3 N인 자석을 0.8 m/s로 등속으로 떨어뜨려 전구를 켠다."
+      }
+    },
+    {
+      "id": "mission.physics.audit-d.light-installation-check",
+      "title": "빛의 설치 조건과 회로 한계",
+      "principleIds": [
+        "physics.audit-d.pinhole-shape-projection",
+        "physics.audit-d.mirror-path-occlusion",
+        "physics.audit-d.parallel-limit-current"
+      ],
+      "passage": "전시등은 12 V에서 각각 4 Ω와 6 Ω인 두 가지를 병렬로 쓴다. 전원 허용 전류는 4 A다. 화면까지와 광원까지의 가림막 거리는 모두 30 cm다. 반사 후보는 실제 거울이 놓인 높이 0~4 cm보다 높은 6 cm를 지나간다.",
+      "followUp": "전류 한계에 맞춰 어느 가지를 먼저 꺼야 하는지 두 가지 선택을 비교하세요.",
+      "source": "references/과학영재학교/인천과학예술영재학교_2024.pdf PDF 12~13쪽 과학 1번, 한국과학영재학교 2025 과학 PDF 2쪽 2번. 상황과 수치는 새로 구성.",
+      "reviewStatus": "draft",
+      "question": {
+        "id": "mission.physics.audit-d.light-installation-check.q",
+        "prompt": "전원 총전류, 구멍 폭 확대, 반사 후보의 판단을 올바르게 묶은 것은?",
+        "choices": [
+          "4 A로 한계, 1배, 거울에 반사한다",
+          "3 A로 여유, 2배, 거울에 반사한다",
+          "5 A로 초과, 2배, 거울에 닿지 않는다",
+          "5 A로 초과, 1배, 거울에 반사한다"
+        ],
+        "correctIndex": 2,
+        "explanation": "가지 전류 3 A와 2 A의 합은 5 A다. b/a=1이라 구멍 폭은 두 배가 된다. 반사 후보점에는 실제 거울이 없다.",
+        "evidenceQuote": "전원 허용 전류는 4 A다."
+      }
+    },
+    {
+      "id": "mission.physics.audit-d.rotating-sensor-demo",
+      "title": "회전 표시 장치와 접촉 센서",
+      "principleIds": [
+        "physics.audit-d.periodic-image-sampling",
+        "physics.audit-d.apparent-rotation-residual",
+        "physics.audit-d.contact-charge-relaxation"
+      ],
+      "passage": "전시 원판에서 같은 무늬가 한 바퀴에 5번 반복되며 카메라는 초당 25장을 찍는다. 연속 장면에서 원판의 실제 이동이 시계 방향으로 70°였던 순간을 따로 기록했다. 옆 전하 센서에서는 외부와 절연한 X, Y가 접촉해 X의 순전하가 +3 nC 증가했다.",
+      "followUp": "센서에서 Y의 전하는 얼마나 변하고, 어느 방향으로 전자가 이동했는지 설명해 보세요.",
+      "source": "references/과학영재학교/대구과고_2021.hwp 영역Ⅱ 예시 1번과 7번. 상황과 수치는 새로 구성.",
+      "reviewStatus": "draft",
+      "question": {
+        "id": "mission.physics.audit-d.rotating-sensor-demo.q",
+        "prompt": "처음 정지처럼 보이는 양의 회전율과 70° 이동 순간의 작은 겉보기 이동은?",
+        "choices": [
+          "초당 5바퀴, 시계 방향 2°",
+          "초당 25바퀴, 반시계 방향 2°",
+          "초당 25바퀴, 멈춤",
+          "초당 5바퀴, 반시계 방향 2°"
+        ],
+        "correctIndex": 3,
+        "explanation": "연속 사진에서 1/5바퀴를 움직이는 첫 회전율은 25/5=5이다. 무늬 반복각 72°를 70°에서 빼면 −2°다.",
+        "evidenceQuote": "전시 원판에서 같은 무늬가 한 바퀴에 5번 반복되며 카메라는 초당 25장을 찍는다. 연속 장면에서 원판의 실제 이동이 시계 방향으로 70°였던 순간을 따로 기록했다."
+      }
+    },
+    {
+      "id": "mission.physics.audit-d.warming-and-piston-measurement",
+      "title": "열 장부를 읽고 피스톤 방향 찾기",
+      "principleIds": [
+        "physics.audit-d.heat-weighted-state",
+        "physics.audit-d.heat-contact-area-rate",
+        "physics.audit-d.two-chamber-piston"
+      ],
+      "passage": "열용량이 40 J/°C인 블록 A와 20 J/°C인 블록 B를 단열 상자에서 접촉시켰다. 두 블록의 처음 온도는 각각 45°C와 15°C였다. 600 J를 공급한 뒤 아직 온도가 다른 상태에서 A는 50°C로 측정됐다. 옆 실험에서 위쪽 기체실의 압력만 갑자기 낮추면 피스톤이 움직인다.",
+      "followUp": "블록의 접촉 면적만 늘리면 가열을 중단한 뒤 평형 온도와 접근 속도가 각각 어떻게 변할지 말해 보세요.",
+      "source": "references/과학영재학교/인천과학예술영재학교_2024.pdf PDF 21쪽 과학 9-(1) 및 references/과학영재학교/대구과고_2021.hwp 영역Ⅱ 예시 2번, 8번. 상황과 수치는 새로 구성.",
+      "reviewStatus": "draft",
+      "question": {
+        "id": "mission.physics.audit-d.warming-and-piston-measurement.q",
+        "prompt": "이때 B의 온도와 옆 실험의 피스톤 이동 방향을 묶은 것은?",
+        "choices": [
+          "35°C, 위",
+          "35°C, 아래",
+          "45°C, 위",
+          "25°C, 아래"
+        ],
+        "correctIndex": 0,
+        "explanation": "A가 저장한 200 J를 빼면 B가 받은 열이 400 J이고 20°C 올라 35°C다. 아래쪽 압력이 상대적으로 크므로 피스톤을 위로 민다.",
+        "evidenceQuote": "열용량이 40 J/°C인 블록 A와 20 J/°C인 블록 B를 단열 상자에서 접촉시켰다. 두 블록의 처음 온도는 각각 45°C와 15°C였다. 600 J를 공급한 뒤 아직 온도가 다른 상태에서 A는 50°C로 측정됐다."
+      }
+    },
+    {
+      "id": "mission.physics.audit-b.tank-stage-calibration",
+      "title": "물탱크의 수면과 움직이는 계측기",
+      "principleIds": [
+        "physics.audit-b.sealed-surface-head",
+        "physics.audit-b.spring-buoyancy-balance",
+        "physics.audit-b.moving-echo-reflection-time"
+      ],
+      "passage": "실험 수조 A는 열려 있고 바닥이 이어진 B의 초기 공기 압력은 대기보다 12 kPa 높다. 물의 ρg는 10 kPa/m이다. A 쪽 스프링에 매단 기둥은 물에 일부 잠겨 있다. 스프링 탄성 계수는 30 N/m, 잠긴 깊이 1 m당 부력 증가량은 10 N이다. A 수면을 8 cm 높여도 기둥은 일부만 잠기고 스프링 장력은 유지된다. 기둥 위 고정 센서는 처음 평형과 새 평형의 표식에 각각 0초, 1초에 펄스를 보낸다. 왕복 시간은 각각 0.006250초와 0.006125초다.",
+      "followUp": "같은 수면 높이 변화에서 더 단단한 스프링을 쓰면 음파 센서로 측정할 표식 변위 크기는 어떻게 달라질까요?",
+      "source": "references/과학고/과학고문제.pdf PDF 76쪽 4(2), 81쪽 11번, 141쪽 1번. 상황과 수치는 새로 구성.",
+      "reviewStatus": "draft",
+      "question": {
+        "id": "mission.physics.audit-b.tank-stage-calibration.q",
+        "prompt": "처음 평형의 수면 차, 새 평형에서 기둥의 상승량, 두 펄스의 반사 시각 차를 순서대로 고르세요.",
+        "choices": [
+          "A가 1.2 m 높음, 8 cm, 1초",
+          "A가 1.2 m 높음, 2 cm, 0.9999375초",
+          "B가 1.2 m 높음, 2 cm, 0.9999375초",
+          "A가 12 m 높음, 6 cm, 1.0000625초"
+        ],
+        "correctIndex": 1,
+        "explanation": "수두는 12/10=1.2 m이며 대기압의 A 수면이 높다. 30z=10(8 cm−z)에서 2 cm다. 반사 시각 차는 송신 간격 1초에 두 왕복 시간 차의 절반 −0.0000625초를 더한 값이다.",
+        "evidenceQuote": "A 수면을 8 cm 높여도 기둥은 일부만 잠기고 스프링 장력은 유지된다. 기둥 위 고정 센서는 처음 평형과 새 평형의 표식에 각각 0초, 1초에 펄스를 보낸다. 왕복 시간은 각각 0.006250초와 0.006125초다."
+      }
+    },
+    {
+      "id": "mission.physics.audit-b.timed-inspection-rig",
+      "title": "렌즈와 회전 접점으로 고리 추적",
+      "principleIds": [
+        "physics.audit-b.lens-aperture-partial-mask",
+        "physics.audit-b.periodic-contacts-overlap",
+        "physics.audit-b.partial-field-current-loop"
+      ],
+      "passage": "검사 장치의 표시등은 두 접점이 모두 닫혀야 켜진다. A는 6초 주기의 처음 3초, B는 3초 주기의 처음 1초 닫히고 0초에 동시에 시작한다. 표시등의 모양을 볼록렌즈로 화면에 비추며 렌즈 중앙 일부를 가려도 물체점마다 열린 경로가 남는다. 표시등 뒤 시험 고리는 별도 전원으로 일정 전류가 흐른다. 종이 밖을 향한 자기장에 고리의 아래쪽 수평변만 들어가며 그 변의 전류는 오른쪽이다.",
+      "followUp": "고리의 위 수평변까지 같은 장 안에 들어가면 연직 가속도에 더해지던 자기력은 어떻게 변할까요?",
+      "source": "references/과학고/과학고문제.pdf PDF 91쪽 4번, 109쪽 22번, 122쪽 3(2). 상황과 수치는 새로 구성.",
+      "reviewStatus": "draft",
+      "question": {
+        "id": "mission.physics.audit-b.timed-inspection-rig.q",
+        "prompt": "0~12초 동안 표시등이 켜진 시간, 화면에서 보이는 모양, 고리의 연직 자기력 방향을 순서대로 고르세요.",
+        "choices": [
+          "4초, 모양 전체가 더 어둡게 보임, 아래쪽",
+          "2초, 가운데가 빈 모양으로 보임, 아래쪽",
+          "2초, 모양 전체가 더 어둡게 보임, 아래쪽",
+          "2초, 모양 전체가 더 어둡게 보임, 위쪽"
+        ],
+        "correctIndex": 2,
+        "explanation": "A와 B가 겹치는 구간은 [0,1), [6,7)이다. 물체 각 점의 열린 구경이 남아 전체 상은 어두워진다. 오른쪽 전류와 종이 밖 장의 벡터곱은 아래쪽이다.",
+        "evidenceQuote": "렌즈 중앙 일부를 가려도 물체점마다 열린 경로가 남는다. 표시등 뒤 시험 고리는 별도 전원으로 일정 전류가 흐른다. 종이 밖을 향한 자기장에 고리의 아래쪽 수평변만 들어가며 그 변의 전류는 오른쪽이다."
       }
     }
   ]

@@ -3,7 +3,7 @@
   "id": "chemistry-foundations",
   "title": "화학 · 입자와 물질의 변화",
   "description": "입자·반응량·용액·기체·상태 변화·혼합물 분리를 연결합니다. 기출 소재를 바탕으로 직접 설명하는 힘을 기릅니다.",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "language": "ko",
   "reviewStatus": "draft",
   "principles": [
@@ -6085,6 +6085,474 @@
         ],
         "passCount": 3
       }
+    },
+    {
+      "id": "chemistry.audit-d.precipitate-composition-constraints",
+      "order": 79,
+      "subject": "화학",
+      "name": "앙금의 전체 질량과 이온별 질량",
+      "summary": "앙금의 질량은 들어간 이온들의 질량 합이다. 각 이온의 질량을 해당 이온의 상대 질량으로 나누면 개수비를 알 수 있다. 전체 질량만 잰 경우에는 각 이온이 얼마씩 들어갔는지 또는 각 이온의 전하량을 알아야 화학식 비를 한 가지로 결정할 수 있다.",
+      "conceptAnswers": [
+        "앙금의 전체 질량과 이온별 질량",
+        "앙금 조성의 제약 조건"
+      ],
+      "hint": "앙",
+      "curriculum": "화학 반응 · 전하 중성 및 조성 추론",
+      "source": "references/과학영재학교/대구과학고_2022-영역Ⅱ.pdf PDF 3쪽 3-(2). 풀이 원리를 활용해 상황과 수치를 새로 구성.",
+      "variants": [
+        {
+          "id": "chemistry.audit-d.precipitate-composition-constraints.v1",
+          "prompt": "고체에 양이온 6 g, 음이온 12 g이 들어 있다. 상대 질량이 각각 2와 3일 때 양이온과 음이온의 개수비는?",
+          "choices": [
+            "1:2",
+            "4:3",
+            "3:4",
+            "2:3"
+          ],
+          "correctIndex": 2,
+          "explanation": "6/2와 12/3을 비교하면 3:4이다. 질량비를 그대로 개수비로 쓸 수 없다."
+        },
+        {
+          "id": "chemistry.audit-d.precipitate-composition-constraints.v2",
+          "prompt": "앙금 속 X와 Y의 질량은 8 g과 10 g, 상대 질량은 2와 5다. X와 Y의 개수비는?",
+          "choices": [
+            "4:5",
+            "1:2",
+            "5:2",
+            "2:1"
+          ],
+          "correctIndex": 3,
+          "explanation": "질량을 각각의 상대 질량으로 나누면 4:2이고, 가장 작은 정수비는 2:1이다."
+        },
+        {
+          "id": "chemistry.audit-d.precipitate-composition-constraints.v3",
+          "prompt": "양이온과 음이온의 상대 질량은 2와 3이다. 각각의 전하량 크기를 모르는 상태에서 앙금 18 g만 얻었다. 조성이 하나로 정해지지 않음을 보여 주는 질량 분배 후보는?",
+          "choices": [
+            "양 6 g·음 12 g과 양 12 g·음 6 g",
+            "양 7 g·음 10 g과 양 9 g·음 7 g",
+            "양 6 g·음 12 g과 양 6 g·음 12 g",
+            "양 8 g·음 10 g과 양 8 g·음 10 g"
+          ],
+          "correctIndex": 0,
+          "explanation": "두 분배는 전체가 모두 18 g이지만 개수비는 3:4와 3:1로 다르다. 전하량 조건이 더 주어지면 일부 후보를 배제할 수 있다."
+        },
+        {
+          "id": "chemistry.audit-d.precipitate-composition-constraints.v4",
+          "prompt": "X 이온의 전하는 +2, Y 이온의 전하는 −3이다. 이 두 이온으로만 이루어진 전하 중성 고체의 가장 작은 X:Y 비는?",
+          "choices": [
+            "2:3",
+            "3:2",
+            "1:1",
+            "1:3"
+          ],
+          "correctIndex": 1,
+          "explanation": "양전하 2×3과 음전하 크기 3×2가 각각 6일 때 상쇄된다."
+        }
+      ],
+      "reviewStatus": "draft",
+      "explain": {
+        "prompt": "한 가지 앙금의 질량을 잰 뒤 화학식 비를 정하려면 어떤 정보가 필요한지 설명하세요.",
+        "rubric": [
+          "앙금에 포함되는 이온을 확인했다",
+          "전체 질량과 이온별 질량을 구분했다",
+          "이온별 질량을 개수비로 바꾸는 법을 말했다",
+          "전하 중성이나 별도의 조성 측정으로 후보를 줄였다"
+        ],
+        "passCount": 3
+      },
+      "followUps": [
+        "앙금을 만드는 두 이온에 원래부터 포함되지 않은 구경꾼 이온을 어떻게 구별할까요?"
+      ]
+    },
+    {
+      "id": "chemistry.audit-d.crystal-feasible-water-window",
+      "order": 80,
+      "subject": "화학",
+      "name": "결정 회수량과 불순물의 동시 조건",
+      "summary": "두 용질의 용해도를 독립으로 보는 모형에서 물 질량을 W, 용해도를 S라 하면 한 성분의 결정 질량은 처음 질량에서 SW/100을 뺀 값과 0 중 큰 값이다. 목표 결정량은 물 질량의 상한을, 허용 불순물량은 하한을 정한다. 두 범위가 겹칠 때만 원하는 분리가 가능하다.",
+      "conceptAnswers": [
+        "결정 회수량과 불순물의 동시 조건",
+        "결정화 물 질량 구간"
+      ],
+      "hint": "결",
+      "curriculum": "물질의 특성 · 용해도와 제약 부등식",
+      "source": "references/과학영재학교/대구과학고_2025-영역Ⅱ.pdf PDF 7쪽 4-(3), 4-(4)의 선택적 결정화 유형. 풀이 원리를 활용해 상황과 수치를 새로 구성.",
+      "variants": [
+        {
+          "id": "chemistry.audit-d.crystal-feasible-water-window.v1",
+          "prompt": "처음 A 40 g과 B 10 g이 녹아 있다. 한 온도에서 물 100 g에 A는 25 g, B는 10 g까지 독립적으로 녹는다. A 결정 20 g 이상과 B 결정 2 g 이하를 함께 얻는 물 질량은?",
+          "choices": [
+            "60 g",
+            "100 g",
+            "120 g",
+            "80 g"
+          ],
+          "correctIndex": 3,
+          "explanation": "A 조건은 40−0.25W≥20이라 W≤80, B 조건은 10−0.1W≤2라 W≥80이다."
+        },
+        {
+          "id": "chemistry.audit-d.crystal-feasible-water-window.v2",
+          "prompt": "A 26 g과 B 9 g이 있다. 두 용해도가 서로 영향을 받지 않고, 각각 물 100 g당 20 g과 15 g이다. 물이 40 g 남은 평형에서 A와 B의 결정 질량은?",
+          "choices": [
+            "A 18 g, B 3 g",
+            "A 8 g, B 6 g",
+            "A 22 g, B 5 g",
+            "A 6 g, B 0 g"
+          ],
+          "correctIndex": 0,
+          "explanation": "녹을 수 있는 양은 각각 8 g과 6 g이다. 처음 질량에서 빼면 18 g과 3 g이다."
+        },
+        {
+          "id": "chemistry.audit-d.crystal-feasible-water-window.v3",
+          "prompt": "A 30 g과 B 8 g의 용해도가 서로 영향을 받지 않고, 각각 물 100 g당 40 g과 10 g이다. A 결정은 10 g 이상, B 결정은 1 g 이하가 되게 할 수 있는가?",
+          "choices": [
+            "물 50 g이면 된다",
+            "이 온도에서는 불가능하다",
+            "물 60 g이면 된다",
+            "물 70 g이면 된다"
+          ],
+          "correctIndex": 1,
+          "explanation": "회수 조건은 W≤50, 불순물 조건은 W≥70이어서 공통 구간이 없다."
+        },
+        {
+          "id": "chemistry.audit-d.crystal-feasible-water-window.v4",
+          "prompt": "A 44 g과 B 12 g의 용해도가 서로 영향을 받지 않고, 각각 물 100 g당 40 g과 20 g이다. B 결정을 전혀 만들지 않으면서 얻을 수 있는 A 결정의 최대 질량은?",
+          "choices": [
+            "44 g",
+            "24 g",
+            "20 g",
+            "32 g"
+          ],
+          "correctIndex": 2,
+          "explanation": "B를 모두 녹이는 데 물이 60 g 이상 필요하다. 60 g일 때 A가 24 g 녹으므로 최대 결정량은 20 g이다."
+        }
+      ],
+      "reviewStatus": "draft",
+      "explain": {
+        "prompt": "두 물질이 녹은 용액에서 회수량을 일정 이상으로 만들면서 불순물을 일정 이하로 제한하는 법을 설명하세요.",
+        "rubric": [
+          "물 질량과 용해 한도의 비례를 나타냈다",
+          "녹지 못한 질량을 결정량으로 나타냈다",
+          "회수량이 물 질량의 상한임을 설명했다",
+          "불순물 제한의 하한과 공통 구간을 찾았다"
+        ],
+        "passCount": 3
+      },
+      "followUps": [
+        "물 질량을 바꿔도 두 조건을 함께 만족시키지 못한다면 냉각 온도를 바꾸는 방법을 어떻게 검토할까요?"
+      ]
+    },
+    {
+      "id": "chemistry.audit-d.changing-boiling-composition",
+      "order": 81,
+      "subject": "화학",
+      "name": "조성이 변하는 혼합물의 끓는 온도",
+      "summary": "일정한 압력에서 휘발성이 서로 다른 액체가 함께 끓으면 증기와 액체의 조성이 다를 수 있다. 더 잘 날아가는 성분이 증기로 많이 빠져나가면 남은 액체가 덜 휘발하는 성분에 풍부해지고 그 액체의 끓는 온도도 달라질 수 있다. 이 판단에는 압력과 혼합물의 실제 끓는 특성을 확인해야 한다.",
+      "conceptAnswers": [
+        "조성이 변하는 혼합물의 끓는 온도",
+        "혼합물 비등 곡선"
+      ],
+      "hint": "조",
+      "curriculum": "물질의 특성 · 혼합물 끓는점과 증류",
+      "source": "references/과학영재학교/한국과학영재학교_2026_과학.pdf PDF 7쪽 7-3. 풀이 원리를 활용해 상황과 수치를 새로 구성.",
+      "variants": [
+        {
+          "id": "chemistry.audit-d.changing-boiling-composition.v1",
+          "prompt": "정해진 압력에서 A가 B보다 휘발성이 높고, A가 더 많이 섞일수록 이 혼합물의 끓는 온도가 낮다. 증기를 계속 빼내면 남은 액체에서 예상되는 변화는?",
+          "choices": [
+            "A의 비율이 내려가며 끓는 온도가 오를 수 있다",
+            "A의 비율이 올라가며 끓는 온도가 오른다",
+            "A의 비율이 내려가며 끓는 온도가 내려간다",
+            "가열하므로 남은 액체의 조성은 항상 일정하다"
+          ],
+          "correctIndex": 0,
+          "explanation": "증기는 A에 더 풍부하므로 냄비에 남은 액체에서 A가 줄어든다. 주어진 관계에 따라 끓는 온도가 오른다."
+        },
+        {
+          "id": "chemistry.audit-d.changing-boiling-composition.v2",
+          "prompt": "A가 증기에 더 풍부하게 나오는 혼합물을 조금만 증류했다. 처음 응축액의 성분비는 어떻게 예상하는가?",
+          "choices": [
+            "반드시 순수한 A이다",
+            "처음 액체보다 A 비율이 높다",
+            "처음 액체보다 A 비율이 낮다",
+            "처음 액체보다 두 성분이 모두 적은 비율로 존재한다"
+          ],
+          "correctIndex": 1,
+          "explanation": "응축액은 모은 증기의 조성을 반영한다. 한 차례의 증류가 완전 분리를 보장하지는 않는다."
+        },
+        {
+          "id": "chemistry.audit-d.changing-boiling-composition.v3",
+          "prompt": "같은 압력에서 순수 A와 B의 끓는 온도만 알 때 A와 B 혼합액의 가열곡선을 그린다. 반드시 먼저 A 온도에서 일정하고 이어 B 온도에서 일정하다고 결론낼 수 있는가?",
+          "choices": [
+            "두 순물질의 온도에서 각각 반드시 일정하다",
+            "두 온도의 산술평균에서 반드시 일정하다",
+            "혼합물의 조성과 끓는 특성이 필요하다",
+            "초기 부피만 알면 두 구간을 정확히 정한다"
+          ],
+          "correctIndex": 2,
+          "explanation": "순물질의 끓는점만으로 증류 중 조성이 바뀌는 혼합액의 정확한 온도를 정할 수 없다."
+        },
+        {
+          "id": "chemistry.audit-d.changing-boiling-composition.v4",
+          "prompt": "휘발하지 않는 고체가 물에 녹아 있고 농도가 높을수록 이 용액의 끓는점이 높다. 일정한 압력에서 끓여 물만 계속 제거하면 어떻게 되는가?",
+          "choices": [
+            "남은 액체의 농도와 끓는 온도가 모두 내린다",
+            "남은 액체의 농도는 그대로고 끓는 온도만 오른다",
+            "고체만 먼저 증발해 물이 남는다",
+            "남은 액체의 농도와 끓는 온도가 오를 수 있다"
+          ],
+          "correctIndex": 3,
+          "explanation": "용질이 남은 채 용매 물이 줄면 농도가 높아진다. 주어진 관계에서 끓는 온도도 오른다."
+        }
+      ],
+      "reviewStatus": "draft",
+      "explain": {
+        "prompt": "서로 다른 휘발성의 액체 혼합물을 같은 압력에서 증류할 때 남은 액체와 모은 액체가 어떻게 다른지 설명하세요.",
+        "rubric": [
+          "끓는 중에도 남은 액체의 조성이 변할 수 있음을 말했다",
+          "어느 성분이 증기에 더 많을지 판단했다",
+          "온도 변화와 조성 변화를 연결했다",
+          "압력 또는 특수한 혼합물이라는 조건을 확인했다"
+        ],
+        "passCount": 3
+      },
+      "followUps": [
+        "조성은 일정하지만 외부 압력이 서서히 낮아진다면 순수한 액체의 끓는 온도도 달라질까요?"
+      ]
+    },
+    {
+      "id": "chemistry.audit-d.spiked-chromatogram-evidence",
+      "order": 82,
+      "subject": "화학",
+      "name": "표준 첨가로 분리 신호 확인",
+      "summary": "같은 분리 조건에서 표준 물질과 시료의 피크가 같은 머무름 시간에 나오면 표적 성분의 후보가 된다. 시료에 소량의 표준을 첨가해 같은 피크가 커지는지 보고, 우연히 두 성분의 피크가 겹칠 가능성은 다른 분리 조건에서 대조한다.",
+      "conceptAnswers": [
+        "표준 첨가로 분리 신호 확인",
+        "크로마토그래피 표준 첨가"
+      ],
+      "hint": "표",
+      "curriculum": "혼합물의 분리 · 표준 물질과 검출 증거",
+      "source": "references/과학영재학교/한국과학영재학교_2026_과학.pdf PDF 5쪽 5-4. 풀이 원리를 활용해 상황과 수치를 새로 구성.",
+      "variants": [
+        {
+          "id": "chemistry.audit-d.spiked-chromatogram-evidence.v1",
+          "prompt": "같은 분리 조건에서 표준 P 피크는 2.4분이다. 원시료는 2.4분과 5.0분에 피크가 나온다. 소량의 P를 섞어 주입량을 맞춘 뒤 P 후보를 지지하는 변화는?",
+          "choices": [
+            "5.0분 피크만 커진다",
+            "2.4분 피크가 뚜렷하게 커진다",
+            "2.4분 피크가 사라진다",
+            "모든 피크가 반드시 두 배가 된다"
+          ],
+          "correctIndex": 1,
+          "explanation": "첨가된 P가 머무름 시간이 같은 신호를 더한다. 공통 머무름 시간만으로 정체를 확정하기 어려워 추가 비교가 필요하다."
+        },
+        {
+          "id": "chemistry.audit-d.spiked-chromatogram-evidence.v2",
+          "prompt": "서로 다른 두 기체가 한 조건에서 같은 시간에 검출됐다. 두 기체를 구별하려면 어떤 결과가 가장 도움이 되는가?",
+          "choices": [
+            "같은 조건의 표준 주입 횟수만 늘린다",
+            "시간축의 단위를 분에서 초로 바꾼다",
+            "다른 분리 조건에서 두 표준의 피크가 갈라진다",
+            "겹친 피크의 이름을 바꾼다"
+          ],
+          "correctIndex": 2,
+          "explanation": "조건을 바꾸면 성분 간 머무름 시간 차가 커져 하나의 겹친 피크를 둘로 확인할 수 있다."
+        },
+        {
+          "id": "chemistry.audit-d.spiked-chromatogram-evidence.v3",
+          "prompt": "표준 R은 1.8분에 나온다. 주입 용매만 넣은 대조에서도 1.8분에 신호가 나왔다. 가장 먼저 할 해석은?",
+          "choices": [
+            "모든 실제 시료에 R이 있다고 확정한다",
+            "시료를 보지 않고 R의 농도를 계산한다",
+            "대조에서 나온 신호는 언제나 버린다",
+            "용매나 장치에서 오는 배경 신호 가능성을 조사한다"
+          ],
+          "correctIndex": 3,
+          "explanation": "대조의 피크는 시료 성분 이외의 출처가 같은 위치에 신호를 낼 수 있음을 보인다."
+        },
+        {
+          "id": "chemistry.audit-d.spiked-chromatogram-evidence.v4",
+          "prompt": "온도 설정을 바꾸자 표준 T 피크가 3.2분에서 4.0분으로 옮겨 갔다. 새 조건에서 시료를 검사할 때 알맞은 비교 위치는?",
+          "choices": [
+            "4.0분",
+            "3.2분",
+            "3.6분",
+            "7.2분"
+          ],
+          "correctIndex": 0,
+          "explanation": "같은 성분도 분리 조건에 따라 머무름 시간이 달라진다. 시료는 현재 설정에서 잰 표준과 비교한다."
+        }
+      ],
+      "reviewStatus": "draft",
+      "explain": {
+        "prompt": "복합 기체에서 특정 성분을 확인할 때 표준, 원시료, 표준 첨가 시료를 비교하는 이유를 설명하세요.",
+        "rubric": [
+          "머무름 시간이 조건에 의존함을 말했다",
+          "세 시료에 같은 분리 조건을 적용했다",
+          "표적 위치의 피크 변화와 빈 시료를 비교했다",
+          "겹쳐 나온 성분을 확인할 추가 조건을 제안했다"
+        ],
+        "passCount": 3
+      },
+      "followUps": [
+        "빈 용기에서 같은 머무름 시간의 신호가 나오면 어떤 오염원부터 점검할까요?"
+      ]
+    },
+    {
+      "id": "chemistry.audit-d.ionic-grid-parity",
+      "order": 83,
+      "subject": "화학",
+      "name": "교대하는 이온 격자의 홀짝",
+      "summary": "두 종류 이온이 모든 격자축의 한 칸마다 교대하는 모형에서는 기준점에서 각 축으로 이동한 정수 칸 수를 더해 홀짝을 비교한다. 총 이동이 짝수면 같은 종류, 홀수면 반대 종류다. 대각선으로 가도 각 축의 이동을 따로 세면 단면에서 같은 종류의 이온이 반복되는 이유를 알 수 있다.",
+      "conceptAnswers": [
+        "교대하는 이온 격자의 홀짝",
+        "이온 격자 홀짝 규칙"
+      ],
+      "hint": "교",
+      "curriculum": "물질의 구성 · 결정 배열과 공간 좌표",
+      "source": "references/과학영재학교/인천과학예술영재학교_2025_과학.pdf PDF 8~9쪽 5-(3). 풀이 원리를 활용해 상황과 수치를 새로 구성.",
+      "variants": [
+        {
+          "id": "chemistry.audit-d.ionic-grid-parity.v1",
+          "prompt": "모든 격자축의 한 칸마다 X와 Y가 교대한다. (0,0,0)이 X일 때 (2,1,3)은?",
+          "choices": [
+            "Y",
+            "두 이온이 겹치는 자리",
+            "X",
+            "이온이 없는 자리"
+          ],
+          "correctIndex": 2,
+          "explanation": "축별 칸 수 합은 2+1+3=6으로 짝수라 기준점과 같은 X이다."
+        },
+        {
+          "id": "chemistry.audit-d.ionic-grid-parity.v2",
+          "prompt": "한 칸마다 교대하는 이온 격자에서 (1,0,2)의 이온이 양이온이다. (2,1,1)의 이온은?",
+          "choices": [
+            "양이온",
+            "중성 원자",
+            "격자축을 움직이는 순서에 따라 달라진다",
+            "음이온"
+          ],
+          "correctIndex": 3,
+          "explanation": "각 축으로 한 칸씩 세 번 움직인다. 홀수 번 교대하므로 반대 종류다."
+        },
+        {
+          "id": "chemistry.audit-d.ionic-grid-parity.v3",
+          "prompt": "한 칸마다 교대하는 격자에서 (0,0,0)은 양이온이다. 평면 x+y+z=4 위의 정수 격자점은?",
+          "choices": [
+            "모두 양이온이다",
+            "모두 음이온이다",
+            "x가 홀수일 때만 음이온이다",
+            "좌표를 옮겨 보는 경로에 따라 달라진다"
+          ],
+          "correctIndex": 0,
+          "explanation": "x+y+z가 짝수면 음수 좌표가 포함되어도 전체 이동의 홀짝은 짝수이다."
+        },
+        {
+          "id": "chemistry.audit-d.ionic-grid-parity.v4",
+          "prompt": "교대 격자의 (1,1,0)에서 (2,2,0)으로 면 대각선을 따라 옮긴다. 두 자리 이온의 관계는?",
+          "choices": [
+            "서로 반대 종류이다",
+            "같은 종류이다",
+            "둘 중 하나가 반드시 비어 있다",
+            "축마다 칸 수를 셀 수 없다"
+          ],
+          "correctIndex": 1,
+          "explanation": "대각선은 격자축 방향으로 한 칸씩 두 번 옮긴 것이라 두 번 교대한다."
+        }
+      ],
+      "reviewStatus": "draft",
+      "explain": {
+        "prompt": "한 칸마다 다른 이온이 있는 격자에서 기울어진 단면 위 이온의 종류를 확인하는 방법을 설명하세요.",
+        "rubric": [
+          "기준점의 이온과 좌표를 표시했다",
+          "격자축의 한 칸 이동을 부호 교대로 해석했다",
+          "대각선 이동을 축별 칸 수로 분해했다",
+          "평면 식이나 이동의 홀짝으로 전체를 판단했다"
+        ],
+        "passCount": 3
+      },
+      "followUps": [
+        "한 종류의 이온만 있는 x+y+z=4 단면에 바로 인접한 x+y+z=5 단면은 어떤 이온으로 이루어질까요?"
+      ]
+    },
+    {
+      "id": "chemistry.audit-d.calorimetry-efficiency-boundary",
+      "order": 84,
+      "subject": "화학",
+      "name": "발열 효율의 측정 경계",
+      "summary": "발열 반응의 이론적 열량과 목표 물체가 실제 받은 열은 다를 수 있다. 먼저 효율의 분자에 포함할 부분을 정하고 각 부분의 열용량과 온도 변화를 곱해 더한다. 다른 부분이 받은 열이나 바깥으로 나간 열은 분자에 자동으로 포함하지 않는다.",
+      "conceptAnswers": [
+        "발열 효율의 측정 경계",
+        "열량계의 유효 열과 손실"
+      ],
+      "hint": "발",
+      "curriculum": "화학 반응의 에너지 · 효율과 계의 경계",
+      "source": "references/과학영재학교/인천과학예술영재학교_2025_과학.pdf PDF 10~11쪽 6-(2), 6-(3). 풀이 원리를 활용해 상황과 수치를 새로 구성.",
+      "variants": [
+        {
+          "id": "chemistry.audit-d.calorimetry-efficiency-boundary.v1",
+          "prompt": "이론상 12 kJ를 내는 장치에서 물이 7 kJ, 용기가 2 kJ를 받았다. 물을 가열하는 효율은?",
+          "choices": [
+            "75%",
+            "약 17%",
+            "약 29%",
+            "약 58%"
+          ],
+          "correctIndex": 3,
+          "explanation": "목표가 물이면 효율은 7/12×100%로 약 58%이다. 용기까지 포함하는 비율은 9/12이다."
+        },
+        {
+          "id": "chemistry.audit-d.calorimetry-efficiency-boundary.v2",
+          "prompt": "물 150 g의 비열을 4 J/(g·°C)로 놓는다. 발열재가 이론상 9,000 J를 내고 물이 9°C 올랐다. 물만의 가열 효율은?",
+          "choices": [
+            "60%",
+            "40%",
+            "75%",
+            "90%"
+          ],
+          "correctIndex": 0,
+          "explanation": "물에 전달된 열은 150×4×9=5,400 J이다. 5,400을 9,000으로 나누면 0.60이다."
+        },
+        {
+          "id": "chemistry.audit-d.calorimetry-efficiency-boundary.v3",
+          "prompt": "목표 물체에 전달되는 열이 장치 하나당 6 kJ이다. 같은 효율로 독립 작동하는 장치를 써서 19 kJ 이상을 전달하려면 최소 몇 개가 필요한가?",
+          "choices": [
+            "3개",
+            "4개",
+            "6개",
+            "2개"
+          ],
+          "correctIndex": 1,
+          "explanation": "3개는 18 kJ라 부족하고, 4개는 24 kJ를 전달한다."
+        },
+        {
+          "id": "chemistry.audit-d.calorimetry-efficiency-boundary.v4",
+          "prompt": "발열재와 액체가 모두 데워졌다. 액체의 열용량과 온도 상승만 알고 있다면 무엇을 계산할 수 있는가?",
+          "choices": [
+            "액체와 발열재가 받은 열의 정확한 합",
+            "외부로 손실된 열의 정확한 값",
+            "액체가 받은 열",
+            "발열재가 흡수한 열"
+          ],
+          "correctIndex": 2,
+          "explanation": "액체의 열용량과 온도 변화의 곱으로 액체가 받은 열을 구한다. 고체의 열용량이나 손실이 주어져야 나머지를 계산할 수 있다."
+        }
+      ],
+      "reviewStatus": "draft",
+      "explain": {
+        "prompt": "같은 발열 장치에서 용액 가열 효율과 장치가 흡수한 열의 비율이 다른 이유를 설명하세요.",
+        "rubric": [
+          "이론적 반응열을 분모에 썼다",
+          "목표 물체의 경계를 먼저 밝혔다",
+          "물체별 열용량과 온도 변화를 적용했다",
+          "분자에 들어가지 않은 열 이동을 구별했다"
+        ],
+        "passCount": 3
+      },
+      "followUps": [
+        "두 반응 장치의 용액 가열 효율을 비교할 때 어떤 질량과 온도 조건을 같게 맞추는 것이 좋을까요?"
+      ]
     }
   ],
   "missions": [
@@ -6749,6 +7217,58 @@
         "correctIndex": 2,
         "explanation": "결정 6 g은 6×10=60 J를 방출한다. 같은 상태로 되돌리는 데 합계 60 J가 필요하므로 남은 열은 45 J다.",
         "evidenceQuote": "같은 온도와 압력의 상태로 돌리는 두 단계 중 먼저 공급한 열은 15 J이며, 부피 변화 일 외의 일은 없다."
+      }
+    },
+    {
+      "id": "mission.chemistry.audit-d.assay-to-recovery",
+      "title": "흰 결정의 분석과 회수 설계",
+      "principleIds": [
+        "chemistry.audit-d.precipitate-composition-constraints",
+        "chemistry.audit-d.crystal-feasible-water-window",
+        "chemistry.audit-d.ionic-grid-parity"
+      ],
+      "passage": "센서 개발실이 흰 고체의 분석과 다른 재료의 회수를 각각 진행했다. 흰 고체에서 이온 U, V의 상대 질량은 3과 2, 실제 들어 있는 양은 각각 9 g과 8 g이다. 별도 모형에서는 격자축으로 한 칸마다 X와 Y가 교대하고 원점은 X이다. 재료 회수용 용액에는 처음 A 30 g과 B 10 g이 들어 있다. 물 100 g에 A 20 g과 B 10 g이 서로 독립적으로 녹고, 물을 75 g 남기기로 했다.",
+      "followUp": "B 결정을 만들지 않도록 물의 양을 늘리면 A를 얼마나 회수할 수 있을지 계산해 보세요.",
+      "source": "용해도 자료의 물 질량 제약과 이온 조성, 결정 격자 해석을 함께 연습하는 창작 상황. 상황과 수치는 새로 구성.",
+      "reviewStatus": "draft",
+      "question": {
+        "id": "mission.chemistry.audit-d.assay-to-recovery.q",
+        "prompt": "U:V의 개수비, 모형 (2,1,0)의 이온, A와 B의 결정 질량을 맞게 묶은 것은?",
+        "choices": [
+          "3:4, X, A 15 g·B 7.5 g",
+          "3:4, Y, A 15 g·B 2.5 g",
+          "9:8, Y, A 20 g·B 10 g",
+          "4:3, X, A 10 g·B 0 g"
+        ],
+        "correctIndex": 1,
+        "explanation": "9/3과 8/2를 비교하면 3:4이다. 모형에서 세 칸을 옮기므로 Y이다. 물 75 g에 A 15 g과 B 7.5 g이 녹아 남으므로 결정은 A 15 g과 B 2.5 g이다.",
+        "evidenceQuote": "흰 고체에서 이온 U, V의 상대 질량은 3과 2, 실제 들어 있는 양은 각각 9 g과 8 g이다. 별도 모형에서는 격자축으로 한 칸마다 X와 Y가 교대하고 원점은 X이다."
+      }
+    },
+    {
+      "id": "mission.chemistry.audit-d.heated-sample-identity",
+      "title": "가열 회수 실험의 열 장부와 성분 확인",
+      "principleIds": [
+        "chemistry.audit-d.changing-boiling-composition",
+        "chemistry.audit-d.spiked-chromatogram-evidence",
+        "chemistry.audit-d.calorimetry-efficiency-boundary"
+      ],
+      "passage": "일정한 압력에서 재료 A와 B의 액체 혼합물을 가열해 증기를 계속 모은다. A가 증기에 더 풍부하고 액체에서 A의 비율이 낮아질수록 끓는 온도가 높아진다. 발열원이 이론상 공급하는 열은 20 kJ이다. 목표 액체는 11 kJ, 용기는 4 kJ를 받았다. 첫 응축액의 2.0분 피크는 A 표준을 더하면 같은 조건에서 커진다.",
+      "followUp": "다른 성분이 2.0분 피크에 섞였는지 확인할 추가 시험을 제안해 보세요.",
+      "source": "혼합물 가열곡선, 표준 첨가, 목표 물체 열 효율을 연계하는 창작 상황. 상황과 수치는 새로 구성.",
+      "reviewStatus": "draft",
+      "question": {
+        "id": "mission.chemistry.audit-d.heated-sample-identity.q",
+        "prompt": "남은 액체의 끓는 온도 추세, 첫 피크의 해석, 목표 액체만의 가열 효율을 맞게 묶은 것은?",
+        "choices": [
+          "온도 상승, 피크는 순수한 A로 확정, 75%",
+          "온도 일정, 피크는 순수한 A로 확정, 55%",
+          "온도 상승, A 후보이며 겹침 가능, 55%",
+          "온도 하강, A 후보이며 겹침 가능, 20%"
+        ],
+        "correctIndex": 2,
+        "explanation": "증기로 A가 더 빠져나가 남은 액체의 끓는 온도가 오른다. 같은 피크가 커져도 다른 성분이 겹칠 수 있다. 목표 액체의 효율은 11/20=55%다.",
+        "evidenceQuote": "발열원이 이론상 공급하는 열은 20 kJ이다. 목표 액체는 11 kJ, 용기는 4 kJ를 받았다. 첫 응축액의 2.0분 피크는 A 표준을 더하면 같은 조건에서 커진다."
       }
     }
   ]

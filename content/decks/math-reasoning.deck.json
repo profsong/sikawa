@@ -3,7 +3,7 @@
   "id": "math-reasoning",
   "title": "수학 · 사고의 도구",
   "description": "정수·조합·대수·기하의 96가지 도구. 기출에서 관찰한 사고 유형을 토대로 계산부터 조건 비교와 증명까지 연습합니다.",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "language": "ko",
   "reviewStatus": "draft",
   "principles": [
@@ -7510,6 +7510,1410 @@
       ],
       "source": "한국과학영재학교_2026_수학.pdf 2쪽 문제 2의 전체 평균과 최댓값·최솟값을 제외한 평균 비교를 참고해 창작.",
       "reviewStatus": "draft"
+    },
+    {
+      "id": "math.audit-d.weighted-median-slope",
+      "order": 97,
+      "subject": "수학",
+      "name": "가중 중앙값으로 기울기 정하기",
+      "summary": "원점을 지나는 y=ax에서 세로 길이 비용의 합을 최소화할 때 각 점의 오차는 abs(x)·abs(a−y/x)이다. x가 0인 점의 비용은 일정하다. 기울기 후보를 정렬한 뒤 양쪽 가중치 합이 각각 전체의 절반 이하가 되는 지점을 찾는다.",
+      "conceptAnswers": [
+        "가중 중앙값으로 기울기 정하기",
+        "가중 중앙값"
+      ],
+      "hint": "가",
+      "curriculum": "대수와 자료 · 절댓값 비용",
+      "source": "references/과학영재학교/한국과학영재학교_2024_수학.pdf PDF 1쪽 1-2. 풀이 원리를 활용해 상황과 수치를 새로 구성.",
+      "variants": [
+        {
+          "id": "math.audit-d.weighted-median-slope.v1",
+          "prompt": "원점 직선으로 (1,0), (2,4), (5,5)를 맞춘다. 세로 거리 합을 최소로 만드는 기울기는?",
+          "choices": [
+            "0",
+            "2",
+            "1",
+            "9/8"
+          ],
+          "correctIndex": 2,
+          "explanation": "기울기 후보 0,1,2의 가중치는 1,5,2다. 전체 8의 절반을 처음 지나는 값은 1이다."
+        },
+        {
+          "id": "math.audit-d.weighted-median-slope.v2",
+          "prompt": "가중치 3인 후보 1과 가중치 3인 후보 4가 있다. 거리 합을 최소화하는 위치는?",
+          "choices": [
+            "2.5만",
+            "1만",
+            "4보다 큰 모든 값",
+            "1과 4 사이 모두"
+          ],
+          "correctIndex": 3,
+          "explanation": "사이에서 한 후보까지의 거리가 늘어난 만큼 다른 후보까지의 거리가 줄어 합이 같다."
+        },
+        {
+          "id": "math.audit-d.weighted-median-slope.v3",
+          "prompt": "점 (−4,−8)이 y=ax에 주는 가중치와 기울기 후보를 짝지으면?",
+          "choices": [
+            "4와 2",
+            "−4와 2",
+            "4와 −2",
+            "8과 2"
+          ],
+          "correctIndex": 0,
+          "explanation": "abs(−8+4a)=4·abs(a−2)이다. 가중치는 x의 절댓값이다."
+        },
+        {
+          "id": "math.audit-d.weighted-median-slope.v4",
+          "prompt": "원점 직선에 점 (0,7)을 새로 넣으면 기울기에 따른 절대 거리 비용은 어떻게 달라지는가?",
+          "choices": [
+            "모든 기울기에서 7배가 된다",
+            "모든 기울기에서 7만큼 늘어난다",
+            "가중치 7인 기울기 0을 하나 추가한다",
+            "기울기 7에서만 비용이 늘어난다"
+          ],
+          "correctIndex": 1,
+          "explanation": "x=0에서 직선의 높이는 항상 0이다. 새 오차는 기울기와 무관하다."
+        }
+      ],
+      "reviewStatus": "draft",
+      "explain": {
+        "prompt": "세로 거리의 합이 가장 작은 원점 직선을 가중 중앙값으로 찾는 이유를 설명하세요.",
+        "rubric": [
+          "오차를 기울기 차로 인수분해했다",
+          "abs(x)가 가중치인 이유를 설명했다",
+          "후보를 정렬하고 누적 가중치를 비교했다",
+          "반을 정확히 나누는 구간도 최소일 수 있다고 했다"
+        ],
+        "passCount": 3
+      },
+      "followUps": [
+        "x=0인 점이 여러 개 있어도 최적 기울기는 왜 바뀌지 않을까요?"
+      ]
+    },
+    {
+      "id": "math.audit-d.origin-least-squares",
+      "order": 98,
+      "subject": "수학",
+      "name": "원점 직선의 제곱 오차 최소",
+      "summary": "원점 직선 y=ax의 세로 제곱 오차 합은 A a²−2B a+C이다. A는 x²의 합, B는 xy의 합이다. A가 양수이면 완전제곱의 중심 a=B/A에서 최소가 된다.",
+      "conceptAnswers": [
+        "원점 직선의 제곱 오차 최소",
+        "원점 최소제곱"
+      ],
+      "hint": "원",
+      "curriculum": "이차식 · 모형 계수",
+      "source": "references/과학영재학교/한국과학영재학교_2024_수학.pdf PDF 1쪽 1-3. 풀이 원리를 활용해 상황과 수치를 새로 구성.",
+      "variants": [
+        {
+          "id": "math.audit-d.origin-least-squares.v1",
+          "prompt": "두 점 (1,3),(2,4)를 지나는 데 가까운 원점 직선을 제곱 오차로 고른다. 기울기는?",
+          "choices": [
+            "5/2",
+            "7/5",
+            "2",
+            "11/5"
+          ],
+          "correctIndex": 3,
+          "explanation": "xy의 합은 3+8=11, x²의 합은 1+4=5다."
+        },
+        {
+          "id": "math.audit-d.origin-least-squares.v2",
+          "prompt": "오차 합이 8a²−24a+30이다. 최소값은?",
+          "choices": [
+            "12",
+            "18",
+            "6",
+            "30"
+          ],
+          "correctIndex": 0,
+          "explanation": "8(a−1.5)²+12이므로 최소값은 12다."
+        },
+        {
+          "id": "math.audit-d.origin-least-squares.v3",
+          "prompt": "원점 직선을 비교할 때 x가 2배이고 y/x가 같은 점이 오차 최소 기울기에 미치는 가중치는 몇 배인가?",
+          "choices": [
+            "2배",
+            "4배",
+            "1/2배",
+            "같다"
+          ],
+          "correctIndex": 1,
+          "explanation": "각 오차 제곱은 x²(a−y/x)²다. 계수가 네 배가 된다."
+        },
+        {
+          "id": "math.audit-d.origin-least-squares.v4",
+          "prompt": "점 (1,2),(−1,4)를 y=ax로 맞춘다. 최적 기울기의 부호와 값은?",
+          "choices": [
+            "양수, 1",
+            "양수, 3",
+            "음수, −1",
+            "0"
+          ],
+          "correctIndex": 2,
+          "explanation": "B=1×2+(−1)×4=−2, A=2이다."
+        }
+      ],
+      "reviewStatus": "draft",
+      "explain": {
+        "prompt": "왜 기울기 후보 y/x의 단순 평균을 내는 방법으로 제곱 오차를 최소화할 수 없는지 설명하세요.",
+        "rubric": [
+          "각 오차의 제곱을 전개했다",
+          "x²의 합이 이차항 계수라고 했다",
+          "xy의 합이 일차항에 나타남을 말했다",
+          "완전제곱을 써 최소 기울기를 제시했다"
+        ],
+        "passCount": 3
+      },
+      "followUps": [
+        "가로 좌표가 모두 0이면 최소 기울기를 하나로 정할 수 있나요?"
+      ]
+    },
+    {
+      "id": "math.audit-d.basis-model-error",
+      "order": 99,
+      "subject": "수학",
+      "name": "서로 다른 모형의 최소 오차 비교",
+      "summary": "f(x)에 하나의 계수 a를 곱하는 모형 y=a f(x)는 x 대신 f(x)의 값으로 제곱 오차 최소화를 한다. 각 모형에서 최적 계수를 따로 구하고, 그 계수에서 남은 제곱합끼리 비교해야 한다.",
+      "conceptAnswers": [
+        "서로 다른 모형의 최소 오차 비교",
+        "기저 모형 비교"
+      ],
+      "hint": "서",
+      "curriculum": "함수 · 모형 선택",
+      "source": "references/과학영재학교/한국과학영재학교_2024_수학.pdf PDF 1쪽 1-3, 1-4. 풀이 원리를 활용해 상황과 수치를 새로 구성.",
+      "variants": [
+        {
+          "id": "math.audit-d.basis-model-error.v1",
+          "prompt": "자료 (0,1),(1,2),(2,5)에 y=a·1을 맞춘다. 최소제곱 계수는?",
+          "choices": [
+            "8/3",
+            "3",
+            "2",
+            "5/3"
+          ],
+          "correctIndex": 0,
+          "explanation": "상수 기저의 f는 1,1,1이므로 최적값은 세 y의 평균 8/3이다."
+        },
+        {
+          "id": "math.audit-d.basis-model-error.v2",
+          "prompt": "두 점 (1,2),(2,7)에 y=bx²를 제곱 오차로 맞춘다. b는?",
+          "choices": [
+            "16/5",
+            "30/17",
+            "9/5",
+            "2"
+          ],
+          "correctIndex": 1,
+          "explanation": "f는 1과 4다. Σfy=2+28=30, Σf²=1+16=17이다."
+        },
+        {
+          "id": "math.audit-d.basis-model-error.v3",
+          "prompt": "상수 모형의 최소 제곱합이 4이고 직선 모형의 최소 제곱합이 3이다. y=2x+1의 제곱합이 2였다면 어떤 결론이 확실한가?",
+          "choices": [
+            "y=2x+1이 반드시 그 모형의 유일한 최적해다",
+            "모든 절편 있는 직선은 오차가 2다",
+            "직선과 절편을 허용한 모형에는 오차 3보다 작은 후보가 있다",
+            "상수 모형이 실제로 더 잘 맞는다"
+          ],
+          "correctIndex": 2,
+          "explanation": "오차 2인 실제 후보 하나를 제시하면 기존 최솟값 3을 이겼다고 말할 수 있다."
+        },
+        {
+          "id": "math.audit-d.basis-model-error.v4",
+          "prompt": "같은 자료의 제곱 오차를 비교할 때 자유 절편 모형이 원점 모형을 포함한다. 최솟값 관계는?",
+          "choices": [
+            "자유 절편 모형의 최솟값은 항상 두 배다",
+            "두 최솟값은 반드시 같다",
+            "원점 모형의 최솟값이 항상 더 작다",
+            "자유 절편 모형의 최솟값은 원점 모형보다 크지 않다"
+          ],
+          "correctIndex": 3,
+          "explanation": "절편을 0으로 둘 수 있어서 기존 후보를 모두 재현한다. 더 작은 후보가 생길 수도 있다."
+        }
+      ],
+      "reviewStatus": "draft",
+      "explain": {
+        "prompt": "상수 모형과 원점 포물선 모형을 같은 자료에 맞추어 비교하는 절차를 설명하세요.",
+        "rubric": [
+          "각 모형의 f(x)를 구분했다",
+          "각 모형의 계수를 따로 최적화했다",
+          "최적 계수에서 잔차를 각각 구했다",
+          "제곱합을 비교해 모형을 골랐다"
+        ],
+        "passCount": 3
+      },
+      "followUps": [
+        "절편이 자유로운 모형의 최저 오차가 원점 직선보다 더 커질 수 있을까요?"
+      ]
+    },
+    {
+      "id": "math.audit-d.finite-pair-inverse",
+      "order": 100,
+      "subject": "수학",
+      "name": "나머지 수 체계에서 켤레와 역원",
+      "summary": "계수를 나머지로 계산하고 u²=d인 수 a+bu를 다룰 때 켤레 a−bu를 곱하면 a²−db²이다. 이 값이 뒤집을 수 있는 나머지이면 켤레에 그 역수를 곱하여 원래 수의 역원을 얻는다.",
+      "conceptAnswers": [
+        "나머지 수 체계에서 켤레와 역원",
+        "유한 체계 역원"
+      ],
+      "hint": "나",
+      "curriculum": "정수 · 계수쌍과 켤레",
+      "source": "references/과학영재학교/한국과학영재학교_2024_수학.pdf PDF 2쪽 2-1, 2-2. 풀이 원리를 활용해 상황과 수치를 새로 구성.",
+      "variants": [
+        {
+          "id": "math.audit-d.finite-pair-inverse.v1",
+          "prompt": "mod 5에서 u²=2이다. 1+u의 역원은?",
+          "choices": [
+            "1−u",
+            "4+u",
+            "1+u",
+            "4−u"
+          ],
+          "correctIndex": 1,
+          "explanation": "켤레 곱은 −1=4이고 4의 역원은 4다. 4(1−u)=4+u이다."
+        },
+        {
+          "id": "math.audit-d.finite-pair-inverse.v2",
+          "prompt": "mod 5에서 u²=2이다. u의 역원은?",
+          "choices": [
+            "2u",
+            "u",
+            "3u",
+            "4u"
+          ],
+          "correctIndex": 2,
+          "explanation": "u·3u=3·2=6≡1이다."
+        },
+        {
+          "id": "math.audit-d.finite-pair-inverse.v3",
+          "prompt": "mod 5에서 u²=2일 때 (2+u)(2−u)는?",
+          "choices": [
+            "0",
+            "4",
+            "3+u",
+            "2"
+          ],
+          "correctIndex": 3,
+          "explanation": "가운데 항이 상쇄되고 4−2=2다."
+        },
+        {
+          "id": "math.audit-d.finite-pair-inverse.v4",
+          "prompt": "두 계수를 mod 7로 계산하고 (a,b)가 각기 0~6의 나머지다. 같은 두 계수 조합만 같은 수라면 서로 다른 수의 개수는?",
+          "choices": [
+            "49",
+            "14",
+            "7",
+            "42"
+          ],
+          "correctIndex": 0,
+          "explanation": "서로 독립적인 두 계수 각각 7가지이므로 7×7이다."
+        }
+      ],
+      "reviewStatus": "draft",
+      "explain": {
+        "prompt": "계수를 5로 나눈 나머지로 계산할 때 1+u의 역원을 구하는 과정을 설명하세요. u²=2이다.",
+        "rubric": [
+          "두 계수를 mod 5로 줄였다",
+          "켤레 곱이 1−2라고 구했다",
+          "4의 역원을 구했다",
+          "역원을 원래 수와 곱해 1을 확인했다"
+        ],
+        "passCount": 3
+      },
+      "followUps": [
+        "어떤 나머지 수 체계에서는 0이 아닌 수끼리 곱해도 0이 됩니다. 그 경우 역원이 존재할 수 있을까요?"
+      ]
+    },
+    {
+      "id": "math.audit-d.residue-discriminant",
+      "order": 101,
+      "subject": "수학",
+      "name": "나머지 수 체계의 제곱근 존재 판정",
+      "summary": "2a의 역원이 있는 수 체계에서 ax²+bx+c=0은 (2ax+b)²=b²−4ac와 같다. 판별식이 양수인지 묻는 대신 실제로 어떤 원소의 제곱인지 확인한다.",
+      "conceptAnswers": [
+        "나머지 수 체계의 제곱근 존재 판정",
+        "나머지 판별식"
+      ],
+      "hint": "나",
+      "curriculum": "이차식 · 나머지 체계의 해",
+      "source": "references/과학영재학교/한국과학영재학교_2024_수학.pdf PDF 2쪽 2-3, 2-4. 풀이 원리를 활용해 상황과 수치를 새로 구성.",
+      "variants": [
+        {
+          "id": "math.audit-d.residue-discriminant.v1",
+          "prompt": "mod 5에서 서로 다른 제곱값은?",
+          "choices": [
+            "0,1,2,3,4",
+            "1,2,4",
+            "0,1,4",
+            "0,2,3"
+          ],
+          "correctIndex": 2,
+          "explanation": "0²부터 4²까지 줄이면 0,1,4,4,1이다."
+        },
+        {
+          "id": "math.audit-d.residue-discriminant.v2",
+          "prompt": "mod 5에서 x²−2=0의 해는?",
+          "choices": [
+            "2와 3",
+            "1과 4",
+            "0만",
+            "없다"
+          ],
+          "correctIndex": 3,
+          "explanation": "2는 mod 5의 제곱값이 아니다."
+        },
+        {
+          "id": "math.audit-d.residue-discriminant.v3",
+          "prompt": "mod 5에서 x²+x+1=0의 판별식은 2이다. 해의 개수는?",
+          "choices": [
+            "0개",
+            "1개",
+            "2개",
+            "5개"
+          ],
+          "correctIndex": 0,
+          "explanation": "1−4=−3≡2이며 2는 제곱값이 아니므로 완전제곱 방정식을 만족할 수 없다."
+        },
+        {
+          "id": "math.audit-d.residue-discriminant.v4",
+          "prompt": "mod 7에서 x²−x=0의 해는?",
+          "choices": [
+            "0과 6",
+            "0과 1",
+            "1과 6",
+            "3과 4"
+          ],
+          "correctIndex": 1,
+          "explanation": "x(x−1)=0이다. 소수 7에서는 둘 중 한 인수가 0이어야 한다."
+        }
+      ],
+      "reviewStatus": "draft",
+      "explain": {
+        "prompt": "보통 실수의 판별식 조건을 나머지 체계에 그대로 적용할 수 없는 이유를 설명하세요.",
+        "rubric": [
+          "완전제곱 변형을 썼다",
+          "나머지에는 실수의 양수 조건을 쓰지 않는다고 했다",
+          "제곱값을 직접 열거했다",
+          "2a를 나눌 수 있는 조건을 말했다"
+        ],
+        "passCount": 3
+      },
+      "followUps": [
+        "계수를 2로 나눈 나머지에서 2a는 왜 항상 역원을 가지지 못할까요?"
+      ]
+    },
+    {
+      "id": "math.audit-d.cyclic-difference-divisibility",
+      "order": 102,
+      "subject": "수학",
+      "name": "순환 차분과 배수 증가",
+      "summary": "원형 배열에서 이웃 차의 절댓값으로 갱신할 때 mod 2에서는 뺄셈과 덧셈이 같다. 항이 2의 거듭제곱 개이면 해당 횟수만큼 반복한 뒤 중간 이항항은 모두 짝수로 지워져 각 값이 짝수다. 배수 증가와 값의 상한을 함께 쓰면 종료를 증명할 수 있다.",
+      "conceptAnswers": [
+        "순환 차분과 배수 증가",
+        "순환 차분의 짝수성"
+      ],
+      "hint": "순",
+      "curriculum": "변환 · 정수의 나머지",
+      "source": "references/과학영재학교/한국과학영재학교_2024_수학.pdf PDF 3쪽 3-4, 3-5. 풀이 원리를 활용해 상황과 수치를 새로 구성.",
+      "variants": [
+        {
+          "id": "math.audit-d.cyclic-difference-divisibility.v1",
+          "prompt": "네 칸 (1,0,0,0)의 각 값을 현재 값과 다음 칸 값의 차의 절댓값으로 동시에 바꾼다. 마지막 칸의 다음은 첫 칸이다. 한 번 바꾼 결과는?",
+          "choices": [
+            "1,1,0,0",
+            "0,0,1,0",
+            "0,0,0,0",
+            "1,0,0,1"
+          ],
+          "correctIndex": 3,
+          "explanation": "순서대로 절댓값 차를 취하면 1,0,0,1이다."
+        },
+        {
+          "id": "math.audit-d.cyclic-difference-divisibility.v2",
+          "prompt": "네 칸에서 네 번의 변환 뒤 모든 값이 짝수임을 보였다. 같은 과정을 4번 더 적용하면 무엇이 보장되는가?",
+          "choices": [
+            "모든 값이 4의 배수",
+            "모든 값이 홀수",
+            "모든 값이 정확히 4",
+            "모든 값이 3의 배수"
+          ],
+          "correctIndex": 0,
+          "explanation": "먼저 배열을 2로 나누어도 변환이 같은 비율로 된다. 나눈 값에 다시 짝수 조건이 생긴다."
+        },
+        {
+          "id": "math.audit-d.cyclic-difference-divisibility.v3",
+          "prompt": "시작 값의 범위가 11인 네 칸에서 변환 뒤 모든 값이 16의 배수가 되었다. 그 시점의 상태는?",
+          "choices": [
+            "전부 16",
+            "전부 0",
+            "0과 16의 혼합",
+            "0 이상이면 어떤 16의 배수도 가능"
+          ],
+          "correctIndex": 1,
+          "explanation": "첫 변환 뒤부터 모든 값은 0 이상 11 이하이다. 가능한 16의 배수는 0뿐이다."
+        },
+        {
+          "id": "math.audit-d.cyclic-difference-divisibility.v4",
+          "prompt": "세 칸 (0,2,2)의 각 값을 현재 값과 다음 칸 값의 차의 절댓값으로 동시에 바꾼다. 마지막 칸의 다음은 첫 칸이다. 결과는?",
+          "choices": [
+            "0,0,0",
+            "2,2,2",
+            "2,0,2로 회전한 같은 배열",
+            "0,2,0"
+          ],
+          "correctIndex": 2,
+          "explanation": "변환 결과 2,0,2는 원형으로 보면 원래 상태를 회전한 것이다."
+        }
+      ],
+      "reviewStatus": "draft",
+      "explain": {
+        "prompt": "네 칸 순환 차가 결국 모두 0이 됨을 설명하세요.",
+        "rubric": [
+          "mod 2에서 차와 합이 같다고 했다",
+          "4번 뒤 자기 자신이 두 번 더해지는 이유를 설명했다",
+          "짝수에서 2로 나눈 배열에 같은 규칙을 적용했다",
+          "범위가 증가하지 않아 높은 2의 배수가 0뿐임을 말했다"
+        ],
+        "passCount": 3
+      },
+      "followUps": [
+        "원형 배열의 칸 수가 3이면 네 칸과 같은 종료 결론이 왜 성립하지 않을 수 있나요?"
+      ]
+    },
+    {
+      "id": "math.audit-d.copy-pair-coefficient",
+      "order": 103,
+      "subject": "수학",
+      "name": "복제 묶음 안팎의 쌍 세기",
+      "summary": "같은 구조를 n개 쌓고 쌍을 세면, 한 묶음 안의 A가지와 서로 다른 두 묶음마다 생기는 B가지를 분리한다. 묶음 사이의 상대 순서만 중요하면 전체는 nA+B·n(n−1)/2가 된다.",
+      "conceptAnswers": [
+        "복제 묶음 안팎의 쌍 세기",
+        "복제 층과 쌍의 수"
+      ],
+      "hint": "복",
+      "curriculum": "경우의 수 · 2차 차분",
+      "source": "references/과학영재학교/한국과학영재학교_2024_수학.pdf PDF 4~5쪽 4-1~4-4. 풀이 원리를 활용해 상황과 수치를 새로 구성.",
+      "variants": [
+        {
+          "id": "math.audit-d.copy-pair-coefficient.v1",
+          "prompt": "한 층 안에서 쌍 3개, 두 다른 층 사이에서 쌍 2개가 생긴다. 층 4개의 전체 쌍은?",
+          "choices": [
+            "24",
+            "20",
+            "16",
+            "32"
+          ],
+          "correctIndex": 0,
+          "explanation": "4×3+6×2=24다."
+        },
+        {
+          "id": "math.audit-d.copy-pair-coefficient.v2",
+          "prompt": "f(1)=4, f(2)=11이며 층간 쌍 수가 일정하다. 다른 두 층마다 추가되는 쌍은?",
+          "choices": [
+            "7개",
+            "3개",
+            "4개",
+            "11개"
+          ],
+          "correctIndex": 1,
+          "explanation": "두 층 내부에서 8개가 이미 있으므로 11−8=3개다."
+        },
+        {
+          "id": "math.audit-d.copy-pair-coefficient.v3",
+          "prompt": "f(n)=nA+B·n(n−1)/2이다. n=3에서 4로 늘 때 증가량은?",
+          "choices": [
+            "A+4B",
+            "3A+B",
+            "A+3B",
+            "A+B"
+          ],
+          "correctIndex": 2,
+          "explanation": "새 층 안 A개와 기존 세 층 각각에 B개씩 연결한다."
+        },
+        {
+          "id": "math.audit-d.copy-pair-coefficient.v4",
+          "prompt": "같은 반복 모형에서 f(2)=13, f(3)=22라고 했다. 쌍 수 정수 조건에 맞는가?",
+          "choices": [
+            "맞는다. A=5,B=3이다",
+            "맞는다. A=6,B=1이다",
+            "맞지 않는다. A가 반드시 음수다",
+            "맞지 않는다. 층간 쌍 B가 5/3이다"
+          ],
+          "correctIndex": 3,
+          "explanation": "2A+B=13, 3A+3B=22를 풀면 B=5/3이라 쌍 개수가 될 수 없다."
+        }
+      ],
+      "reviewStatus": "draft",
+      "explain": {
+        "prompt": "반복 배열의 전체 쌍 수를 구할 때 같은 묶음과 다른 묶음을 나누는 이유를 설명하세요.",
+        "rubric": [
+          "모든 쌍을 두 경우로 분류했다",
+          "다른 두 묶음의 쌍 수가 왜 일정한지 설명했다",
+          "두 묶음을 고르는 개수를 썼다",
+          "알려진 값으로 A,B를 확인했다"
+        ],
+        "passCount": 3
+      },
+      "followUps": [
+        "묶음 사이의 실제 거리가 길이에 영향을 주면 B가 일정하다는 가정은 어떻게 바뀔까요?"
+      ]
+    },
+    {
+      "id": "math.audit-d.counts-with-previous",
+      "order": 104,
+      "subject": "수학",
+      "name": "남은 개수와 직전 종류를 저장해 세기",
+      "summary": "연속으로 같은 종류를 놓지 않는 배열은 각 종류의 남은 개수와 직전 종류로 다음 선택이 정해진다. 같은 상태를 한 번만 계산하고 첫 자리도 기억하면 원형 배열의 끝 조건까지 처리할 수 있다.",
+      "conceptAnswers": [
+        "남은 개수와 직전 종류를 저장해 세기",
+        "인접 제약 상태 점화식"
+      ],
+      "hint": "남",
+      "curriculum": "조합 · 인접 조건의 상태",
+      "source": "references/과학영재학교/한국과학영재학교_2026_수학.pdf PDF 3쪽 3-1~3-3. 풀이 원리를 활용해 상황과 수치를 새로 구성.",
+      "variants": [
+        {
+          "id": "math.audit-d.counts-with-previous.v1",
+          "prompt": "A 두 개, B 두 개를 이어 붙이고 연속 중복을 금지한다. 개수는?",
+          "choices": [
+            "4개",
+            "2개",
+            "6개",
+            "1개"
+          ],
+          "correctIndex": 1,
+          "explanation": "처음이 A면 ABAB, B면 BABA만 가능하다."
+        },
+        {
+          "id": "math.audit-d.counts-with-previous.v2",
+          "prompt": "A 두 개, B 한 개, C 한 개의 줄 배열에서 연속 AA를 금지한다. 개수는?",
+          "choices": [
+            "8개",
+            "12개",
+            "6개",
+            "4개"
+          ],
+          "correctIndex": 2,
+          "explanation": "전체 4!/2!=12개다. AA를 한 덩어리로 보면 붙은 경우 3!=6개다."
+        },
+        {
+          "id": "math.audit-d.counts-with-previous.v3",
+          "prompt": "남은 개수가 A 2개, B 1개이고 직전에 B를 놓았다. 가능한 마무리 순서는?",
+          "choices": [
+            "AAB만",
+            "BAA만",
+            "ABA와 BAA",
+            "ABA만"
+          ],
+          "correctIndex": 3,
+          "explanation": "먼저 A만 가능하고, 연달아 A는 놓을 수 없어 B,A가 이어진다."
+        },
+        {
+          "id": "math.audit-d.counts-with-previous.v4",
+          "prompt": "서로 구별되는 다섯 자리가 원을 이룬다. A 두 개와 B,C,D를 한 개씩 쓰되 A가 이웃하지 않는 개수는?",
+          "choices": [
+            "30개",
+            "36개",
+            "60개",
+            "24개"
+          ],
+          "correctIndex": 0,
+          "explanation": "A의 두 위치는 10쌍 중 원의 이웃 5쌍을 뺀 5쌍이다. 나머지 세 글자 배열 6을 곱한다."
+        }
+      ],
+      "reviewStatus": "draft",
+      "explain": {
+        "prompt": "A와 B와 C를 각각 주어진 수만큼 쓰면서 인접 중복을 피하는 배열의 개수를 구하는 상태를 정의하세요.",
+        "rubric": [
+          "종류별 남은 개수를 넣었다",
+          "직전 종류를 넣었다",
+          "가능한 종류 하나를 써 다음 상태를 만들었다",
+          "원형일 때 처음과 마지막을 비교했다"
+        ],
+        "passCount": 3
+      },
+      "followUps": [
+        "첫 번째와 마지막에 같은 종류가 오도록 요구하면 원형과 달리 마지막 조건을 어떻게 쓰나요?"
+      ]
+    },
+    {
+      "id": "math.audit-d.local-connection-loops",
+      "order": 105,
+      "subject": "수학",
+      "name": "연결을 닫을 때 생기는 고리 세기",
+      "summary": "세 평행선에 이웃한 두 선을 위·아래에서 묶는 연산 L,R를 이어 붙인다. 같은 연산을 바로 이어 쓰면 내부 고리 하나가 생기고, LRL과 RLR의 바깥 연결은 각각 L과 R과 같다. 양 끝을 닫았을 때 남는 고리까지 더한다.",
+      "conceptAnswers": [
+        "연결을 닫을 때 생기는 고리 세기",
+        "닫힌 연결 성분"
+      ],
+      "hint": "연",
+      "curriculum": "그래프 · 경계 연결 상태",
+      "source": "references/과학영재학교/한국과학영재학교_2026_수학.pdf PDF 4쪽 4-1~4-3. 풀이 원리를 활용해 상황과 수치를 새로 구성.",
+      "variants": [
+        {
+          "id": "math.audit-d.local-connection-loops.v1",
+          "prompt": "세 평행선의 양 끝을 번호가 같은 것끼리 닫는다. 아무 분할도 하지 않으면 고리는 몇 개인가?",
+          "choices": [
+            "1개",
+            "2개",
+            "3개",
+            "0개"
+          ],
+          "correctIndex": 2,
+          "explanation": "세 개의 평행선이 서로 연결되지 않아 각각 고리가 된다."
+        },
+        {
+          "id": "math.audit-d.local-connection-loops.v2",
+          "prompt": "같은 쪽 분할 L을 세 번 이어 LL L이 된다. 완전히 닫으면 고리는?",
+          "choices": [
+            "3개",
+            "2개",
+            "1개",
+            "4개"
+          ],
+          "correctIndex": 3,
+          "explanation": "연속 중복 두 번에서 내부 고리 두 개가 생긴다. 남은 L을 닫아 두 개를 더 얻는다."
+        },
+        {
+          "id": "math.audit-d.local-connection-loops.v3",
+          "prompt": "LRL을 이어 붙이고 양 끝을 닫으면 고리는?",
+          "choices": [
+            "2개",
+            "3개",
+            "1개",
+            "4개"
+          ],
+          "correctIndex": 0,
+          "explanation": "서로 다른 분할이 교대하여 내부 고리가 없다. LRL의 경계는 L과 같아 닫으면 두 고리다."
+        },
+        {
+          "id": "math.audit-d.local-connection-loops.v4",
+          "prompt": "가능한 네 자리 연산은 L,R,L,R이다. 고리 하나만 만들기 위해 고를 수 있는 분할열 길이는?",
+          "choices": [
+            "1 또는 3",
+            "2 또는 4",
+            "4만",
+            "0 또는 2"
+          ],
+          "correctIndex": 1,
+          "explanation": "고리 하나는 선택열이 비어 있지 않고 연속 중복 없이 처음과 끝이 달라야 한다. 길이가 짝수여야 한다."
+        }
+      ],
+      "reviewStatus": "draft",
+      "explain": {
+        "prompt": "분할이 같은 쪽에 반복될 때 내부 고리와 마지막에 생기는 고리를 따로 세는 이유를 말하세요.",
+        "rubric": [
+          "위아래를 연결한 국소 연산을 표시했다",
+          "같은 연산이 연달아 나올 때 내부 고리가 생김을 말했다",
+          "교대 3회가 처음 연산의 경계로 줄어듦을 말했다",
+          "마지막 양 끝을 닫아 남은 고리를 합했다"
+        ],
+        "passCount": 3
+      },
+      "followUps": [
+        "중간에 건너뛴 연산은 연결 상태를 바꾸지 않습니다. 선택할 때마다 기억할 최소 정보는 무엇일까요?"
+      ]
+    },
+    {
+      "id": "math.audit-d.equal-sum-reaction-components",
+      "order": 106,
+      "subject": "수학",
+      "name": "같은 합으로 묶어 연산 횟수 줄이기",
+      "summary": "두 수를 합치거나 하나를 둘로 나눌 때 수의 총합이 보존된다. 시작 묶음과 끝 묶음을 합이 같은 독립 부분으로 대응시키면, 각 부분을 한 수로 합쳤다가 나누는 데 시작·끝 항의 수 합에서 2를 뺀 만큼 필요하다.",
+      "conceptAnswers": [
+        "같은 합으로 묶어 연산 횟수 줄이기",
+        "합성 분해의 최소 횟수"
+      ],
+      "hint": "같",
+      "curriculum": "불변량 · 하한과 구성",
+      "source": "references/과학영재학교/한국과학영재학교_2025_수학.pdf PDF 4쪽 4-1~4-3. 풀이 원리를 활용해 상황과 수치를 새로 구성.",
+      "variants": [
+        {
+          "id": "math.audit-d.equal-sum-reaction-components.v1",
+          "prompt": "시작 1,4,8을 끝 5,8로 바꾼다. 최소 횟수는?",
+          "choices": [
+            "2회",
+            "3회",
+            "0회",
+            "1회"
+          ],
+          "correctIndex": 3,
+          "explanation": "8을 남기고 1과 4를 합치면 된다. 항 수가 한 개 줄어 최소 한 번이 필요하다."
+        },
+        {
+          "id": "math.audit-d.equal-sum-reaction-components.v2",
+          "prompt": "시작 1,2,6을 끝 4,5로 바꾼다. 최소 횟수는?",
+          "choices": [
+            "3회",
+            "1회",
+            "2회",
+            "4회"
+          ],
+          "correctIndex": 0,
+          "explanation": "한 번만 한다면 합성인데 두 시작 수의 합으로 4나 5를 얻을 수 없다. 항 수 차가 홀수라 두 번도 불가능하다. 전체를 9로 두 번 합친 뒤 4와 5로 나누면 3회다."
+        },
+        {
+          "id": "math.audit-d.equal-sum-reaction-components.v3",
+          "prompt": "시작 2,3,4에서 끝 3,7을 만든다. 유한 번으로 가능한가?",
+          "choices": [
+            "가능하다. 2와 4를 합치면 된다",
+            "아니요. 총합이 9와 10이다",
+            "항 수가 다르므로 총합과 관계없이 불가능하다",
+            "중간에 음수를 쓰면 가능하다"
+          ],
+          "correctIndex": 1,
+          "explanation": "합성·분해를 몇 번 하더라도 모든 항의 합은 바뀌지 않는다."
+        },
+        {
+          "id": "math.audit-d.equal-sum-reaction-components.v4",
+          "prompt": "서로 독립인 같은 합의 두 묶음에 시작과 끝의 항이 총 7개다. 각 묶음을 합쳤다 나누는 방법의 횟수는?",
+          "choices": [
+            "5회",
+            "7회",
+            "3회",
+            "1회"
+          ],
+          "correctIndex": 2,
+          "explanation": "두 묶음에 각각 2를 빼므로 7−4=3회다."
+        }
+      ],
+      "reviewStatus": "draft",
+      "explain": {
+        "prompt": "합성과 분해의 최소 횟수를 같은 합의 부분 묶음으로 설명하세요.",
+        "rubric": [
+          "연산에서 보존되는 총합을 말했다",
+          "시작과 끝의 합이 같은 부분을 대응시켰다",
+          "부분마다 한 항까지 합친 뒤 나누는 횟수를 셌다",
+          "같은 값은 남겨 두는 구성이나 하한을 설명했다"
+        ],
+        "passCount": 3
+      },
+      "followUps": [
+        "가장 많은 독립 묶음으로 나누는 것이 총 연산 횟수를 줄이는 이유는 무엇인가요?"
+      ]
+    },
+    {
+      "id": "math.audit-d.grid-degree-two-cycle",
+      "order": 107,
+      "subject": "수학",
+      "name": "격자 배치를 이분 그래프의 순환으로 바꾸기",
+      "summary": "행과 열을 다른 종류의 꼭짓점으로 놓고 표시가 있는 칸을 간선으로 바꾼다. 각 행·열에 표시가 두 개면 각 꼭짓점의 차수가 2라 여러 순환으로 분해된다. 두 행과 두 열의 4순환은 같은 행 또는 열 패턴이 있다는 뜻이다.",
+      "conceptAnswers": [
+        "격자 배치를 이분 그래프의 순환으로 바꾸기",
+        "이분 그래프 순환 배치"
+      ],
+      "hint": "격",
+      "curriculum": "배치 · 순환과 대칭",
+      "source": "references/과학영재학교/인천과학예술영재학교_2024.pdf PDF 7쪽 수학 4-(2). 풀이 원리를 활용해 상황과 수치를 새로 구성.",
+      "variants": [
+        {
+          "id": "math.audit-d.grid-degree-two-cycle.v1",
+          "prompt": "행 3개, 열 3개에 표시를 두 개씩 두고 같은 패턴을 금지한다. 가능한 순환 구조는?",
+          "choices": [
+            "길이 6의 순환 하나",
+            "길이 3의 순환 두 개",
+            "길이 4와 길이 2 순환",
+            "꼭짓점 여섯 개의 직선 경로"
+          ],
+          "correctIndex": 0,
+          "explanation": "이분 그래프 순환은 짝수 길이다. 2순환은 같은 칸에 간선을 두 번 그려야 하고 4순환은 금지다."
+        },
+        {
+          "id": "math.audit-d.grid-degree-two-cycle.v2",
+          "prompt": "두 행 모두 1열과 3열에만 표시가 있다. 대응 그래프에서 생기는 구조는?",
+          "choices": [
+            "두 꼭짓점의 고리",
+            "두 행과 두 열의 4순환",
+            "길이 6의 순환",
+            "간선 한 개"
+          ],
+          "correctIndex": 1,
+          "explanation": "행1→열1→행2→열3→행1로 이어진다."
+        },
+        {
+          "id": "math.audit-d.grid-degree-two-cycle.v3",
+          "prompt": "행과 열이 각각 3개인 차수 2 격자 배치는 몇 가지인가?",
+          "choices": [
+            "3가지",
+            "9가지",
+            "6가지",
+            "12가지"
+          ],
+          "correctIndex": 2,
+          "explanation": "빈칸이 각 행과 열에 하나라 빈칸 위치가 3개 열의 순열을 이룬다. 3!=6이다."
+        },
+        {
+          "id": "math.audit-d.grid-degree-two-cycle.v4",
+          "prompt": "행과 열이 각각 4개이고 같은 패턴이 없는 차수 2 격자에서 특정 행·열의 교차 칸이 표시될 확률은?",
+          "choices": [
+            "1/4",
+            "1/8",
+            "3/4",
+            "1/2"
+          ],
+          "correctIndex": 3,
+          "explanation": "열 이름을 바꾸어도 배치 조건은 같다. 한 행에서 네 칸 중 두 칸이 표시되므로 특정 칸은 2/4이다."
+        }
+      ],
+      "reviewStatus": "draft",
+      "explain": {
+        "prompt": "모든 행과 열에 두 개씩 표시된 격자에서 같은 패턴이 없어야 한다는 조건을 그래프로 바꾸세요.",
+        "rubric": [
+          "행과 열을 다른 꼭짓점으로 정했다",
+          "표시를 두 종류 사이 간선으로 바꿨다",
+          "차수 2라 순환으로 이루어짐을 설명했다",
+          "4순환이 같은 두 행·열에 대응함을 말했다"
+        ],
+        "passCount": 3
+      },
+      "followUps": [
+        "행과 열이 각각 여섯 개이면 순환 하나뿐 아니라 어떤 분해도 가능할까요?"
+      ]
+    },
+    {
+      "id": "math.audit-d.unfolded-return-parity",
+      "order": 108,
+      "subject": "수학",
+      "name": "반사 경로를 펼쳐 복귀 방향 구하기",
+      "summary": "정사각형에서 벽에 반사될 때마다 옆에 반사된 정사각형을 붙이면 경로가 직선이 된다. 꼭짓점에서는 두 속도 성분이 모두 반전된다고 정한다. 중심 사이의 수평·수직 변위는 정수 칸수다. 세로 벽을 통과한 횟수의 홀짝은 가로 성분을, 가로 벽을 통과한 횟수의 홀짝은 세로 성분을 결정한다.",
+      "conceptAnswers": [
+        "반사 경로를 펼쳐 복귀 방향 구하기",
+        "반사 경로의 홀짝"
+      ],
+      "hint": "반",
+      "curriculum": "기하 · 펼침과 홀짝",
+      "source": "references/과학영재학교/한국과학영재학교_2025_수학.pdf PDF 2쪽 2-1~2-3. 풀이 원리를 활용해 상황과 수치를 새로 구성.",
+      "variants": [
+        {
+          "id": "math.audit-d.unfolded-return-parity.v1",
+          "prompt": "한 변 1인 정사각형을 펼쳤다. 중심에서 오른쪽으로 2, 위로 3인 중심에 도달하면 가로·세로 속도 부호는 어떻게 되는가?",
+          "choices": [
+            "가로 반전, 세로 유지",
+            "가로 유지, 세로 반전",
+            "둘 다 유지",
+            "둘 다 반전"
+          ],
+          "correctIndex": 1,
+          "explanation": "세로 벽 두 개를 지나므로 가로 성분은 유지되고, 가로 벽 세 개를 지나므로 세로 성분은 반전된다."
+        },
+        {
+          "id": "math.audit-d.unfolded-return-parity.v2",
+          "prompt": "가로 대 세로 이동비가 6:8인 중심 출발 경로의 최초 복귀 격자 이동은?",
+          "choices": [
+            "6과 8",
+            "2와 3",
+            "3과 4",
+            "1과 1"
+          ],
+          "correctIndex": 2,
+          "explanation": "최초의 양의 정수 이동쌍은 기약비 3:4다."
+        },
+        {
+          "id": "math.audit-d.unfolded-return-parity.v3",
+          "prompt": "펼친 직선의 수평 이동과 수직 이동의 비가 √2:1이다. 중심에서 다른 격자 중심으로 다시 도달하는가?",
+          "choices": [
+            "첫 수직 벽 직후 도달한다",
+            "두 번 반사하면 항상 도달한다",
+            "가로 길이 2를 지나면 반드시 도달한다",
+            "도달하지 않는다"
+          ],
+          "correctIndex": 3,
+          "explanation": "두 중심을 잇는 유한한 변위는 가로와 세로가 모두 정수라 비가 무리수일 수 없다."
+        },
+        {
+          "id": "math.audit-d.unfolded-return-parity.v4",
+          "prompt": "위쪽과 오른쪽으로 출발했다. 펼친 중심을 3칸 오른쪽, 2칸 위에서 처음 만난다. 원래 중심에 들어오는 속도는?",
+          "choices": [
+            "왼쪽과 위쪽 성분",
+            "오른쪽과 위쪽 성분",
+            "왼쪽과 아래쪽 성분",
+            "오른쪽과 아래쪽 성분"
+          ],
+          "correctIndex": 0,
+          "explanation": "세로 벽에서 세 번 반사되면 오른쪽 성분이 왼쪽으로 바뀌고, 가로 벽에서 두 번 반사되면 위쪽 성분이 유지된다."
+        }
+      ],
+      "reviewStatus": "draft",
+      "explain": {
+        "prompt": "중심에서 출발한 입자의 처음 중심 복귀 방향을 펼친 격자로 예측하는 방법을 말하세요.",
+        "rubric": [
+          "반사될 때마다 정사각형을 펼쳤다",
+          "중심 사이의 이동을 정수 쌍으로 나타냈다",
+          "최초 복귀에 기약 정수비를 사용했다",
+          "두 축의 교차 홀짝으로 속도 부호를 구했다"
+        ],
+        "passCount": 3
+      },
+      "followUps": [
+        "중심으로 돌아오는 것과 처음 속도 방향까지 되찾는 것이 언제 달라질까요?"
+      ]
+    },
+    {
+      "id": "math.audit-a.circular-cap-area",
+      "order": 109,
+      "subject": "수학",
+      "name": "활꼴 넓이",
+      "summary": "현과 원호가 둘러싼 부분이 활꼴이다. 작은 활꼴은 중심에서 현의 양 끝을 연결해 얻은 부채꼴에서 삼각형을 빼고, 큰 활꼴은 원 전체에서 작은 활꼴을 뺀다. 같은 원판 두 장의 겹침은 두 활꼴로 나눌 수 있다.",
+      "conceptAnswers": [
+        "활꼴 넓이",
+        "부채꼴에서 삼각형 빼기"
+      ],
+      "hint": "활",
+      "curriculum": "평면도형 · 원과 넓이",
+      "source": "references/과학고/경기과고 2024.pdf PDF 13쪽 검사Ⅰ 23번 및 references/과학고/경남과고 2021.pdf PDF 1쪽 1(2). 풀이 원리를 활용해 예문의 상황과 수치를 새로 구성.",
+      "reviewStatus": "draft",
+      "variants": [
+        {
+          "id": "math.audit-a.circular-cap-area.v1",
+          "prompt": "반지름 4인 원에서 중심각 90°인 작은 활꼴의 넓이는?",
+          "choices": [
+            "4π−8",
+            "4π−4",
+            "8π−8",
+            "4π+8"
+          ],
+          "correctIndex": 0,
+          "explanation": "부채꼴은 원의 1/4인 4π, 양 반지름을 두 변으로 하는 직각삼각형은 4×4/2=8이다."
+        },
+        {
+          "id": "math.audit-a.circular-cap-area.v2",
+          "prompt": "반지름 5인 원의 중심에서 현까지의 거리가 3이다. 활꼴 계산에 쓸 중심 삼각형의 넓이는?",
+          "choices": [
+            "24",
+            "12",
+            "15",
+            "8"
+          ],
+          "correctIndex": 1,
+          "explanation": "현의 반은 √(25−9)=4이다. 현 길이 8에 중심에서의 높이 3을 곱해 2로 나눈다."
+        },
+        {
+          "id": "math.audit-a.circular-cap-area.v3",
+          "prompt": "같은 반지름의 두 원이 겹쳐 있다. 공통현에서 원 중심까지의 거리가 커질 때 겹친 넓이는?",
+          "choices": [
+            "늘어난다",
+            "그대로다",
+            "줄어든다",
+            "반드시 원 넓이의 반이 된다"
+          ],
+          "correctIndex": 2,
+          "explanation": "각 활꼴은 공통현 바깥쪽에 있는 원판 부분이다. 현이 중심에서 더 멀어지면 포함되는 부분이 줄어든다."
+        },
+        {
+          "id": "math.audit-a.circular-cap-area.v4",
+          "prompt": "반지름 3인 원에서 중심각 120°에 대응하는 작은 활꼴을 제외한 큰 활꼴의 넓이는?",
+          "choices": [
+            "3π−9√3/4",
+            "6π−9√3/4",
+            "3π+9√3/4",
+            "6π+9√3/4"
+          ],
+          "correctIndex": 3,
+          "explanation": "작은 쪽 부채꼴은 3π, 삼각형은 9sin120°/2=9√3/4이다. 작은 활꼴을 전체 9π에서 뺀다."
+        }
+      ],
+      "explain": {
+        "prompt": "원을 가르는 현이 주어졌을 때 작은 활꼴과 큰 활꼴을 각각 어떻게 구하나요?",
+        "rubric": [
+          "현과 원호로 활꼴을 정의했다",
+          "중심을 연결해 부채꼴과 삼각형을 구분했다",
+          "작은 활꼴에서 삼각형을 빼는 이유를 말했다",
+          "큰 활꼴을 여집합으로 구했다"
+        ],
+        "passCount": 3
+      },
+      "followUps": [
+        "반지름이 다른 두 원도 겹치는 부분을 어떤 두 조각으로 나눌 수 있나요?"
+      ]
+    },
+    {
+      "id": "math.audit-a.fold-intersection-regimes",
+      "order": 110,
+      "subject": "수학",
+      "name": "접은 조각의 겹침 영역",
+      "summary": "접는 선을 기준으로 움직이는 쪽만 선대칭한다. 반사된 조각과 움직이지 않는 조각이 함께 덮는 부분이 겹침이다. 접는 선의 위치가 변하면 겹침을 만드는 꼭짓점이 다른 변으로 바뀔 수 있다.",
+      "conceptAnswers": [
+        "접은 조각의 겹침 영역",
+        "반사 다각형 교집합"
+      ],
+      "hint": "접",
+      "curriculum": "평면도형 · 선대칭과 영역",
+      "source": "references/과학고/경기과고 2024.pdf PDF 18~19쪽 검사Ⅱ 1번. 풀이 원리를 활용해 예문의 상황과 수치를 새로 구성.",
+      "reviewStatus": "draft",
+      "variants": [
+        {
+          "id": "math.audit-a.fold-intersection-regimes.v1",
+          "prompt": "가로 8, 세로 4인 종이가 0≤x≤8에 있다. x=3에서 오른쪽 조각을 접었다. 겹친 넓이는?",
+          "choices": [
+            "8",
+            "12",
+            "16",
+            "20"
+          ],
+          "correctIndex": 1,
+          "explanation": "오른쪽의 x 범위 [3,8]은 [−2,3]이 된다. 남은 [0,3]과 겹치는 폭 3에 높이 4를 곱한다."
+        },
+        {
+          "id": "math.audit-a.fold-intersection-regimes.v2",
+          "prompt": "0≤x≤4, 0≤y≤4인 정사각형에서 x+y=6보다 큰 쪽을 접었다. 겹친 넓이는?",
+          "choices": [
+            "4",
+            "8",
+            "2",
+            "1"
+          ],
+          "correctIndex": 2,
+          "explanation": "접는 선 위 (2,4),(4,2)는 그대로이고, (4,4)는 (2,2)가 된다. 전부 남은 영역 안인 직각삼각형의 넓이는 2다."
+        },
+        {
+          "id": "math.audit-a.fold-intersection-regimes.v3",
+          "prompt": "가로 10, 세로 h인 직사각형을 x=a에서 오른쪽만 왼쪽으로 접는다. 0<a<10에서 겹친 넓이는?",
+          "choices": [
+            "ha",
+            "h(10−a)",
+            "h·max(a,10−a)",
+            "h·min(a,10−a)"
+          ],
+          "correctIndex": 3,
+          "explanation": "접는 선 왼쪽에서 남은 폭은 a, 덮으려는 폭은 10−a다. 둘이 함께 있는 폭은 작은 쪽이다."
+        },
+        {
+          "id": "math.audit-a.fold-intersection-regimes.v4",
+          "prompt": "접는 위치를 바꾸니 반사 조각의 꼭짓점이 남은 종이의 한 변을 통과했다. 계산에서 확인할 것은?",
+          "choices": [
+            "교집합 꼭짓점의 출처와 넓이 식이 바뀌는지",
+            "종이의 전체 원래 넓이가 바뀌는지",
+            "선대칭이 길이의 비를 바꾸는지",
+            "접는 선 위 점도 반대쪽으로 이동하는지"
+          ],
+          "correctIndex": 0,
+          "explanation": "반사와 원래 종이의 성질은 같아도 교집합을 경계 짓는 변·꼭짓점이 바뀔 수 있다."
+        }
+      ],
+      "explain": {
+        "prompt": "직사각형에서 한쪽을 접었을 때 겹친 범위와 식이 바뀌는 지점을 설명하세요.",
+        "rubric": [
+          "어느 쪽이 움직이고 어느 쪽이 남는지 구별했다",
+          "접는 선을 축으로 움직인 조각의 범위를 구했다",
+          "겹침을 두 조각의 교집합으로 표현했다",
+          "반사 조각이 경계를 지날 때 경우를 나눴다"
+        ],
+        "passCount": 3
+      },
+      "followUps": [
+        "접는 선이 대각선이면 교집합의 꼭짓점을 찾는 데 어떤 좌표 조건을 사용할 수 있나요?"
+      ]
+    },
+    {
+      "id": "math.audit-a.polyhedron-plane-section",
+      "order": 111,
+      "subject": "수학",
+      "name": "평면과 모서리의 교점",
+      "summary": "볼록 다면체를 평면으로 자르면 각 면에서 평면이 만나는 선분이 경계를 이룬다. 평면식을 모서리에 대입해 교점을 구하고 중복 꼭짓점을 지운 뒤, 면을 공유하는 순서로 이으면 단면을 얻는다.",
+      "conceptAnswers": [
+        "평면과 모서리의 교점",
+        "절단면의 꼭짓점"
+      ],
+      "hint": "평",
+      "curriculum": "공간도형 · 단면과 좌표",
+      "source": "references/과학고/경기과고 2024.pdf PDF 14쪽 검사Ⅰ 25번. 풀이 원리를 활용해 예문의 상황과 수치를 새로 구성.",
+      "reviewStatus": "draft",
+      "variants": [
+        {
+          "id": "math.audit-a.polyhedron-plane-section.v1",
+          "prompt": "0≤x≤4, 0≤y≤3, 0≤z≤2인 상자를 z=1로 자른 단면은?",
+          "choices": [
+            "넓이 8인 직사각형",
+            "넓이 6인 직사각형",
+            "넓이 12인 직사각형",
+            "넓이 12인 삼각형"
+          ],
+          "correctIndex": 2,
+          "explanation": "z가 고정되고 x와 y는 원래 범위 전체를 움직여 4×3 직사각형이다."
+        },
+        {
+          "id": "math.audit-a.polyhedron-plane-section.v2",
+          "prompt": "한 변 3인 좌표 정육면체 0≤x,y,z≤3을 x+y=2로 잘랐다. 단면 넓이는?",
+          "choices": [
+            "4√2",
+            "6",
+            "9",
+            "6√2"
+          ],
+          "correctIndex": 3,
+          "explanation": "바닥 단면의 끝은 (2,0,0),(0,2,0)이라 길이 2√2이고, 같은 선분이 z 방향으로 3만큼 이어진다."
+        },
+        {
+          "id": "math.audit-a.polyhedron-plane-section.v3",
+          "prompt": "좌표축과 x+y+z=4로 둘러싸인 제1팔분공간의 사면체를 z=2로 자른 단면 넓이는?",
+          "choices": [
+            "2",
+            "4",
+            "8",
+            "2√2"
+          ],
+          "correctIndex": 0,
+          "explanation": "z=2에서는 0≤x,0≤y,x+y≤2다. 두 직각변 길이가 2이므로 넓이는 2다."
+        },
+        {
+          "id": "math.audit-a.polyhedron-plane-section.v4",
+          "prompt": "한 변 1인 좌표 정육면체 0≤x,y,z≤1에서 x+y+z=0인 단면에는 점이 몇 개 있나요?",
+          "choices": [
+            "0개",
+            "1개",
+            "3개",
+            "무한히 많다"
+          ],
+          "correctIndex": 1,
+          "explanation": "세 좌표가 음이 아니어서 원점만 가능하다. 여러 모서리가 같은 꼭짓점에서 만난 경우 한 번 센다."
+        }
+      ],
+      "explain": {
+        "prompt": "평면이 상자의 꼭짓점 하나와 모서리 두 곳을 지날 때 단면 꼭짓점이 어떻게 정해지는지 설명하세요.",
+        "rubric": [
+          "평면을 좌표식으로 두었다",
+          "모서리에서 나머지 좌표가 고정됨을 이용했다",
+          "모서리 밖의 해와 중복점을 제거했다",
+          "같은 면에 있는 교점끼리 단면의 경계를 이었다"
+        ],
+        "passCount": 3
+      },
+      "followUps": [
+        "평면이 상자의 한 모서리 전체와 만날 때 교점 목록에는 무엇을 남겨야 하나요?"
+      ]
+    },
+    {
+      "id": "math.audit-a.intercept-minimum-area",
+      "order": 112,
+      "subject": "수학",
+      "name": "고정점을 지나는 절편 삼각형",
+      "summary": "두 양의 좌표축을 자르는 직선이 내부의 점 (p,q)를 지나면 절편 u,v는 p/u+q/v=1을 만족한다. (u−p)(v−q)=pq를 이용해 두 차이가 균형을 이루는 u=2p,v=2q에서 uv가 최소임을 보인다.",
+      "conceptAnswers": [
+        "고정점을 지나는 절편 삼각형",
+        "절편 곱의 최솟값"
+      ],
+      "hint": "고",
+      "curriculum": "함수와 기하 · 절편과 최솟값",
+      "source": "references/과학고/경남과고 2022.pdf PDF 2쪽 2(3). 풀이 원리를 활용해 예문의 상황과 수치를 새로 구성.",
+      "reviewStatus": "draft",
+      "variants": [
+        {
+          "id": "math.audit-a.intercept-minimum-area.v1",
+          "prompt": "직선이 (2,3)을 지나고 양의 좌표축과 만드는 삼각형 넓이의 최솟값은?",
+          "choices": [
+            "6",
+            "9",
+            "10",
+            "12"
+          ],
+          "correctIndex": 3,
+          "explanation": "절편은 각각 4,6일 때 곱이 최소라 넓이는 4×6/2=12다."
+        },
+        {
+          "id": "math.audit-a.intercept-minimum-area.v2",
+          "prompt": "60°로 만나는 두 반직선의 방향 벡터를 각각 한 단위로 삼았다. 점의 좌표가 (1,2)라면 그 점을 지나는 절편 삼각형의 최소 넓이는?",
+          "choices": [
+            "2√3",
+            "4",
+            "4√3",
+            "8"
+          ],
+          "correctIndex": 0,
+          "explanation": "두 절편의 최소 곱은 4×1×2=8이다. 넓이는 그 절반에 끼인각의 sin60°를 곱한다."
+        },
+        {
+          "id": "math.audit-a.intercept-minimum-area.v3",
+          "prompt": "직선이 (3,2)와 x축 위 (9,0)을 지난다. y절편과 삼각형 넓이는?",
+          "choices": [
+            "2, 9",
+            "3, 27/2",
+            "4, 18",
+            "6, 27"
+          ],
+          "correctIndex": 1,
+          "explanation": "3/9+2/v=1에서 v=3이다. 두 절편을 곱한 뒤 반으로 나누면 27/2다."
+        },
+        {
+          "id": "math.audit-a.intercept-minimum-area.v4",
+          "prompt": "직선이 (2,1)을 지나며 x절편이 6 이상이다. 양의 두 절편이 만드는 최소 넓이는?",
+          "choices": [
+            "4",
+            "6",
+            "9/2",
+            "12"
+          ],
+          "correctIndex": 2,
+          "explanation": "u가 6 이상이면 uv=(u−2)+4+4/(u−2)는 증가한다. x₂>x₁≥4에서 x+4/x의 차가 (x₂−x₁)(1−4/(x₁x₂))>0이기 때문이다. u=6에서 v=3/2다."
+        }
+      ],
+      "explain": {
+        "prompt": "고정점의 좌표와 두 절편의 관계를 이용해 삼각형 넓이가 최소가 되는 위치를 설명하세요.",
+        "rubric": [
+          "두 절편을 양수 u,v로 나타냈다",
+          "고정점이 직선 위라서 절편식이 성립함을 보였다",
+          "두 절편 차이의 곱이 일정함을 이용했다",
+          "최소와 등호가 성립하는 절편 위치를 구했다"
+        ],
+        "passCount": 3
+      },
+      "followUps": [
+        "가로 절편이 최적값보다 더 커야 할 때 최소 넓이를 어디에서 찾을 수 있나요?"
+      ]
+    },
+    {
+      "id": "math.audit-a.finite-staggered-packing",
+      "order": 113,
+      "subject": "수학",
+      "name": "엇갈린 원 배열의 테두리",
+      "summary": "같은 원을 엇갈리게 놓으면 이웃 줄의 원 중심이 정삼각형을 만든다. 반지름 r일 때 가로 간격 2r, 줄 사이 높이 √3r이다. 직사각형에서는 각 변에서 중심까지 r을 남기고, 첫 줄과 r만큼 옮긴 줄을 따로 세어야 한다.",
+      "conceptAnswers": [
+        "엇갈린 원 배열의 테두리",
+        "유한 육각 배열"
+      ],
+      "hint": "엇",
+      "curriculum": "평면도형 · 배치와 부등식",
+      "source": "references/과학고/과학고문제.pdf PDF 4~5쪽 2023 문항 4(3). 풀이 원리를 활용해 예문의 상황과 수치를 새로 구성.",
+      "reviewStatus": "draft",
+      "variants": [
+        {
+          "id": "math.audit-a.finite-staggered-packing.v1",
+          "prompt": "가로 17, 세로 11 상자에 반지름 2의 원을 가로 줄로 놓는다. 첫 줄은 왼쪽에 붙이고 다음 줄은 반지름만큼 오른쪽으로 옮긴다. 같은 규칙으로 채우면 몇 개인가요?",
+          "choices": [
+            "11개",
+            "12개",
+            "9개",
+            "14개"
+          ],
+          "correctIndex": 0,
+          "explanation": "줄 수는 4+(n−1)2√3≤11에서 3이다. 중심 x는 첫 줄 2,6,10,14이고 옮긴 줄 4,8,12여서 4+3+4=11이다."
+        },
+        {
+          "id": "math.audit-a.finite-staggered-packing.v2",
+          "prompt": "8×9 상자에 반지름 1인 원을 놓는다. 같은 줄의 원끼리 접하고, 다음 줄마다 가로 위치를 1씩 엇갈리게 하여 이웃 줄의 원에도 접하게 놓는다. 이 배치에서 8인 변을 따라 줄을 놓을 때와 9인 변을 따라 줄을 놓을 때 각각 최대 몇 개가 들어가는가?",
+          "choices": [
+            "16개, 18개",
+            "18개, 16개",
+            "20개, 20개",
+            "20개, 18개"
+          ],
+          "correctIndex": 1,
+          "explanation": "가로 8이면 5줄의 4·3·4·3·4개다. 가로 9이면 4줄에 모두 4개다. 90° 돌리면 테두리에서 빠지는 원이 달라진다."
+        },
+        {
+          "id": "math.audit-a.finite-staggered-packing.v3",
+          "prompt": "반지름 3인 원의 중심들을 같은 줄 안에서 6씩, 이웃 줄 사이에서 가로로 3씩 엇갈리게 놓아 이웃 원끼리 닿게 한다. 이런 네 줄을 담기 위한 직사각형의 최소 높이는?",
+          "choices": [
+            "9√3",
+            "6+12√3",
+            "6+9√3",
+            "12+9√3"
+          ],
+          "correctIndex": 2,
+          "explanation": "첫 중심과 마지막 중심의 차는 줄 간격 3√3의 세 배이고 위아래 끝에 반지름 3씩 남긴다."
+        },
+        {
+          "id": "math.audit-a.finite-staggered-packing.v4",
+          "prompt": "폭 18인 상자에 반지름 2인 원을 가로 줄로 놓는다. 첫 줄 중심 x=2, 옮긴 줄 중심 x=4에서 시작한다. 각 줄의 원 개수는?",
+          "choices": [
+            "4개, 3개",
+            "5개, 4개",
+            "4개, 5개",
+            "4개, 4개"
+          ],
+          "correctIndex": 3,
+          "explanation": "두 줄의 중심들은 각각 2,6,10,14와 4,8,12,16이다. 끝 16에서도 오른쪽에 반지름 2가 남는다."
+        }
+      ],
+      "explain": {
+        "prompt": "엇갈린 원 배열의 간격을 구하고 두 종류 줄의 원 개수가 같을 때와 다를 때를 설명하세요.",
+        "rubric": [
+          "중심 사이 가로 간격을 지름으로 뒀다",
+          "정삼각형의 높이로 줄 사이 간격을 구했다",
+          "양 끝에 반지름만큼 경계를 남겼다",
+          "일반 줄과 옮긴 줄의 가능한 중심을 따로 셌다"
+        ],
+        "passCount": 3
+      },
+      "followUps": [
+        "직사각형 안에서 같은 엇갈림 규칙을 90° 돌리면 어떤 길이를 다시 계산해야 하나요?"
+      ]
+    },
+    {
+      "id": "math.audit-a.composition-shift-rates",
+      "order": 114,
+      "subject": "수학",
+      "name": "구성비와 전체 비율",
+      "summary": "전체 비율은 각 집단의 비율을 집단 크기 비중으로 가중한 값이다. 집단 내부 비율이 일정하거나 모두 좋아져도, 더 낮은 비율의 집단 비중이 커지면 전체 비율은 반대 방향으로 움직일 수 있다.",
+      "conceptAnswers": [
+        "구성비와 전체 비율",
+        "집단 비율의 가중 평균"
+      ],
+      "hint": "구",
+      "curriculum": "자료 해석 · 집단과 비율",
+      "source": "references/과학고/경기과고 2025.pdf PDF 15쪽 검사Ⅰ 2교시 6번. 풀이 원리를 활용해 예문의 상황과 수치를 새로 구성.",
+      "reviewStatus": "draft",
+      "variants": [
+        {
+          "id": "math.audit-a.composition-shift-rates.v1",
+          "prompt": "두 모둠의 통과율이 각각 90%→95%, 40%→50%다. 첫 모둠 수가 100→20명, 둘째가 20→100명이라면 전체 통과율은?",
+          "choices": [
+            "두 모둠과 같이 상승",
+            "항상 그대로",
+            "80%로 같아진다",
+            "98/120에서 69/120으로 하락"
+          ],
+          "correctIndex": 3,
+          "explanation": "처음에는 90+8명, 나중에는 19+50명이 통과한다. 낮은 비율 모둠의 비중이 크게 늘었다."
+        },
+        {
+          "id": "math.audit-a.composition-shift-rates.v2",
+          "prompt": "A 작업 90%, B 작업 30%를 통과한다. A가 전체의 1/4일 때 전체 통과율은?",
+          "choices": [
+            "45%",
+            "60%",
+            "30%",
+            "75%"
+          ],
+          "correctIndex": 0,
+          "explanation": "A와 B의 비중은 각각 1/4,3/4이므로 0.9/4+0.3×3/4=0.45다."
+        },
+        {
+          "id": "math.audit-a.composition-shift-rates.v3",
+          "prompt": "A 재료의 불량률이 4%, B가 10%이고 전체가 7%다. A와 B의 수량 관계는?",
+          "choices": [
+            "A가 B의 두 배",
+            "같다",
+            "B가 A의 두 배",
+            "주어진 정보로는 판단할 수 없다"
+          ],
+          "correctIndex": 1,
+          "explanation": "7%는 4%와 10%의 중간이다. 수량에 대한 가중 평균이므로 양쪽의 가중치가 같다."
+        },
+        {
+          "id": "math.audit-a.composition-shift-rates.v4",
+          "prompt": "첫 반은 10명 중 2명, 둘째 반은 90명 중 9명이 성공했다. 전체 성공률은?",
+          "choices": [
+            "10%",
+            "15%",
+            "11%",
+            "20%"
+          ],
+          "correctIndex": 2,
+          "explanation": "성공 건수 2+9를 전체 10+90으로 나눈다. 표본 수가 달라 20%와 10%를 단순 평균하면 안 된다."
+        }
+      ],
+      "explain": {
+        "prompt": "두 집단의 비율은 모두 높아지는데 전체 비율이 낮아지는 자료를 만들고 이유를 설명하세요.",
+        "rubric": [
+          "각 집단의 분자와 분모를 밝혔다",
+          "시점마다 집단 내부 비율을 계산했다",
+          "전체의 분자 합을 분모 합으로 나눴다",
+          "구성비 변화가 전체 방향을 바꾼 이유를 설명했다"
+        ],
+        "passCount": 3
+      },
+      "followUps": [
+        "두 시점에 같은 집단 가중치를 쓰면 결과가 어떻게 달라질까요?"
+      ]
     }
   ],
   "missions": [
@@ -8302,6 +9706,162 @@
       "followUp": "평균을 16/3으로 바꾸면 남은 세 값은 어떻게 배분할까요?",
       "source": "한국과학영재학교_2026_수학.pdf 2쪽 문제 2의 전체 평균과 최댓값·최솟값을 제외한 평균 비교를 참고해 창작.",
       "reviewStatus": "draft"
+    },
+    {
+      "id": "mission.math.audit-d.route-fits",
+      "title": "운반 레일의 두 가지 오차",
+      "principleIds": [
+        "math.audit-d.weighted-median-slope",
+        "math.audit-d.origin-least-squares",
+        "math.audit-d.basis-model-error"
+      ],
+      "passage": "창고에는 원점을 통과하는 운반 레일 y=ax를 놓는다. 위치 자료는 (1,0), (1,2), (4,4)이다. 관으로 연결하는 비용은 세로 거리의 합, 진동을 평가하는 비용은 세로 거리의 제곱합이다.",
+      "followUp": "기울기 후보 2에 가중치가 훨씬 큰 점을 하나 추가하면 두 방식의 최적값이 어떻게 움직일까요?",
+      "source": "references/과학영재학교/한국과학영재학교_2024_수학.pdf PDF 1쪽 1-2, 1-3. 상황과 수치는 새로 구성.",
+      "reviewStatus": "draft",
+      "question": {
+        "id": "mission.math.audit-d.route-fits.q",
+        "prompt": "거리합과 제곱합에서 얻은 기울기와 두 모형의 차이를 알맞게 설명한 것은?",
+        "choices": [
+          "거리합은 2, 제곱합은 1이다",
+          "둘 다 1이지만 각 비용에서 최적이 되는 이유는 다르다",
+          "거리합은 1, 제곱합은 2다",
+          "둘 다 1이므로 어느 자료에서도 비용 방식이 결과를 바꾸지 않는다"
+        ],
+        "correctIndex": 1,
+        "explanation": "가중치 4인 후보 1이 가중 중앙값이다. 제곱합은 xy 합 18과 x² 합 18의 비로도 1이지만 일반적으로 두 규칙은 다르다.",
+        "evidenceQuote": "위치 자료는 (1,0), (1,2), (4,4)이다."
+      }
+    },
+    {
+      "id": "mission.math.audit-d.modular-lab",
+      "title": "나머지 실험의 가역성",
+      "principleIds": [
+        "math.audit-d.finite-pair-inverse",
+        "math.audit-d.residue-discriminant",
+        "math.audit-d.cyclic-difference-divisibility"
+      ],
+      "passage": "계산 장치는 계수를 mod 5로 줄이며 u²=2인 수를 쓴다. 이 장치에는 1+u를 곱하는 기능과 x²=3의 해를 찾는 기능이 있다. 옆의 순환 장치는 네 칸마다 현재 칸과 다음 칸의 차의 절댓값을 동시에 계산하는 작업을 네 번 반복한다.",
+      "followUp": "결과가 0이라면 입력도 반드시 0이었는지, 계산 장치의 곱셈 결과와 순환 장치의 짝홀 표시를 비교하세요.",
+      "source": "references/과학영재학교/한국과학영재학교_2024_수학.pdf PDF 2~3쪽 2-2, 2-4, 3-5. 상황과 수치는 새로 구성.",
+      "reviewStatus": "draft",
+      "question": {
+        "id": "mission.math.audit-d.modular-lab.q",
+        "prompt": "1+u를 곱한 뒤 되돌리는 인수, x²=3의 해 한 개, 순환 장치의 모든 결과를 바르게 묶은 것은?",
+        "choices": [
+          "4+u, u, 전부 짝수",
+          "2+u, 2u, 전부 홀수",
+          "4+u, 2u, 전부 짝수",
+          "되돌리는 인수 없음, u, 전부 짝수"
+        ],
+        "correctIndex": 2,
+        "explanation": "켤레 곱은 4여서 4(1−u)=4+u로 복구된다. (2u)²=8≡3이다. mod 2에서 네 번의 순환 갱신은 모든 자리에 0을 남긴다.",
+        "evidenceQuote": "계산 장치는 계수를 mod 5로 줄이며 u²=2인 수를 쓴다. 이 장치에는 1+u를 곱하는 기능과 x²=3의 해를 찾는 기능이 있다."
+      }
+    },
+    {
+      "id": "mission.math.audit-d.event-count-check",
+      "title": "두 공정의 반복 횟수 계산",
+      "principleIds": [
+        "math.audit-d.copy-pair-coefficient",
+        "math.audit-d.counts-with-previous",
+        "math.audit-d.local-connection-loops"
+      ],
+      "passage": "전시 모형의 공정 순서는 L,R,L,R이다. 선택한 연결 작업끼리 같은 종류가 연달아 붙으면 내부 고리가 하나 생긴다. 공정 모형을 세 층 쌓았을 때 층 안의 연결 쌍은 2개, 두 서로 다른 층 사이마다 추가 연결 쌍은 1개이다.",
+      "followUp": "층이 여섯 개라면 두 층의 연결 쌍은 얼마나 더 많이 생길까요?",
+      "source": "references/과학영재학교/한국과학영재학교_2024_수학.pdf PDF 4~5쪽 4번 및 2026 수학 PDF 4쪽 4번. 상황과 수치는 새로 구성.",
+      "reviewStatus": "draft",
+      "question": {
+        "id": "mission.math.audit-d.event-count-check.q",
+        "prompt": "층 전체의 쌍 수와 내부 고리 없이 분할 2개를 고르는 수는 각각 얼마인가?",
+        "choices": [
+          "6쌍과 2가지",
+          "9쌍과 6가지",
+          "12쌍과 2가지",
+          "9쌍과 4가지"
+        ],
+        "correctIndex": 3,
+        "explanation": "세 층 내부에 6쌍, 서로 다른 세 쌍의 층 사이에 3쌍이다. L 두 자리 중 하나와 R 두 자리 중 하나를 고르는 4가지면 연속 중복이 없다.",
+        "evidenceQuote": "층 안의 연결 쌍은 2개, 두 서로 다른 층 사이마다 추가 연결 쌍은 1개이다."
+      }
+    },
+    {
+      "id": "mission.math.audit-d.sum-grid-route",
+      "title": "도형 공작실의 세 가지 불변 조건",
+      "principleIds": [
+        "math.audit-d.equal-sum-reaction-components",
+        "math.audit-d.grid-degree-two-cycle",
+        "math.audit-d.unfolded-return-parity"
+      ],
+      "passage": "학생이 세 모형을 실험한다. 첫 모형은 2,5,9를 합성 또는 분해해 7,9를 만든다. 둘째는 3행 3열 격자에서 행·열마다 두 칸을 표시하고 같은 행과 열 모양을 금지한다. 셋째는 오른쪽·위쪽으로 출발한 빛이 펼친 격자의 (1,2)만큼 이동한 중심으로 돌아온다.",
+      "followUp": "격자를 4행 4열로 키우면 순환 성분의 개수는 달라질 수 있나요?",
+      "source": "references/과학영재학교/한국과학영재학교_2025_수학.pdf PDF 2,4쪽 및 인천과학예술영재학교 2024 PDF 7쪽 수학 4-(2). 상황과 수치는 새로 구성.",
+      "reviewStatus": "draft",
+      "question": {
+        "id": "mission.math.audit-d.sum-grid-route.q",
+        "prompt": "세 모형에 대한 판단이 모두 맞는 것은?",
+        "choices": [
+          "합성 한 번, 길이 6 순환, 왼쪽·위쪽 속도",
+          "분해 한 번, 길이 6 순환, 오른쪽·위쪽 속도",
+          "합성 두 번, 길이 4 순환, 왼쪽·아래쪽 속도",
+          "합성 한 번, 두 순환, 오른쪽·아래쪽 속도"
+        ],
+        "correctIndex": 0,
+        "explanation": "2+5=7이고 9는 보존한다. 차수 2 이분 그래프에서 4순환을 빼면 6순환만 가능하다. 세로 벽 하나와 가로 벽 둘을 지나므로 가로 속도만 뒤집힌다.",
+        "evidenceQuote": "셋째는 오른쪽·위쪽으로 출발한 빛이 펼친 격자의 (1,2)만큼 이동한 중심으로 돌아온다."
+      }
+    },
+    {
+      "id": "mission.math.audit-a.maker-shapes",
+      "title": "공작실의 세 면적 검산",
+      "principleIds": [
+        "math.audit-a.circular-cap-area",
+        "math.audit-a.fold-intersection-regimes",
+        "math.audit-a.polyhedron-plane-section"
+      ],
+      "passage": "공작실에서 세 면적을 계산한다. 첫째, 반지름 2인 원의 중심각 90°에 대응하는 작은 활꼴을 투명창으로 사용한다. 둘째, 가로 6·세로 3인 종이의 오른쪽을 왼쪽에서 2 떨어진 세로선으로 접는다. 셋째, 밑면 가로 4·세로 3, 높이 2인 직육면체를 밑면에서 높이 1인 수평면으로 자른다.",
+      "followUp": "종이의 접는 선을 오른쪽으로 움직이면 어떤 위치에서 겹침이 가장 커질까요?",
+      "source": "경기과고 2024 PDF 13~14쪽 검사Ⅰ 23·25번, 18~19쪽 검사Ⅱ 1번의 풀이 원리를 결합한 새 미션.",
+      "reviewStatus": "draft",
+      "question": {
+        "id": "mission.math.audit-a.maker-shapes.q",
+        "prompt": "투명창, 종이의 겹침, 직육면체 단면의 넓이를 순서대로 맞게 구한 것은?",
+        "choices": [
+          "π−2, 6, 12",
+          "2π, 12, 6",
+          "2π+2, 6, 8",
+          "4π−2, 3, 12"
+        ],
+        "correctIndex": 0,
+        "explanation": "투명창은 1/4원에서 직각삼각형 2를 뺀다. 종이는 남은 폭 2와 접힌 폭 4 가운데 작은 2에 높이 3을 곱한다. 수평 단면은 밑면과 같은 4×3이다.",
+        "evidenceQuote": "둘째, 가로 6·세로 3인 종이의 오른쪽을 왼쪽에서 2 떨어진 세로선으로 접는다."
+      }
+    },
+    {
+      "id": "mission.math.audit-a.garden-plan",
+      "title": "모종 배치와 관찰 계획",
+      "principleIds": [
+        "math.audit-a.intercept-minimum-area",
+        "math.audit-a.finite-staggered-packing",
+        "math.audit-a.composition-shift-rates"
+      ],
+      "passage": "학교 화단의 두 경계가 직각으로 만나고 좌표 (3,1)에 표지판이 있다. 그 표지판을 지나는 직선으로 두 양의 경계에 닿는 삼각형을 만든다. 별도의 가로 9·세로 6 상자에는 반지름 1의 원형 모종판을 가로 줄로 엇갈리게 놓으며 첫 줄과 옮긴 줄 중심의 시작 x는 각각 1과 2다. 발아 시험에서 A종은 10개 중 3개, B종은 20개 중 12개가 발아했다.",
+      "followUp": "두 종의 발아율을 공정하게 같은 가중치로 비교하면 전체 성공률의 추정이 어떻게 달라질까요?",
+      "source": "경남과고 2022 PDF 2쪽 2(3), 과학고문제.pdf PDF 4~5쪽 2023 4(3), 경기과고 2025 PDF 15쪽 검사Ⅰ 2교시 6번의 풀이 원리를 결합한 새 미션.",
+      "reviewStatus": "draft",
+      "question": {
+        "id": "mission.math.audit-a.garden-plan.q",
+        "prompt": "삼각형의 최소 넓이, 상자 안 모종판 개수, 전체 발아율을 순서대로 고르세요.",
+        "choices": [
+          "3, 12개, 45%",
+          "6, 10개, 50%",
+          "6, 12개, 50%",
+          "12, 16개, 45%"
+        ],
+        "correctIndex": 2,
+        "explanation": "최소 절편은 6과 2여서 넓이는 6이다. 줄 간격 √3으로 세 줄을 놓고 각각 네 원이 들어간다. 발아율은 두 집단의 성공을 합친 15를 총 30으로 나눈 50%다.",
+        "evidenceQuote": "발아 시험에서 A종은 10개 중 3개, B종은 20개 중 12개가 발아했다."
+      }
     }
   ]
 }
